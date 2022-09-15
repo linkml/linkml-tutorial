@@ -1,0 +1,22 @@
+id: https://w3id.org/linkml/linkml-tutorial-schema
+name: linkml-tutorial-schema
+title: linkml-tutorial-schema
+description: |-
+  A repostitory that walks through schema generation. 
+license: MIT
+see_also:
+  - https://linkml.github.io/linkml-tutorial-schema
+
+prefixes:
+  linkml_tutorial_schema: https://w3id.org/linkml/linkml-tutorial-schema/
+  linkml: https://w3id.org/linkml/
+  biolink: https://w3id.org/biolink/
+  schema: http://schema.org/
+  PATO: http://purl.obolibrary.org/obo/PATO_
+  example: https://example.org/
+default_prefix: linkml_tutorial_schema
+default_range: string
+
+imports:
+  - linkml:types
+  - personinfo_enums

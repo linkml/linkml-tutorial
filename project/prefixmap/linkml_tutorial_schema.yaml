@@ -1,0 +1,29 @@
+{
+   "PATO": "http://purl.obolibrary.org/obo/PATO_",
+   "TEMP": "https://example.org/TEMP/",
+   "biolink": "https://w3id.org/biolink/",
+   "example": "https://example.org/",
+   "linkml": "https://w3id.org/linkml/",
+   "linkml_tutorial_schema": "https://w3id.org/linkml/linkml-tutorial-schema/",
+   "schema": "http://schema.org/",
+   "sdo": "http://example.org/sdo/",
+   "wikidata": "http://www.wikidata.org/entity/",
+   "Event": {
+      "@id": "TEMP:Event"
+   },
+   "ForProfit": {
+      "@id": "TEMP:ForProfit"
+   },
+   "MedicalEvent": {
+      "@id": "TEMP:MedicalEvent"
+   },
+   "NonProfit": {
+      "@id": "TEMP:NonProfit"
+   },
+   "Organization": {
+      "@id": "TEMP:Organization"
+   },
+   "Person": {
+      "@id": "TEMP:Person"
+   }
+}

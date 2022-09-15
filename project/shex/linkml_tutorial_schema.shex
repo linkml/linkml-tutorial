@@ -1,0 +1,88 @@
+BASE <https://w3id.org/linkml/linkml-tutorial-schema/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX linkml: <https://w3id.org/linkml/>
+PREFIX TEMP: <https://example.org/TEMP/>
+
+
+linkml:String xsd:string
+
+linkml:Integer xsd:integer
+
+linkml:Boolean xsd:boolean
+
+linkml:Float xsd:float
+
+linkml:Double xsd:double
+
+linkml:Decimal xsd:decimal
+
+linkml:Time xsd:dateTime
+
+linkml:Date xsd:date
+
+linkml:Datetime xsd:dateTime
+
+linkml:DateOrDatetime linkml:DateOrDatetime
+
+linkml:Uriorcurie IRI
+
+linkml:Uri IRI
+
+linkml:Ncname xsd:string
+
+linkml:Objectidentifier IRI
+
+linkml:Nodeidentifier NONLITERAL
+
+TEMP:Event  (
+    CLOSED {
+       (  $TEMP:Event_tes rdf:type . * ;
+          rdf:type [ TEMP:Event ] ?
+       )
+    } OR @TEMP:MedicalEvent
+)
+
+TEMP:ForProfit CLOSED {
+    (  $TEMP:ForProfit_tes (  &TEMP:Organization_tes ;
+          rdf:type [ TEMP:Organization ] ?
+       ) ;
+       rdf:type [ TEMP:ForProfit ] ?
+    )
+}
+
+TEMP:MedicalEvent CLOSED {
+    (  $TEMP:MedicalEvent_tes (  &TEMP:Event_tes ;
+          rdf:type [ TEMP:Event ] ?
+       ) ;
+       rdf:type [ TEMP:MedicalEvent ] ?
+    )
+}
+
+TEMP:NonProfit CLOSED {
+    (  $TEMP:NonProfit_tes (  &TEMP:Organization_tes ;
+          rdf:type [ TEMP:Organization ] ?
+       ) ;
+       rdf:type [ TEMP:NonProfit ] ?
+    )
+}
+
+TEMP:Organization  (
+    CLOSED {
+       (  $TEMP:Organization_tes TEMP:name @linkml:String ;
+          rdf:type [ TEMP:Organization ] ?
+       )
+    } OR @TEMP:ForProfit OR @TEMP:NonProfit
+)
+
+TEMP:Person CLOSED {
+    (  $TEMP:Person_tes (  TEMP:name @linkml:String ;
+          TEMP:age @linkml:Decimal ? ;
+          TEMP:gender @linkml:Decimal ? ;
+          TEMP:has_medical_history @TEMP:MedicalEvent *
+       ) ;
+       rdf:type [ TEMP:Person ]
+    )
+}
+
+

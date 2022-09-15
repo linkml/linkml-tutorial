@@ -1,0 +1,19 @@
+site_name: "linkml-tutorial-schema"
+theme:
+  name: material
+  analytics:
+    gtag: G-2SYBSJVZ23
+#  palette:
+#    scheme: slate
+#    primary: cyan
+  features:
+    - content.tabs.link
+plugins:
+  - search
+  - mermaid2
+nav:
+#  - Home: home.md
+  - Index: index.md
+  - About: about.md
+site_url: https://linkml.github.io/linkml-tutorial-schema
+repo_url: https://github.com/linkml/linkml-tutorial-schema

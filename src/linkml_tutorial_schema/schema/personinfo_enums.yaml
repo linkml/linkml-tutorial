@@ -1,0 +1,172 @@
+name: TEMP
+id: TEMP
+imports:
+- linkml:types
+prefixes:
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+  TEMP:
+    prefix_prefix: TEMP
+    prefix_reference: https://example.org/TEMP/
+  sdo:
+    prefix_prefix: sdo
+    prefix_reference: http://example.org/sdo/
+  wikidata:
+    prefix_prefix: wikidata
+    prefix_reference: http://www.wikidata.org/entity/
+default_prefix: TEMP
+default_range: string
+subsets:
+  a:
+    name: a
+  b:
+    name: b
+slots:
+  id:
+    name: id
+    description: any identifier
+    from_schema: TEMP
+    exact_mappings:
+    - sdo:identifier
+    - sdo:identifier
+    multivalued: false
+    identifier: true
+    range: string
+    required: true
+  description:
+    name: description
+    annotations:
+      special:
+        tag: special
+        value: my_val
+      special2:
+        tag: special2
+        value: my_val2
+    description: a textual description
+    from_schema: TEMP
+    exact_mappings:
+    - sdo:description
+    - sdo:description
+    multivalued: false
+    range: string
+    required: false
+  name:
+    name: name
+    from_schema: TEMP
+  age:
+    name: age
+    from_schema: TEMP
+  gender:
+    name: gender
+    from_schema: TEMP
+  has medical history:
+    name: has medical history
+    from_schema: TEMP
+classes:
+  Person:
+    name: Person
+    description: a person,living or dead
+    from_schema: TEMP
+    exact_mappings:
+    - sdo:Person
+    - wikidata:Q215627
+    - sdo:Person
+    - wikidata:Q215627
+    status: release
+    slots:
+    - id
+    - name
+    - age
+    - gender
+    - has medical history
+    slot_usage:
+      id:
+        name: id
+        description: identifier for a person
+        exact_mappings:
+        - sdo:identifier
+        multivalued: false
+        identifier: true
+        range: string
+        required: true
+      name:
+        name: name
+        annotations:
+          special:
+            tag: special
+            value: my_val
+        description: full name
+        exact_mappings:
+        - sdo:name
+        multivalued: false
+        range: string
+        required: true
+      age:
+        name: age
+        description: age in years
+        multivalued: false
+        range: decimal
+        required: false
+      gender:
+        name: gender
+        description: age in years
+        multivalued: false
+        range: decimal
+        required: false
+      has medical history:
+        name: has medical history
+        description: medical history
+        status: testing
+        multivalued: true
+        range: MedicalEvent
+        required: false
+  Organization:
+    name: Organization
+    from_schema: TEMP
+    slots:
+    - name
+    slot_usage:
+      name:
+        name: name
+        annotations:
+          special:
+            tag: special
+            value: my_val
+        description: full name
+        exact_mappings:
+        - sdo:name
+        multivalued: false
+        range: string
+        required: true
+  Event:
+    name: Event
+    description: grouping class for events
+    in_subset:
+    - a
+    - a
+    from_schema: TEMP
+    exact_mappings:
+    - wikidata:Q1656682
+    - wikidata:Q1656682
+    status: release
+  MedicalEvent:
+    name: MedicalEvent
+    description: a medical encounter
+    in_subset:
+    - b
+    - b
+    from_schema: TEMP
+    is_a: Event
+    status: testing
+  ForProfit:
+    name: ForProfit
+    from_schema: TEMP
+    is_a: Organization
+  NonProfit:
+    name: NonProfit
+    from_schema: TEMP
+    exact_mappings:
+    - wikidata:Q163740
+    - wikidata:Q163740
+    is_a: Organization

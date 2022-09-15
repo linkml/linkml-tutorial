@@ -1,0 +1,6 @@
+name: linkml_tutorial_schema
+author: LinkML Team <admin@linkml.org>
+description: A repostitory that walks through schema generation. 
+source_schema_path: src/linkml_tutorial_schema/schema/linkml_tutorial_schema.yaml
+google_sheet_id: 1wVoaiFg47aT9YWNeRfTZ8tYHN8s8PAuDx5i2HUcDpvQ
+google_sheet_tabs: personinfo enums
