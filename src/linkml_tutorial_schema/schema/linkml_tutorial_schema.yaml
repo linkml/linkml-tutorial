@@ -23,19 +23,12 @@ imports:
 
 classes:
 
-  NamedThing:
-    description: >-
-      A generic grouping for any identifiable entity
-    slots:
-      - id
-      - name
-      - description
-
   Person:
-    is_a: NamedThing
     description: >-
       Represents a Person:
     slots:
+      - id
+      - name
       - primary_email
       - birth_date
       - age_in_years
@@ -45,11 +38,8 @@ classes:
     tree_root: true
     description: >-
       A holder for Person objects
-    attributes:
-      entries:
-        range: Person
-        multivalued: true
-        inlined: true
+    slots:
+      - entries
 
 slots:
   id:
@@ -66,3 +56,7 @@ slots:
     description: Number of years since birth
   vital_status:
     description: living or dead status
+  entries:
+    range: Person
+    multivalued: true
+    inlined: true
