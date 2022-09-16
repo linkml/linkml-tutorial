@@ -1,32 +1,23 @@
-type Event
+type NamedThing
   {
-  }
-
-type ForProfit
-  {
-    name: String!
-  }
-
-type MedicalEvent
-  {
-  }
-
-type NonProfit
-  {
-    name: String!
-  }
-
-type Organization
-  {
-    name: String!
+    id: String
+    name: String
+    description: String
   }
 
 type Person
   {
-    id: String!
-    name: String!
-    age: Decimal
-    gender: Decimal
-    hasMedicalHistory: [MedicalEvent]
+    id: String
+    name: String
+    description: String
+    primaryEmail: String
+    birthDate: String
+    ageInYears: String
+    vitalStatus: String
+  }
+
+type PersonCollection
+  {
+    entries: [Person]
   }
 

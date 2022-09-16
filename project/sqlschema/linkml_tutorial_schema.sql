@@ -1,30 +1,24 @@
 
 
-CREATE TABLE "ForProfit" (
-	name TEXT NOT NULL, 
-	PRIMARY KEY (name)
-);
-
-CREATE TABLE "NonProfit" (
-	name TEXT NOT NULL, 
-	PRIMARY KEY (name)
-);
-
-CREATE TABLE "Organization" (
-	name TEXT NOT NULL, 
-	PRIMARY KEY (name)
+CREATE TABLE "NamedThing" (
+	id TEXT, 
+	name TEXT, 
+	description TEXT, 
+	PRIMARY KEY (id, name, description)
 );
 
 CREATE TABLE "Person" (
-	id TEXT NOT NULL, 
-	name TEXT NOT NULL, 
-	age TEXT, 
-	gender TEXT, 
-	PRIMARY KEY (id)
+	id TEXT, 
+	name TEXT, 
+	description TEXT, 
+	primary_email TEXT, 
+	birth_date TEXT, 
+	age_in_years TEXT, 
+	vital_status TEXT, 
+	PRIMARY KEY (id, name, description, primary_email, birth_date, age_in_years, vital_status)
 );
 
-CREATE TABLE "MedicalEvent" (
-	"Person_id" TEXT, 
-	PRIMARY KEY ("Person_id"), 
-	FOREIGN KEY("Person_id") REFERENCES "Person" (id)
+CREATE TABLE "PersonCollection" (
+	entries TEXT, 
+	PRIMARY KEY (entries)
 );

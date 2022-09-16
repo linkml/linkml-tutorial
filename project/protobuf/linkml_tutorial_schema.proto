@@ -1,21 +1,23 @@
-message ForProfit
+// A generic grouping for any identifiable entity
+message NamedThing
  {
+  string id = 0
   string name = 0
+  string description = 0
  }
-message NonProfit
- {
-  string name = 0
- }
-message Organization
- {
-  string name = 0
- }
-// a person,living or dead
+// Represents a Person:
 message Person
  {
   string id = 0
   string name = 0
-  decimal age = 0
-  decimal gender = 0
- repeated  medicalEvent hasMedicalHistory = 0
+  string description = 0
+  string primaryEmail = 0
+  string birthDate = 0
+  string ageInYears = 0
+  string vitalStatus = 0
+ }
+// A holder for Person objects
+message PersonCollection
+ {
+ repeated  person entries = 0
  }

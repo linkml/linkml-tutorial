@@ -1,99 +1,76 @@
 {
    "$defs": {
-      "Event": {
+      "NamedThing": {
          "additionalProperties": false,
-         "description": "grouping class for events",
-         "properties": {},
+         "description": "A generic grouping for any identifiable entity",
+         "properties": {
+            "description": {
+               "description": "A human-readable description for a thing",
+               "type": "string"
+            },
+            "id": {
+               "description": "A unique identifier for a thing",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for a thing",
+               "type": "string"
+            }
+         },
          "required": [],
-         "title": "Event",
-         "type": "object"
-      },
-      "ForProfit": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "name": {
-               "description": "full name",
-               "type": "string"
-            }
-         },
-         "required": [
-            "name"
-         ],
-         "title": "ForProfit",
-         "type": "object"
-      },
-      "MedicalEvent": {
-         "additionalProperties": false,
-         "description": "a medical encounter",
-         "properties": {},
-         "required": [],
-         "title": "MedicalEvent",
-         "type": "object"
-      },
-      "NonProfit": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "name": {
-               "description": "full name",
-               "type": "string"
-            }
-         },
-         "required": [
-            "name"
-         ],
-         "title": "NonProfit",
-         "type": "object"
-      },
-      "Organization": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "name": {
-               "description": "full name",
-               "type": "string"
-            }
-         },
-         "required": [
-            "name"
-         ],
-         "title": "Organization",
+         "title": "NamedThing",
          "type": "object"
       },
       "Person": {
          "additionalProperties": false,
-         "description": "a person,living or dead",
+         "description": "Represents a Person:",
          "properties": {
-            "age": {
-               "description": "age in years",
-               "type": "number"
+            "age_in_years": {
+               "description": "Number of years since birth",
+               "type": "string"
             },
-            "gender": {
-               "description": "age in years",
-               "type": "number"
+            "birth_date": {
+               "description": "Date on which a person is born",
+               "type": "string"
             },
-            "has_medical_history": {
-               "description": "medical history",
-               "items": {
-                  "$ref": "#/$defs/MedicalEvent"
-               },
-               "type": "array"
+            "description": {
+               "description": "A human-readable description for a thing",
+               "type": "string"
             },
             "id": {
-               "description": "identifier for a person",
+               "description": "A unique identifier for a thing",
                "type": "string"
             },
             "name": {
-               "description": "full name",
+               "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "primary_email": {
+               "description": "The main email address of a person",
+               "type": "string"
+            },
+            "vital_status": {
+               "description": "living or dead status",
                "type": "string"
             }
          },
-         "required": [
-            "id",
-            "name"
-         ],
+         "required": [],
          "title": "Person",
+         "type": "object"
+      },
+      "PersonCollection": {
+         "additionalProperties": false,
+         "description": "A holder for Person objects",
+         "properties": {
+            "entries": {
+               "items": {
+                  "$ref": "#/$defs/Person"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "PersonCollection",
          "type": "object"
       }
    },
@@ -101,7 +78,14 @@
    "$schema": "http://json-schema.org/draft-07/schema#",
    "additionalProperties": true,
    "metamodel_version": "1.7.0",
-   "properties": {},
+   "properties": {
+      "entries": {
+         "items": {
+            "$ref": "#/$defs/Person"
+         },
+         "type": "array"
+      }
+   },
    "required": [],
    "title": "linkml-tutorial-schema",
    "type": "object",
