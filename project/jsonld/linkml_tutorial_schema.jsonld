@@ -7,8 +7,7 @@
   ],
   "id": "https://w3id.org/linkml/linkml-tutorial-schema",
   "imports": [
-    "linkml:types",
-    "personinfo_enums"
+    "linkml:types"
   ],
   "license": "MIT",
   "prefixes": [
@@ -39,20 +38,6 @@
   ],
   "default_prefix": "linkml_tutorial_schema",
   "default_range": "string",
-  "subsets": [
-    {
-      "name": "a",
-      "definition_uri": "https://example.org/TEMP/A",
-      "from_schema": "TEMP",
-      "@type": "SubsetDefinition"
-    },
-    {
-      "name": "b",
-      "definition_uri": "https://example.org/TEMP/B",
-      "from_schema": "TEMP",
-      "@type": "SubsetDefinition"
-    }
-  ],
   "types": [
     {
       "name": "string",
@@ -227,90 +212,49 @@
   "slots": [
     {
       "name": "id",
-      "definition_uri": "https://example.org/TEMP/id",
-      "description": "any identifier",
-      "from_schema": "TEMP",
-      "exact_mappings": [
-        "http://example.org/sdo/identifier",
-        "http://example.org/sdo/identifier"
-      ],
-      "slot_uri": "https://example.org/TEMP/id",
-      "identifier": true,
-      "owner": "Person",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/id",
+      "description": "A unique identifier for a thing",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/id",
+      "owner": "NamedThing",
       "domain_of": [
-        "Person"
+        "NamedThing"
       ],
-      "range": "string",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "description",
-      "definition_uri": "https://example.org/TEMP/description",
-      "annotations": [
-        {
-          "tag": "special",
-          "value": "my_val",
-          "@type": "Annotation"
-        },
-        {
-          "tag": "special2",
-          "value": "my_val2",
-          "@type": "Annotation"
-        }
-      ],
-      "description": "a textual description",
-      "from_schema": "TEMP",
-      "exact_mappings": [
-        "http://example.org/sdo/description",
-        "http://example.org/sdo/description"
-      ],
-      "slot_uri": "https://example.org/TEMP/description",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
       "name": "name",
-      "definition_uri": "https://example.org/TEMP/name",
-      "from_schema": "TEMP",
-      "slot_uri": "https://example.org/TEMP/name",
-      "owner": "Organization",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/name",
+      "description": "A human-readable name for a thing",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/name",
+      "owner": "NamedThing",
       "domain_of": [
-        "Person",
-        "Organization"
+        "NamedThing"
       ],
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "age",
-      "definition_uri": "https://example.org/TEMP/age",
-      "from_schema": "TEMP",
-      "slot_uri": "https://example.org/TEMP/age",
-      "owner": "Person",
+      "name": "description",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/description",
+      "description": "A human-readable description for a thing",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/description",
+      "owner": "NamedThing",
       "domain_of": [
-        "Person"
+        "NamedThing"
       ],
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "gender",
-      "definition_uri": "https://example.org/TEMP/gender",
-      "from_schema": "TEMP",
-      "slot_uri": "https://example.org/TEMP/gender",
-      "owner": "Person",
-      "domain_of": [
-        "Person"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "has_medical_history",
-      "definition_uri": "https://example.org/TEMP/has_medical_history",
-      "from_schema": "TEMP",
-      "slot_uri": "https://example.org/TEMP/has_medical_history",
+      "name": "primary_email",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/primary_email",
+      "description": "The main email address of a person",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/primary_email",
       "owner": "Person",
       "domain_of": [
         "Person"
@@ -319,251 +263,125 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Person_id",
-      "definition_uri": "https://example.org/TEMP/id",
-      "description": "identifier for a person",
-      "from_schema": "TEMP",
-      "exact_mappings": [
-        "http://example.org/sdo/identifier"
-      ],
-      "is_a": "id",
-      "domain": "Person",
-      "slot_uri": "https://example.org/TEMP/id",
-      "identifier": true,
-      "alias": "id",
+      "name": "birth_date",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/birth_date",
+      "description": "Date on which a person is born",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/birth_date",
       "owner": "Person",
       "domain_of": [
         "Person"
       ],
-      "is_usage_slot": true,
-      "usage_slot_name": "id",
       "range": "string",
-      "required": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "Person_name",
-      "definition_uri": "https://example.org/TEMP/name",
-      "annotations": [
-        {
-          "tag": "special",
-          "value": "my_val",
-          "@type": "Annotation"
-        }
-      ],
-      "description": "full name",
-      "from_schema": "TEMP",
-      "exact_mappings": [
-        "http://example.org/sdo/name"
-      ],
-      "is_a": "name",
-      "domain": "Person",
-      "slot_uri": "https://example.org/TEMP/name",
-      "alias": "name",
+      "name": "age_in_years",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/age_in_years",
+      "description": "Number of years since birth",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/age_in_years",
       "owner": "Person",
       "domain_of": [
         "Person"
       ],
-      "is_usage_slot": true,
-      "usage_slot_name": "name",
       "range": "string",
-      "required": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "Person_age",
-      "definition_uri": "https://example.org/TEMP/age",
-      "description": "age in years",
-      "from_schema": "TEMP",
-      "is_a": "age",
-      "domain": "Person",
-      "slot_uri": "https://example.org/TEMP/age",
-      "alias": "age",
+      "name": "vital_status",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/vital_status",
+      "description": "living or dead status",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/vital_status",
       "owner": "Person",
       "domain_of": [
         "Person"
       ],
-      "is_usage_slot": true,
-      "usage_slot_name": "age",
-      "range": "decimal",
+      "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "Person_gender",
-      "definition_uri": "https://example.org/TEMP/gender",
-      "description": "age in years",
-      "from_schema": "TEMP",
-      "is_a": "gender",
-      "domain": "Person",
-      "slot_uri": "https://example.org/TEMP/gender",
-      "alias": "gender",
-      "owner": "Person",
-      "domain_of": [
-        "Person"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "gender",
-      "range": "decimal",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "Person_has_medical_history",
-      "definition_uri": "https://example.org/TEMP/has_medical_history",
-      "description": "medical history",
-      "from_schema": "TEMP",
-      "is_a": "has_medical_history",
-      "status": "testing",
-      "domain": "Person",
-      "slot_uri": "https://example.org/TEMP/has_medical_history",
+      "name": "personCollection__entries",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/entries",
       "multivalued": true,
-      "alias": "has medical history",
-      "owner": "Person",
+      "alias": "entries",
+      "owner": "PersonCollection",
       "domain_of": [
-        "Person"
+        "PersonCollection"
       ],
-      "is_usage_slot": true,
-      "usage_slot_name": "has medical history",
-      "range": "MedicalEvent",
+      "range": "Person",
       "inlined": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "Organization_name",
-      "definition_uri": "https://example.org/TEMP/name",
-      "annotations": [
-        {
-          "tag": "special",
-          "value": "my_val",
-          "@type": "Annotation"
-        }
-      ],
-      "description": "full name",
-      "from_schema": "TEMP",
-      "exact_mappings": [
-        "http://example.org/sdo/name"
-      ],
-      "is_a": "name",
-      "domain": "Organization",
-      "slot_uri": "https://example.org/TEMP/name",
-      "alias": "name",
-      "owner": "Organization",
-      "domain_of": [
-        "Organization"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "name",
-      "range": "string",
-      "required": true,
       "@type": "SlotDefinition"
     }
   ],
   "classes": [
     {
+      "name": "NamedThing",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/NamedThing",
+      "description": "A generic grouping for any identifiable entity",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slots": [
+        "id",
+        "name",
+        "description"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/NamedThing",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "Person",
-      "definition_uri": "https://example.org/TEMP/Person",
-      "description": "a person,living or dead",
-      "from_schema": "TEMP",
-      "exact_mappings": [
-        "sdo:Person",
-        "wikidata:Q215627",
-        "sdo:Person",
-        "wikidata:Q215627"
-      ],
-      "status": "release",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Person",
+      "description": "Represents a Person:",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "is_a": "NamedThing",
       "slots": [
-        "Person_id",
-        "Person_name",
-        "Person_age",
-        "Person_gender",
-        "Person_has_medical_history"
+        "id",
+        "name",
+        "description",
+        "primary_email",
+        "birth_date",
+        "age_in_years",
+        "vital_status"
       ],
       "slot_usage": {},
-      "class_uri": "https://example.org/TEMP/Person",
+      "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Person",
       "@type": "ClassDefinition"
     },
     {
-      "name": "Organization",
-      "definition_uri": "https://example.org/TEMP/Organization",
-      "from_schema": "TEMP",
+      "name": "PersonCollection",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/PersonCollection",
+      "description": "A holder for Person objects",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
       "slots": [
-        "Organization_name"
+        "personCollection__entries"
       ],
       "slot_usage": {},
-      "class_uri": "https://example.org/TEMP/Organization",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "Event",
-      "definition_uri": "https://example.org/TEMP/Event",
-      "description": "grouping class for events",
-      "in_subset": [
-        "a",
-        "a"
+      "attributes": [
+        {
+          "name": "entries",
+          "multivalued": true,
+          "range": "Person",
+          "inlined": true,
+          "@type": "SlotDefinition"
+        }
       ],
-      "from_schema": "TEMP",
-      "exact_mappings": [
-        "wikidata:Q1656682",
-        "wikidata:Q1656682"
-      ],
-      "status": "release",
-      "slot_usage": {},
-      "class_uri": "https://example.org/TEMP/Event",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "MedicalEvent",
-      "definition_uri": "https://example.org/TEMP/MedicalEvent",
-      "description": "a medical encounter",
-      "in_subset": [
-        "b",
-        "b"
-      ],
-      "from_schema": "TEMP",
-      "is_a": "Event",
-      "status": "testing",
-      "slot_usage": {},
-      "class_uri": "https://example.org/TEMP/MedicalEvent",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "ForProfit",
-      "definition_uri": "https://example.org/TEMP/ForProfit",
-      "from_schema": "TEMP",
-      "is_a": "Organization",
-      "slots": [
-        "Organization_name"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://example.org/TEMP/ForProfit",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "NonProfit",
-      "definition_uri": "https://example.org/TEMP/NonProfit",
-      "from_schema": "TEMP",
-      "exact_mappings": [
-        "wikidata:Q163740",
-        "wikidata:Q163740"
-      ],
-      "is_a": "Organization",
-      "slots": [
-        "Organization_name"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://example.org/TEMP/NonProfit",
+      "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/PersonCollection",
+      "tree_root": true,
       "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
   "source_file": "linkml_tutorial_schema.yaml",
-  "source_file_date": "2022-09-15T16:50:02",
-  "source_file_size": 628,
-  "generation_date": "2022-09-15T16:50:47",
+  "source_file_date": "2022-09-16T11:23:58",
+  "source_file_size": 1572,
+  "generation_date": "2022-09-16T11:34:44",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/linkml_tutorial_schema.context.jsonld",
     "https://w3id.org/linkml/types.context.jsonld",
-    "personinfo_enums.context.jsonld",
     {
       "@base": "https://w3id.org/linkml/linkml-tutorial-schema/"
     }

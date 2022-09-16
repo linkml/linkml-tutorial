@@ -7,26 +7,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://example.org/TEMP/ForProfit> a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "ForProfit" ;
-    rdfs:subClassOf <https://example.org/TEMP/Organization> .
-
-<https://example.org/TEMP/NonProfit> a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "NonProfit" ;
-    rdfs:subClassOf <https://example.org/TEMP/Organization> ;
-    skos:exactMatch <http://www.wikidata.org/entity/Q163740> .
-
-<https://example.org/TEMP/description> a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "description" ;
-    rdfs:range linkml:String ;
-    skos:definition "a textual description" ;
-    skos:exactMatch <http://example.org/sdo/description> ;
-    linkml_tutorial_schema:special "my_val" ;
-    linkml_tutorial_schema:special2 "my_val2" .
-
 linkml:SubsetDefinition a owl:Class ;
     rdfs:label "subset_definition" .
 
@@ -35,93 +15,113 @@ linkml:TypeDefinition a owl:Class ;
 
 linkml:linkml-tutorial-schema a owl:Ontology ;
     rdfs:label "linkml-tutorial-schema" ;
-    IAO:0000700 <https://example.org/TEMP/Event>,
-        <https://example.org/TEMP/Organization>,
-        <https://example.org/TEMP/Person> ;
+    IAO:0000700 linkml_tutorial_schema:NamedThing,
+        linkml_tutorial_schema:PersonCollection ;
     dcterms:license "MIT" ;
     dcterms:title "linkml-tutorial-schema" ;
     rdfs:seeAlso "https://linkml.github.io/linkml-tutorial-schema" ;
-    linkml:generation_date "2022-09-15T16:50:52" ;
+    linkml:generation_date "2022-09-16T11:34:48" ;
     linkml:metamodel_version "1.7.0" ;
     linkml:source_file "linkml_tutorial_schema.yaml" ;
-    linkml:source_file_date "2022-09-15T16:50:02" ;
-    linkml:source_file_size 628 .
+    linkml:source_file_date "2022-09-16T11:23:58" ;
+    linkml:source_file_size 1572 .
 
 linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "value" .
 
-<https://example.org/TEMP/MedicalEvent> a owl:Class,
+linkml_tutorial_schema:PersonCollection a owl:Class,
         linkml:ClassDefinition ;
-    rdfs:label "MedicalEvent" ;
-    rdfs:subClassOf <https://example.org/TEMP/Event> ;
-    skos:definition "a medical encounter" .
-
-<https://example.org/TEMP/Person> a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "Person" ;
+    rdfs:label "PersonCollection" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://example.org/TEMP/name> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://example.org/TEMP/MedicalEvent> ;
-            owl:onProperty <https://example.org/TEMP/has_medical_history> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Decimal ;
-            owl:onProperty <https://example.org/TEMP/age> ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://example.org/TEMP/id> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Decimal ;
-            owl:onProperty <https://example.org/TEMP/gender> ] ;
-    skos:definition "a person,living or dead" ;
-    skos:exactMatch <http://example.org/sdo/Person>,
-        <http://www.wikidata.org/entity/Q215627> .
+            owl:allValuesFrom linkml_tutorial_schema:Person ;
+            owl:onProperty linkml_tutorial_schema:entries ] ;
+    skos:definition "A holder for Person objects" .
 
-<https://example.org/TEMP/age> a owl:ObjectProperty,
+linkml_tutorial_schema:age_in_years a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "age" ;
-    rdfs:range linkml:String .
+    rdfs:label "age_in_years" ;
+    rdfs:range linkml:String ;
+    skos:definition "Number of years since birth" .
 
-<https://example.org/TEMP/gender> a owl:ObjectProperty,
+linkml_tutorial_schema:birth_date a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "gender" ;
-    rdfs:range linkml:String .
+    rdfs:label "birth_date" ;
+    rdfs:range linkml:String ;
+    skos:definition "Date on which a person is born" .
 
-<https://example.org/TEMP/has_medical_history> a owl:ObjectProperty,
+linkml_tutorial_schema:description a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "has medical history" ;
-    rdfs:range linkml:String .
+    rdfs:label "description" ;
+    rdfs:range linkml:String ;
+    skos:definition "A human-readable description for a thing" .
 
-<https://example.org/TEMP/id> a owl:ObjectProperty,
+linkml_tutorial_schema:entries a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "entries" ;
+    rdfs:range linkml_tutorial_schema:Person .
+
+linkml_tutorial_schema:id a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "id" ;
     rdfs:range linkml:String ;
-    skos:definition "any identifier" ;
-    skos:exactMatch <http://example.org/sdo/identifier> .
+    skos:definition "A unique identifier for a thing" .
 
-<https://example.org/TEMP/Event> a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "Event" ;
-    skos:definition "grouping class for events" ;
-    skos:exactMatch <http://www.wikidata.org/entity/Q1656682> .
-
-<https://example.org/TEMP/name> a owl:ObjectProperty,
+linkml_tutorial_schema:name a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "name" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "A human-readable name for a thing" .
 
-<https://example.org/TEMP/Organization> a owl:Class,
+linkml_tutorial_schema:primary_email a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "primary_email" ;
+    rdfs:range linkml:String ;
+    skos:definition "The main email address of a person" .
+
+linkml_tutorial_schema:vital_status a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "vital_status" ;
+    rdfs:range linkml:String ;
+    skos:definition "living or dead status" .
+
+linkml_tutorial_schema:NamedThing a owl:Class,
         linkml:ClassDefinition ;
-    rdfs:label "Organization" ;
+    rdfs:label "NamedThing" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://example.org/TEMP/name> ;
-            owl:qualifiedCardinality 1 ] .
+            owl:onProperty linkml_tutorial_schema:description ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty linkml_tutorial_schema:id ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty linkml_tutorial_schema:name ] ;
+    skos:definition "A generic grouping for any identifiable entity" .
+
+linkml_tutorial_schema:Person a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Person" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty linkml_tutorial_schema:vital_status ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty linkml_tutorial_schema:birth_date ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty linkml_tutorial_schema:primary_email ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty linkml_tutorial_schema:age_in_years ],
+        linkml_tutorial_schema:NamedThing ;
+    skos:definition "Represents a Person:" .
 
 linkml:ClassDefinition a owl:Class ;
     rdfs:label "class_definition" .

@@ -2,7 +2,6 @@ BASE <https://w3id.org/linkml/linkml-tutorial-schema/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX linkml: <https://w3id.org/linkml/>
-PREFIX TEMP: <https://example.org/TEMP/>
 
 
 linkml:String xsd:string
@@ -35,53 +34,32 @@ linkml:Objectidentifier IRI
 
 linkml:Nodeidentifier NONLITERAL
 
-TEMP:Event  (
+<NamedThing>  (
     CLOSED {
-       (  $TEMP:Event_tes rdf:type . * ;
-          rdf:type [ TEMP:Event ] ?
+       (  $<NamedThing_tes> (  <id> @linkml:String ? ;
+             <name> @linkml:String ? ;
+             <description> @linkml:String ?
+          ) ;
+          rdf:type [ <NamedThing> ] ?
        )
-    } OR @TEMP:MedicalEvent
+    } OR @<Person>
 )
 
-TEMP:ForProfit CLOSED {
-    (  $TEMP:ForProfit_tes (  &TEMP:Organization_tes ;
-          rdf:type [ TEMP:Organization ] ?
+<Person> CLOSED {
+    (  $<Person_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ? ;
+          <primary_email> @linkml:String ? ;
+          <birth_date> @linkml:String ? ;
+          <age_in_years> @linkml:String ? ;
+          <vital_status> @linkml:String ?
        ) ;
-       rdf:type [ TEMP:ForProfit ] ?
+       rdf:type [ <Person> ] ?
     )
 }
 
-TEMP:MedicalEvent CLOSED {
-    (  $TEMP:MedicalEvent_tes (  &TEMP:Event_tes ;
-          rdf:type [ TEMP:Event ] ?
-       ) ;
-       rdf:type [ TEMP:MedicalEvent ] ?
-    )
-}
-
-TEMP:NonProfit CLOSED {
-    (  $TEMP:NonProfit_tes (  &TEMP:Organization_tes ;
-          rdf:type [ TEMP:Organization ] ?
-       ) ;
-       rdf:type [ TEMP:NonProfit ] ?
-    )
-}
-
-TEMP:Organization  (
-    CLOSED {
-       (  $TEMP:Organization_tes TEMP:name @linkml:String ;
-          rdf:type [ TEMP:Organization ] ?
-       )
-    } OR @TEMP:ForProfit OR @TEMP:NonProfit
-)
-
-TEMP:Person CLOSED {
-    (  $TEMP:Person_tes (  TEMP:name @linkml:String ;
-          TEMP:age @linkml:Decimal ? ;
-          TEMP:gender @linkml:Decimal ? ;
-          TEMP:has_medical_history @TEMP:MedicalEvent *
-       ) ;
-       rdf:type [ TEMP:Person ]
+<PersonCollection> CLOSED {
+    (  $<PersonCollection_tes> <entries> @<Person> * ;
+       rdf:type [ <PersonCollection> ] ?
     )
 }
 
