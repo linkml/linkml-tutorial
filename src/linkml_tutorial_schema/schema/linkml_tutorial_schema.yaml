@@ -19,7 +19,6 @@ default_range: string
 
 imports:
   - linkml:types
-  - personinfo_enums
 
 classes:
 
