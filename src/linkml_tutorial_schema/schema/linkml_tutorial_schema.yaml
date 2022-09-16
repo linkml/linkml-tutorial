@@ -20,3 +20,40 @@ default_range: string
 imports:
   - linkml:types
   - personinfo_enums
+
+classes:
+
+  NamedThing:
+    description: >-
+      A generic grouping for any identifiable entity
+    slots:
+      - id
+      - name
+      - description
+
+  Person:
+    is_a: NamedThing
+    description: >-
+      Represents a Person
+    slots:
+      - primary_email
+      - birth_date
+      - age_in_years
+      - vital_status
+
+slots:
+  id:
+    description: A unique identifier for a thing
+  name:
+    description: A human-readable name for a thing
+  description:
+    description: A human-readable description for a thing
+  primary_email:
+    description: The main email address of a person
+  birth_date:
+    slot_uri: schema:birthDate
+    description: Date on which a person is born
+  age_in_years:
+    description: Number of years since birth
+  vital_status:
+    description: living or dead status
