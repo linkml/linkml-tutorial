@@ -46,11 +46,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://linkml.github.io/linkml-tutorial-schema/NamedThing/</loc>
-         <lastmod>2022-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://linkml.github.io/linkml-tutorial-schema/Ncname/</loc>
          <lastmod>2022-09-16</lastmod>
          <changefreq>daily</changefreq>

@@ -142,11 +142,6 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#inheritance">
-    Inheritance
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#slots">
     Slots
   </a>
@@ -208,25 +203,16 @@
 <p><em>Represents a Person:</em></p>
 <p>URI: <a href="https://w3id.org/linkml/linkml-tutorial-schema/Person">linkml_tutorial_schema:Person</a></p>
 <div class="mermaid"> classDiagram
-      NamedThing &lt;|-- Person
-
+    class Person
       Person : age_in_years
       Person : birth_date
-      Person : description
       Person : id
       Person : name
       Person : primary_email
       Person : vital_status
 
-
 </div>
-<h2 id="inheritance">Inheritance</h2>
-<ul>
-<li><a href="../NamedThing/">NamedThing</a><ul>
-<li><strong>Person</strong></li>
-</ul>
-</li>
-</ul>
+<!-- no inheritance hierarchy -->
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -237,6 +223,16 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../id/">id</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>A unique identifier for a thing</td>
+</tr>
+<tr>
+<td><a href="../name/">name</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>A human-readable name for a thing</td>
+</tr>
 <tr>
 <td><a href="../primary_email/">primary_email</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
@@ -256,21 +252,6 @@
 <td><a href="../vital_status/">vital_status</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>living or dead status</td>
-</tr>
-<tr>
-<td><a href="../id/">id</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
-<td>A unique identifier for a thing</td>
-</tr>
-<tr>
-<td><a href="../name/">name</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
-<td>A human-readable name for a thing</td>
-</tr>
-<tr>
-<td><a href="../description/">description</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
-<td>A human-readable description for a thing</td>
 </tr>
 </tbody>
 </table>
@@ -325,8 +306,9 @@
 description: 'Represents a Person:'
 from_schema: https://w3id.org/linkml/linkml-tutorial-schema
 rank: 1000
-is_a: NamedThing
 slots:
+- id
+- name
 - primary_email
 - birth_date
 - age_in_years
@@ -340,8 +322,27 @@ slots:
 description: 'Represents a Person:'
 from_schema: https://w3id.org/linkml/linkml-tutorial-schema
 rank: 1000
-is_a: NamedThing
 attributes:
+  id:
+    name: id
+    description: A unique identifier for a thing
+    from_schema: https://w3id.org/linkml/linkml-tutorial-schema
+    rank: 1000
+    alias: id
+    owner: Person
+    domain_of:
+    - Person
+    range: string
+  name:
+    name: name
+    description: A human-readable name for a thing
+    from_schema: https://w3id.org/linkml/linkml-tutorial-schema
+    rank: 1000
+    alias: name
+    owner: Person
+    domain_of:
+    - Person
+    range: string
   primary_email:
     name: primary_email
     description: The main email address of a person
@@ -381,36 +382,6 @@ attributes:
     owner: Person
     domain_of:
     - Person
-    range: string
-  id:
-    name: id
-    description: A unique identifier for a thing
-    from_schema: https://w3id.org/linkml/linkml-tutorial-schema
-    rank: 1000
-    alias: id
-    owner: Person
-    domain_of:
-    - NamedThing
-    range: string
-  name:
-    name: name
-    description: A human-readable name for a thing
-    from_schema: https://w3id.org/linkml/linkml-tutorial-schema
-    rank: 1000
-    alias: name
-    owner: Person
-    domain_of:
-    - NamedThing
-    range: string
-  description:
-    name: description
-    description: A human-readable description for a thing
-    from_schema: https://w3id.org/linkml/linkml-tutorial-schema
-    rank: 1000
-    alias: description
-    owner: Person
-    domain_of:
-    - NamedThing
     range: string
 
 </code></pre>
