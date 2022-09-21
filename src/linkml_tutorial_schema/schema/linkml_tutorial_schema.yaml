@@ -92,8 +92,3 @@ slots:
     description: A collection of things
     multivalued: true
     range: NamedThing
-
-  animals:
-    description: A collection of animals
-    multivalued: true
-    range: Animal
