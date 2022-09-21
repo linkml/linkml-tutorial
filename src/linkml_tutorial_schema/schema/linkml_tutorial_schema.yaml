@@ -23,4 +23,28 @@ imports:
 
 classes:
 
+  Person:
+    slots:
+      - id
+      - name
+      - primary_email
+      - birth_date
+      - age_in_years
+      - vital_status
+
 slots:
+  id:
+    range: uriorcurie
+    description: A unique identifier for a person
+  name:
+    description: A human-readable name for a person
+  primary_email:
+    description: The main email address of a person
+  birth_date:
+    range: date
+    description: Date on which a person is born
+  age_in_years:
+    range: integer
+    description: Number of years since birth
+  vital_status:
+    description: living or dead status
