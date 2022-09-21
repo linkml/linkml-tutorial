@@ -23,17 +23,34 @@ imports:
 
 classes:
 
-  Person:
+  NamedThing:
+    description: >-
+      The most generic type of entity that has a name
+    abstract: true
     slots:
       - id
       - name
-      - primary_email
       - birth_date
       - age_in_years
+
+  Person:
+    is_a: NamedThing
+    slots:
+      - primary_email
       - vital_status
+      - pets
+
+  Animal:
+    is_a: NamedThing
+    slots:
+      - species
+      - breed
+      - color
+      - weight
 
 slots:
   id:
+    required: true
     range: uriorcurie
     description: A unique identifier for a person
   name:
@@ -48,3 +65,22 @@ slots:
     description: Number of years since birth
   vital_status:
     description: living or dead status
+    required: true
+  pets:
+    description: a collection of animals that lives with and is taken care of by a person.
+    multivalued: true
+    range: Animal
+
+  species:
+    description: The species of an animal
+  breed:
+    description: The breed of an animal
+  color:
+    description: The color of an animal
+  weight_in_mgs:
+    description: The weight of an animal in milligrams
+
+  entries:
+    description: A collection of people
+    multivalued: true
+    range: Person
