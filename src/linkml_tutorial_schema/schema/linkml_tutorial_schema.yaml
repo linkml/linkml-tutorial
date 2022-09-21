@@ -24,7 +24,6 @@ imports:
 classes:
 
   Person:
-    is_a: NamedThing
     slots:
       - id
       - name
@@ -33,7 +32,6 @@ classes:
       - pets
 
   Animal:
-    is_a: NamedThing
     slots:
       - id
       - name
