@@ -36,8 +36,6 @@ classes:
   Person:
     is_a: NamedThing
     slots:
-      - id
-      - name
       - primary_email
       - vital_status
       - pets
