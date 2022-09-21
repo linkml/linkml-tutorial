@@ -46,23 +46,6 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
-<AnimalCollection> CLOSED {
-    (  $<AnimalCollection_tes> (  &<Collection_tes> ;
-          rdf:type [ <Collection> ] ? ;
-          <animals> @<Animal> *
-       ) ;
-       rdf:type [ <AnimalCollection> ] ?
-    )
-}
-
-<Collection>  (
-    CLOSED {
-       (  $<Collection_tes> <entries> @<NamedThing> * ;
-          rdf:type [ <Collection> ] ?
-       )
-    } OR @<AnimalCollection> OR @<PersonCollection>
-)
-
 <NamedThing>  (
     @<Animal> OR @<Person>
 )
@@ -88,9 +71,7 @@ linkml:Nodeidentifier NONLITERAL
 }
 
 <PersonCollection> CLOSED {
-    (  $<PersonCollection_tes> (  &<Collection_tes> ;
-          rdf:type [ <Collection> ] ?
-       ) ;
+    (  $<PersonCollection_tes> <entries> @<NamedThing> * ;
        rdf:type [ <PersonCollection> ] ?
     )
 }

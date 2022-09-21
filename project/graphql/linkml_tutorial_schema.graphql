@@ -10,17 +10,6 @@ type Animal
     weightInMgs: String
   }
 
-type AnimalCollection
-  {
-    entries: [NamedThing]
-    animals: [Animal]
-  }
-
-type Collection
-  {
-    entries: [NamedThing]
-  }
-
 interface NamedThing
   {
     id: String!

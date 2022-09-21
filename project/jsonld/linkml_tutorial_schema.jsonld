@@ -364,25 +364,11 @@
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
       "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/entries",
       "multivalued": true,
-      "owner": "Collection",
+      "owner": "PersonCollection",
       "domain_of": [
-        "Collection"
+        "PersonCollection"
       ],
       "range": "NamedThing",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "animals",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/animals",
-      "description": "A collection of animals",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/animals",
-      "multivalued": true,
-      "owner": "AnimalCollection",
-      "domain_of": [
-        "AnimalCollection"
-      ],
-      "range": "Animal",
       "@type": "SlotDefinition"
     }
   ],
@@ -441,50 +427,23 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "Collection",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Collection",
+      "name": "PersonCollection",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/PersonCollection",
       "description": "A collection of things",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
       "slots": [
         "entries"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Collection",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "PersonCollection",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/PersonCollection",
-      "description": "A collection of people",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "is_a": "Collection",
-      "slots": [
-        "entries"
-      ],
-      "slot_usage": {},
       "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/PersonCollection",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "AnimalCollection",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/AnimalCollection",
-      "description": "A collection of animals",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "is_a": "Collection",
-      "slots": [
-        "entries",
-        "animals"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/AnimalCollection",
       "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
   "source_file": "linkml_tutorial_schema.yaml",
-  "source_file_date": "2022-09-21T13:11:41",
-  "source_file_size": 2345,
-  "generation_date": "2022-09-21T13:14:16",
+  "source_file_date": "2022-09-21T13:46:06",
+  "source_file_size": 2048,
+  "generation_date": "2022-09-21T13:47:35",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/linkml_tutorial_schema.context.jsonld",
