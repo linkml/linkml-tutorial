@@ -51,6 +51,7 @@ classes:
   PersonCollection:
     description: >-
       A collection of things
+    tree_root: true
     slots:
       - entries
 
@@ -87,8 +88,7 @@ slots:
   weight_in_mgs:
     description: The weight of an animal in milligrams
 
-
   entries:
     description: A collection of things
     multivalued: true
-    range: NamedThing
+    range: Person

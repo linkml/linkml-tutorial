@@ -1,5 +1,5 @@
 # Auto generated from linkml_tutorial_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-09-21T13:14:23
+# Generation date: 2022-09-21T13:42:45
 # Schema: linkml-tutorial-schema
 #
 # id: https://w3id.org/linkml/linkml-tutorial-schema
@@ -163,30 +163,9 @@ class Animal(NamedThing):
 
 
 @dataclass
-class Collection(YAMLRoot):
+class PersonCollection(YAMLRoot):
     """
     A collection of things
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.Collection
-    class_class_curie: ClassVar[str] = "linkml_tutorial_schema:Collection"
-    class_name: ClassVar[str] = "Collection"
-    class_model_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.Collection
-
-    entries: Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if not isinstance(self.entries, list):
-            self.entries = [self.entries] if self.entries is not None else []
-        self.entries = [v if isinstance(v, NamedThingId) else NamedThingId(v) for v in self.entries]
-
-        super().__post_init__(**kwargs)
-
-
-class PersonCollection(Collection):
-    """
-    A collection of people
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -195,25 +174,12 @@ class PersonCollection(Collection):
     class_name: ClassVar[str] = "PersonCollection"
     class_model_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.PersonCollection
 
-
-@dataclass
-class AnimalCollection(Collection):
-    """
-    A collection of animals
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.AnimalCollection
-    class_class_curie: ClassVar[str] = "linkml_tutorial_schema:AnimalCollection"
-    class_name: ClassVar[str] = "AnimalCollection"
-    class_model_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.AnimalCollection
-
-    animals: Optional[Union[Union[str, AnimalId], List[Union[str, AnimalId]]]] = empty_list()
+    entries: Optional[Union[Union[str, PersonId], List[Union[str, PersonId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if not isinstance(self.animals, list):
-            self.animals = [self.animals] if self.animals is not None else []
-        self.animals = [v if isinstance(v, AnimalId) else AnimalId(v) for v in self.animals]
+        if not isinstance(self.entries, list):
+            self.entries = [self.entries] if self.entries is not None else []
+        self.entries = [v if isinstance(v, PersonId) else PersonId(v) for v in self.entries]
 
         super().__post_init__(**kwargs)
 
@@ -259,7 +225,4 @@ slots.weight_in_mgs = Slot(uri=LINKML_TUTORIAL_SCHEMA.weight_in_mgs, name="weigh
                    model_uri=LINKML_TUTORIAL_SCHEMA.weight_in_mgs, domain=None, range=Optional[str])
 
 slots.entries = Slot(uri=LINKML_TUTORIAL_SCHEMA.entries, name="entries", curie=LINKML_TUTORIAL_SCHEMA.curie('entries'),
-                   model_uri=LINKML_TUTORIAL_SCHEMA.entries, domain=None, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.animals = Slot(uri=LINKML_TUTORIAL_SCHEMA.animals, name="animals", curie=LINKML_TUTORIAL_SCHEMA.curie('animals'),
-                   model_uri=LINKML_TUTORIAL_SCHEMA.animals, domain=None, range=Optional[Union[Union[str, AnimalId], List[Union[str, AnimalId]]]])
+                   model_uri=LINKML_TUTORIAL_SCHEMA.entries, domain=None, range=Optional[Union[Union[str, PersonId], List[Union[str, PersonId]]]])

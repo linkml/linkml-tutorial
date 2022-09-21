@@ -44,45 +44,6 @@
          "title": "Animal",
          "type": "object"
       },
-      "AnimalCollection": {
-         "additionalProperties": false,
-         "description": "A collection of animals",
-         "properties": {
-            "animals": {
-               "description": "A collection of animals",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "entries": {
-               "description": "A collection of things",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            }
-         },
-         "required": [],
-         "title": "AnimalCollection",
-         "type": "object"
-      },
-      "Collection": {
-         "additionalProperties": false,
-         "description": "A collection of things",
-         "properties": {
-            "entries": {
-               "description": "A collection of things",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            }
-         },
-         "required": [],
-         "title": "Collection",
-         "type": "object"
-      },
       "Person": {
          "additionalProperties": false,
          "description": "",
@@ -129,7 +90,7 @@
       },
       "PersonCollection": {
          "additionalProperties": false,
-         "description": "A collection of people",
+         "description": "A collection of things",
          "properties": {
             "entries": {
                "description": "A collection of things",
@@ -148,7 +109,15 @@
    "$schema": "http://json-schema.org/draft-07/schema#",
    "additionalProperties": true,
    "metamodel_version": "1.7.0",
-   "properties": {},
+   "properties": {
+      "entries": {
+         "description": "A collection of things",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      }
+   },
    "required": [],
    "title": "linkml-tutorial-schema",
    "type": "object",
