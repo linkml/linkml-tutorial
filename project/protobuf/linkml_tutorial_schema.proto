@@ -1,23 +1,37 @@
-// A generic grouping for any identifiable entity
-message NamedThing
+message Animal
  {
   string id = 0
   string name = 0
-  string description = 0
+  date birthDate = 0
+  integer ageInYears = 0
+  string species = 0
+  string breed = 0
+  string color = 0
+  string weightInMgs = 0
  }
-// Represents a Person:
+// A collection of animals
+message AnimalCollection
+ {
+ repeated  namedThing entries = 0
+ repeated  animal animals = 0
+ }
+// A collection of things
+message Collection
+ {
+ repeated  namedThing entries = 0
+ }
 message Person
  {
   string id = 0
   string name = 0
-  string description = 0
+  date birthDate = 0
+  integer ageInYears = 0
   string primaryEmail = 0
-  string birthDate = 0
-  string ageInYears = 0
   string vitalStatus = 0
+ repeated  animal pets = 0
  }
-// A holder for Person objects
+// A collection of people
 message PersonCollection
  {
- repeated  person entries = 0
+ repeated  namedThing entries = 0
  }

@@ -46,12 +46,19 @@ classes:
       - species
       - breed
       - color
-      - weight
+      - weight_in_mgs
+
+  PersonCollection:
+    description: >-
+      A collection of things
+    slots:
+      - entries
 
 slots:
   id:
+    identifier: true
     required: true
-    range: uriorcurie
+    range: string
     description: A unique identifier for a person
   name:
     description: A human-readable name for a person
@@ -80,7 +87,13 @@ slots:
   weight_in_mgs:
     description: The weight of an animal in milligrams
 
+
   entries:
-    description: A collection of people
+    description: A collection of things
     multivalued: true
-    range: Person
+    range: NamedThing
+
+  animals:
+    description: A collection of animals
+    multivalued: true
+    range: Animal

@@ -1,21 +1,37 @@
 
 
-CREATE TABLE "NamedThing" (
-	id TEXT, 
+CREATE TABLE "Animal" (
+	id TEXT NOT NULL, 
 	name TEXT, 
-	description TEXT, 
-	PRIMARY KEY (id, name, description)
+	birth_date DATE, 
+	age_in_years INTEGER, 
+	species TEXT, 
+	breed TEXT, 
+	color TEXT, 
+	weight_in_mgs TEXT, 
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE "AnimalCollection" (
+	entries TEXT, 
+	animals TEXT, 
+	PRIMARY KEY (entries, animals)
+);
+
+CREATE TABLE "Collection" (
+	entries TEXT, 
+	PRIMARY KEY (entries)
 );
 
 CREATE TABLE "Person" (
-	id TEXT, 
+	id TEXT NOT NULL, 
 	name TEXT, 
-	description TEXT, 
+	birth_date DATE, 
+	age_in_years INTEGER, 
 	primary_email TEXT, 
-	birth_date TEXT, 
-	age_in_years TEXT, 
-	vital_status TEXT, 
-	PRIMARY KEY (id, name, description, primary_email, birth_date, age_in_years, vital_status)
+	vital_status TEXT NOT NULL, 
+	pets TEXT, 
+	PRIMARY KEY (id)
 );
 
 CREATE TABLE "PersonCollection" (

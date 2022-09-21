@@ -1,49 +1,115 @@
 {
    "$defs": {
-      "NamedThing": {
+      "Animal": {
          "additionalProperties": false,
-         "description": "A generic grouping for any identifiable entity",
+         "description": "",
          "properties": {
-            "description": {
-               "description": "A human-readable description for a thing",
+            "age_in_years": {
+               "description": "Number of years since birth",
+               "type": "integer"
+            },
+            "birth_date": {
+               "description": "Date on which a person is born",
+               "format": "date",
+               "type": "string"
+            },
+            "breed": {
+               "description": "The breed of an animal",
+               "type": "string"
+            },
+            "color": {
+               "description": "The color of an animal",
                "type": "string"
             },
             "id": {
-               "description": "A unique identifier for a thing",
+               "description": "A unique identifier for a person",
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for a person",
+               "type": "string"
+            },
+            "species": {
+               "description": "The species of an animal",
+               "type": "string"
+            },
+            "weight_in_mgs": {
+               "description": "The weight of an animal in milligrams",
                "type": "string"
             }
          },
+         "required": [
+            "id"
+         ],
+         "title": "Animal",
+         "type": "object"
+      },
+      "AnimalCollection": {
+         "additionalProperties": false,
+         "description": "A collection of animals",
+         "properties": {
+            "animals": {
+               "description": "A collection of animals",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "entries": {
+               "description": "A collection of things",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
          "required": [],
-         "title": "NamedThing",
+         "title": "AnimalCollection",
+         "type": "object"
+      },
+      "Collection": {
+         "additionalProperties": false,
+         "description": "A collection of things",
+         "properties": {
+            "entries": {
+               "description": "A collection of things",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "Collection",
          "type": "object"
       },
       "Person": {
          "additionalProperties": false,
-         "description": "Represents a Person:",
+         "description": "",
          "properties": {
             "age_in_years": {
                "description": "Number of years since birth",
-               "type": "string"
+               "type": "integer"
             },
             "birth_date": {
                "description": "Date on which a person is born",
-               "type": "string"
-            },
-            "description": {
-               "description": "A human-readable description for a thing",
+               "format": "date",
                "type": "string"
             },
             "id": {
-               "description": "A unique identifier for a thing",
+               "description": "A unique identifier for a person",
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for a person",
                "type": "string"
+            },
+            "pets": {
+               "description": "a collection of animals that lives with and is taken care of by a person.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "primary_email": {
                "description": "The main email address of a person",
@@ -54,17 +120,21 @@
                "type": "string"
             }
          },
-         "required": [],
+         "required": [
+            "id",
+            "vital_status"
+         ],
          "title": "Person",
          "type": "object"
       },
       "PersonCollection": {
          "additionalProperties": false,
-         "description": "A holder for Person objects",
+         "description": "A collection of people",
          "properties": {
             "entries": {
+               "description": "A collection of things",
                "items": {
-                  "$ref": "#/$defs/Person"
+                  "type": "string"
                },
                "type": "array"
             }
@@ -78,14 +148,7 @@
    "$schema": "http://json-schema.org/draft-07/schema#",
    "additionalProperties": true,
    "metamodel_version": "1.7.0",
-   "properties": {
-      "entries": {
-         "items": {
-            "$ref": "#/$defs/Person"
-         },
-         "type": "array"
-      }
-   },
+   "properties": {},
    "required": [],
    "title": "linkml-tutorial-schema",
    "type": "object",

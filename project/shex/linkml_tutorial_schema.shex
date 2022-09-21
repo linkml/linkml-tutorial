@@ -34,31 +34,63 @@ linkml:Objectidentifier IRI
 
 linkml:Nodeidentifier NONLITERAL
 
-<NamedThing>  (
+<Animal> CLOSED {
+    (  $<Animal_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ? ;
+          <species> @linkml:String ? ;
+          <breed> @linkml:String ? ;
+          <color> @linkml:String ? ;
+          <weight_in_mgs> @linkml:String ?
+       ) ;
+       rdf:type [ <Animal> ]
+    )
+}
+
+<AnimalCollection> CLOSED {
+    (  $<AnimalCollection_tes> (  &<Collection_tes> ;
+          rdf:type [ <Collection> ] ? ;
+          <animals> @<Animal> *
+       ) ;
+       rdf:type [ <AnimalCollection> ] ?
+    )
+}
+
+<Collection>  (
     CLOSED {
-       (  $<NamedThing_tes> (  <id> @linkml:String ? ;
-             <name> @linkml:String ? ;
-             <description> @linkml:String ?
-          ) ;
-          rdf:type [ <NamedThing> ] ?
+       (  $<Collection_tes> <entries> @<NamedThing> * ;
+          rdf:type [ <Collection> ] ?
        )
-    } OR @<Person>
+    } OR @<AnimalCollection> OR @<PersonCollection>
 )
+
+<NamedThing>  (
+    @<Animal> OR @<Person>
+)
+
+<NamedThing_struct> {
+    (  $<NamedThing_tes> (  <name> @linkml:String ? ;
+          <birth_date> @linkml:Date ? ;
+          <age_in_years> @linkml:Integer ?
+       ) ;
+       rdf:type [ <NamedThing> ]
+    )
+}
 
 <Person> CLOSED {
     (  $<Person_tes> (  &<NamedThing_tes> ;
           rdf:type [ <NamedThing> ] ? ;
           <primary_email> @linkml:String ? ;
-          <birth_date> @linkml:String ? ;
-          <age_in_years> @linkml:String ? ;
-          <vital_status> @linkml:String ?
+          <vital_status> @linkml:String ;
+          <pets> @<Animal> *
        ) ;
-       rdf:type [ <Person> ] ?
+       rdf:type [ <Person> ]
     )
 }
 
 <PersonCollection> CLOSED {
-    (  $<PersonCollection_tes> <entries> @<Person> * ;
+    (  $<PersonCollection_tes> (  &<Collection_tes> ;
+          rdf:type [ <Collection> ] ?
+       ) ;
        rdf:type [ <PersonCollection> ] ?
     )
 }
