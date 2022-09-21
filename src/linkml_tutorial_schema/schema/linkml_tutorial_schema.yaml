@@ -23,19 +23,11 @@ imports:
 
 classes:
 
-  NamedThing:
-    description: >-
-      The most generic type of entity that has a name
-    abstract: true
-    slots:
-      - id
-      - name
-      - birth_date
-      - age_in_years
-
   Person:
     is_a: NamedThing
     slots:
+      - id
+      - name
       - primary_email
       - vital_status
       - pets
@@ -43,6 +35,8 @@ classes:
   Animal:
     is_a: NamedThing
     slots:
+      - id
+      - name
       - species
       - breed
       - color
@@ -79,8 +73,4 @@ slots:
     description: The color of an animal
   weight_in_mgs:
     description: The weight of an animal in milligrams
-
-  entries:
-    description: A collection of people
-    multivalued: true
-    range: Person
+    range: integer
