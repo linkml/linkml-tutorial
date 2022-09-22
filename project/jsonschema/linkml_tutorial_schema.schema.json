@@ -33,7 +33,7 @@
                "description": "The species of an animal",
                "type": "string"
             },
-            "weight_in_mgs": {
+            "weight": {
                "description": "The weight of an animal in milligrams",
                "type": "string"
             }
@@ -74,6 +74,7 @@
             },
             "primary_email": {
                "description": "The main email address of a person",
+               "pattern": "^\\S+@[\\S+\\.]+\\S+",
                "type": "string"
             },
             "vital_status": {
@@ -133,6 +134,7 @@
             },
             "primary_email": {
                "description": "The main email address of a person",
+               "pattern": "^\\S+@[\\S+\\.]+\\S+",
                "type": "string"
             },
             "vital_status": {

@@ -23,7 +23,7 @@ CREATE TABLE "Animal" (
 	species TEXT, 
 	breed TEXT, 
 	color TEXT, 
-	weight_in_mgs TEXT, 
+	weight TEXT, 
 	"Person_id" TEXT, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("Person_id") REFERENCES "Person" (id)

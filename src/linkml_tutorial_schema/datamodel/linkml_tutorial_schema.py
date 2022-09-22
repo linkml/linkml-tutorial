@@ -1,5 +1,5 @@
 # Auto generated from linkml_tutorial_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-09-21T17:29:18
+# Generation date: 2022-09-22T12:59:00
 # Schema: linkml-tutorial-schema
 #
 # id: https://w3id.org/linkml/linkml-tutorial-schema
@@ -39,7 +39,7 @@ BIOLINK = CurieNamespace('biolink', 'http://example.org/UNKNOWN/biolink/')
 FOAF = CurieNamespace('foaf', 'http://example.org/UNKNOWN/foaf/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 LINKML_TUTORIAL_SCHEMA = CurieNamespace('linkml_tutorial_schema', 'https://w3id.org/linkml/linkml-tutorial-schema/')
-SCHEMA = CurieNamespace('schema', 'http://example.org/UNKNOWN/schema/')
+SCHEMA = CurieNamespace('schema', 'http://schema.org/')
 DEFAULT_ = LINKML_TUTORIAL_SCHEMA
 
 
@@ -65,8 +65,8 @@ class NamedThing(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.NamedThing
-    class_class_curie: ClassVar[str] = "linkml_tutorial_schema:NamedThing"
+    class_class_uri: ClassVar[URIRef] = SCHEMA.Thing
+    class_class_curie: ClassVar[str] = "schema:Thing"
     class_name: ClassVar[str] = "NamedThing"
     class_model_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.NamedThing
 
@@ -141,7 +141,7 @@ class Animal(NamedThing):
     species: Optional[str] = None
     breed: Optional[str] = None
     color: Optional[str] = None
-    weight_in_mgs: Optional[str] = None
+    weight: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -158,8 +158,8 @@ class Animal(NamedThing):
         if self.color is not None and not isinstance(self.color, str):
             self.color = str(self.color)
 
-        if self.weight_in_mgs is not None and not isinstance(self.weight_in_mgs, str):
-            self.weight_in_mgs = str(self.weight_in_mgs)
+        if self.weight is not None and not isinstance(self.weight, str):
+            self.weight = str(self.weight)
 
         super().__post_init__(**kwargs)
 
@@ -198,7 +198,8 @@ slots.name = Slot(uri=SCHEMA.name, name="name", curie=SCHEMA.curie('name'),
                    model_uri=LINKML_TUTORIAL_SCHEMA.name, domain=None, range=Optional[str])
 
 slots.primary_email = Slot(uri=SCHEMA.email, name="primary_email", curie=SCHEMA.curie('email'),
-                   model_uri=LINKML_TUTORIAL_SCHEMA.primary_email, domain=None, range=Optional[str])
+                   model_uri=LINKML_TUTORIAL_SCHEMA.primary_email, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^\S+@[\S+\.]+\S+'))
 
 slots.birth_date = Slot(uri=SCHEMA.birthDate, name="birth_date", curie=SCHEMA.curie('birthDate'),
                    model_uri=LINKML_TUTORIAL_SCHEMA.birth_date, domain=None, range=Optional[Union[str, XSDDate]])
@@ -221,8 +222,8 @@ slots.breed = Slot(uri=LINKML_TUTORIAL_SCHEMA.breed, name="breed", curie=LINKML_
 slots.color = Slot(uri=LINKML_TUTORIAL_SCHEMA.color, name="color", curie=LINKML_TUTORIAL_SCHEMA.curie('color'),
                    model_uri=LINKML_TUTORIAL_SCHEMA.color, domain=None, range=Optional[str])
 
-slots.weight_in_mgs = Slot(uri=LINKML_TUTORIAL_SCHEMA.weight_in_mgs, name="weight_in_mgs", curie=LINKML_TUTORIAL_SCHEMA.curie('weight_in_mgs'),
-                   model_uri=LINKML_TUTORIAL_SCHEMA.weight_in_mgs, domain=None, range=Optional[str])
+slots.weight = Slot(uri=LINKML_TUTORIAL_SCHEMA.weight, name="weight", curie=LINKML_TUTORIAL_SCHEMA.curie('weight'),
+                   model_uri=LINKML_TUTORIAL_SCHEMA.weight, domain=None, range=Optional[str])
 
 slots.entries = Slot(uri=LINKML_TUTORIAL_SCHEMA.entries, name="entries", curie=LINKML_TUTORIAL_SCHEMA.curie('entries'),
                    model_uri=LINKML_TUTORIAL_SCHEMA.entries, domain=None, range=Optional[Union[Dict[Union[str, PersonId], Union[dict, Person]], List[Union[dict, Person]]]])

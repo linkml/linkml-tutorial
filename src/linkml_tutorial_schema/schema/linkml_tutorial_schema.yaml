@@ -10,6 +10,7 @@ see_also:
 prefixes:
   linkml_tutorial_schema: https://w3id.org/linkml/linkml-tutorial-schema/
   linkml: https://w3id.org/linkml/
+  schema: http://schema.org/
 
 default_prefix: linkml_tutorial_schema
 default_range: string
@@ -103,8 +104,6 @@ slots:
       - NCBITaxon
   breed:
     description: The breed of an animal
-    values_from:
-      - VBO # vertebrate breed ontology
   color:
     description: The color of an animal
   weight:
@@ -113,8 +112,10 @@ slots:
     structured_pattern:
       syntax: "{float} {unit.weight}"
       interpolated: true
-      partial_match: false  ## implicit ^...$
-
+      partial_match: false
+      notes: >- 
+        By setting partial_match here to false, we are saying that the pattern must match the entire syntax
+        specified in the syntax field.
 
   entries:
     description: A collection of things

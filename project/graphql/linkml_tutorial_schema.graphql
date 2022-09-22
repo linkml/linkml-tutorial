@@ -7,7 +7,7 @@ type Animal
     species: String
     breed: String
     color: String
-    weightInMgs: String
+    weight: String
   }
 
 interface NamedThing

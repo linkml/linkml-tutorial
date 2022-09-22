@@ -1,0 +1,6 @@
+id: animal:001
+name: garfield
+age_in_years: 42
+breed: Persian Tabby
+species: NCBITaxon:9685
+color: orange

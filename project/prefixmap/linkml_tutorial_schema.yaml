@@ -6,7 +6,10 @@
    "foaf": "http://example.org/UNKNOWN/foaf/",
    "linkml": "https://w3id.org/linkml/",
    "linkml_tutorial_schema": "https://w3id.org/linkml/linkml-tutorial-schema/",
-   "schema": "http://example.org/UNKNOWN/schema/",
+   "schema": "http://schema.org/",
+   "NamedThing": {
+      "@id": "schema:Thing"
+   },
    "Person": {
       "@id": "schema:Person"
    }

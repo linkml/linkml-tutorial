@@ -7,7 +7,7 @@ message Animal
   string species = 0
   string breed = 0
   string color = 0
-  string weightInMgs = 0
+  string weight = 0
  }
 message Person
  {

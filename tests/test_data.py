@@ -9,7 +9,7 @@ from linkml_tutorial_schema.datamodel import Person
 ROOT = os.path.join(os.path.dirname(__file__), '..')
 DATA_DIR = os.path.join(ROOT, "src", "data", "examples")
 
-EXAMPLE_FILES = glob.glob(os.path.join(DATA_DIR, '*.yaml'))
+EXAMPLE_FILES = glob.glob(os.path.join(DATA_DIR, 'Person-001.yaml'))
 
 
 class TestData(unittest.TestCase):

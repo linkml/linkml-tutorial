@@ -18,6 +18,10 @@
     {
       "prefix_prefix": "linkml",
       "prefix_reference": "https://w3id.org/linkml/"
+    },
+    {
+      "prefix_prefix": "schema",
+      "prefix_reference": "http://schema.org/"
     }
   ],
   "default_prefix": "linkml_tutorial_schema",
@@ -200,9 +204,9 @@
       "description": "A unique identifier for a person",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
       "mappings": [
-        "http://example.org/UNKNOWN/schema/identifier"
+        "http://schema.org/identifier"
       ],
-      "slot_uri": "http://example.org/UNKNOWN/schema/identifier",
+      "slot_uri": "http://schema.org/identifier",
       "identifier": true,
       "owner": "NamedThing",
       "domain_of": [
@@ -218,9 +222,9 @@
       "description": "A human-readable name for a person",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
       "mappings": [
-        "http://example.org/UNKNOWN/schema/name"
+        "http://schema.org/name"
       ],
-      "slot_uri": "http://example.org/UNKNOWN/schema/name",
+      "slot_uri": "http://schema.org/name",
       "owner": "NamedThing",
       "domain_of": [
         "NamedThing"
@@ -234,14 +238,15 @@
       "description": "The main email address of a person",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
       "mappings": [
-        "http://example.org/UNKNOWN/schema/email"
+        "http://schema.org/email"
       ],
-      "slot_uri": "http://example.org/UNKNOWN/schema/email",
+      "slot_uri": "http://schema.org/email",
       "owner": "Person",
       "domain_of": [
         "Person"
       ],
       "range": "string",
+      "pattern": "^\\S+@[\\S+\\.]+\\S+",
       "@type": "SlotDefinition"
     },
     {
@@ -250,9 +255,9 @@
       "description": "Date on which a person is born",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
       "mappings": [
-        "http://example.org/UNKNOWN/schema/birthDate"
+        "http://schema.org/birthDate"
       ],
-      "slot_uri": "http://example.org/UNKNOWN/schema/birthDate",
+      "slot_uri": "http://schema.org/birthDate",
       "owner": "NamedThing",
       "domain_of": [
         "NamedThing"
@@ -306,6 +311,9 @@
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/species",
       "description": "The species of an animal",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "values_from": [
+        "NCBITaxon"
+      ],
       "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/species",
       "owner": "Animal",
       "domain_of": [
@@ -341,16 +349,24 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "weight_in_mgs",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/weight_in_mgs",
+      "name": "weight",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/weight",
       "description": "The weight of an animal in milligrams",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/weight_in_mgs",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/weight",
       "owner": "Animal",
       "domain_of": [
         "Animal"
       ],
       "range": "string",
+      "structured_pattern": {
+        "syntax": "{float} {unit.weight}",
+        "interpolated": true,
+        "notes": [
+          "By setting partial_match here to false, we are saying that the pattern must match the entire syntax specified in the syntax field."
+        ],
+        "@type": "PatternExpression"
+      },
       "@type": "SlotDefinition"
     },
     {
@@ -375,6 +391,9 @@
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/NamedThing",
       "description": "The most generic type of entity that has a name",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "mappings": [
+        "schema:Thing"
+      ],
       "abstract": true,
       "slots": [
         "id",
@@ -383,7 +402,7 @@
         "age_in_years"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/NamedThing",
+      "class_uri": "http://schema.org/Thing",
       "@type": "ClassDefinition"
     },
     {
@@ -411,7 +430,7 @@
         "pets"
       ],
       "slot_usage": {},
-      "class_uri": "http://example.org/UNKNOWN/schema/Person",
+      "class_uri": "http://schema.org/Person",
       "@type": "ClassDefinition"
     },
     {
@@ -437,7 +456,7 @@
         "species",
         "breed",
         "color",
-        "weight_in_mgs"
+        "weight"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Animal",
@@ -458,9 +477,19 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "linkml_tutorial_schema.yaml",
-  "source_file_date": "2022-09-21T17:25:52",
-  "source_file_size": 2360,
-  "generation_date": "2022-09-21T17:29:11",
+  "source_file_date": "2022-09-22T12:57:21",
+  "source_file_size": 2839,
+  "generation_date": "2022-09-22T12:58:53",
+  "settings": [
+    {
+      "setting_key": "float",
+      "setting_value": "\\d+[\\.\\d+]"
+    },
+    {
+      "setting_key": "unit.weight",
+      "setting_value": "(kg|g|lbs|stone)"
+    }
+  ],
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/linkml_tutorial_schema.context.jsonld",
