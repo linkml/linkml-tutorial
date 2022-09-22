@@ -1,5 +1,5 @@
 # Auto generated from linkml_tutorial_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-09-22T14:47:37
+# Generation date: 2022-09-22T14:52:07
 # Schema: linkml-tutorial-schema
 #
 # id: https://w3id.org/linkml/linkml-tutorial-schema
@@ -175,7 +175,7 @@ class PersonCollection(YAMLRoot):
 
     class_class_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.PersonCollection
     class_class_curie: ClassVar[str] = "linkml_tutorial_schema:PersonCollection"
-    class_name: ClassVar[str] = "PersonCollection"
+    class_name: ClassVar[str] = "Person_Collection"
     class_model_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.PersonCollection
 
     entries: Optional[Union[Dict[Union[str, NamedThingId], Union[dict, NamedThing]], List[Union[dict, NamedThing]]]] = empty_dict()

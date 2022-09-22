@@ -29,7 +29,7 @@ classes:
     slots:
       - id
       - name
-      - birth_date
+      - birth date
       - age_in_years
 
   Person:
@@ -112,7 +112,7 @@ slots:
     pattern: "^\\S+@[\\S+\\.]+\\S+"
     range: string
 
-  birth_date:
+  birth date:
     slot_uri: schema:birthDate
     range: date
     description: Date on which a person is born
