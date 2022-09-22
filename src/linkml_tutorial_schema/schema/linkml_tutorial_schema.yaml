@@ -83,7 +83,7 @@ classes:
           - name
           - birth_date
 
-  PersonCollection:
+  Person_Collection:
     description: >-
       A collection of things
     slots:
