@@ -11,6 +11,7 @@ prefixes:
   linkml_tutorial_schema: https://w3id.org/linkml/linkml-tutorial-schema/
   linkml: https://w3id.org/linkml/
   schema: http://schema.org/
+  PATO: http://purl.obolibrary.org/obo/PATO_
 
 default_prefix: linkml_tutorial_schema
 default_range: string
@@ -75,6 +76,12 @@ classes:
                 species:
                   required: true
           description: At least one of breed or species should be populated.
+    unique_keys:
+      main:
+        description: An animal is also be uniquely identified by their name and birth date
+        unique_key_slots:
+          - name
+          - birth_date
 
   PersonCollection:
     description: >-
@@ -117,7 +124,7 @@ slots:
   vital_status:
     description: living or dead status
     required: true
-    range: string
+    range: PersonStatus
 
   pets:
     description: a collection of animals that lives with and is taken care of by a person.
@@ -135,6 +142,7 @@ slots:
     values_from:
       - VBO # vertebrate breed ontology
     range: uriorcurie
+
 
   color:
     description: The color of an animal
@@ -155,3 +163,24 @@ slots:
     multivalued: true
     range: Animal
     inlined_as_list: true
+
+enums:
+  PersonStatus:
+    permissible_values:
+      ALIVE:
+        description: the person is living
+        meaning: PATO:0001421
+      DEAD:
+        description: the person is deceased
+        meaning: PATO:0001422
+      UNKNOWN:
+        description: the vital status is not known
+
+  Breeds:
+    reachable_from:
+      source_ontology: bioregistry:pato
+      source_nodes:
+        - VBO:00000000
+      is_direct: false
+      relationship_types:
+        - rdfs:subClassOf

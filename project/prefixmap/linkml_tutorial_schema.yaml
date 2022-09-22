@@ -1,6 +1,7 @@
 {
    "FOODON": "http://example.org/UNKNOWN/FOODON/",
    "NCIT": "http://example.org/UNKNOWN/NCIT/",
+   "PATO": "http://purl.obolibrary.org/obo/PATO_",
    "WIKIDATA": "http://example.org/UNKNOWN/WIKIDATA/",
    "biolink": "http://example.org/UNKNOWN/biolink/",
    "foaf": "http://example.org/UNKNOWN/foaf/",

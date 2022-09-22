@@ -22,6 +22,10 @@
     {
       "prefix_prefix": "schema",
       "prefix_reference": "http://schema.org/"
+    },
+    {
+      "prefix_prefix": "PATO",
+      "prefix_reference": "http://purl.obolibrary.org/obo/PATO_"
     }
   ],
   "default_prefix": "linkml_tutorial_schema",
@@ -197,6 +201,43 @@
       "@type": "TypeDefinition"
     }
   ],
+  "enums": [
+    {
+      "name": "PersonStatus",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/PersonStatus",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "permissible_values": [
+        {
+          "text": "ALIVE",
+          "description": "the person is living",
+          "meaning": "PATO:0001421"
+        },
+        {
+          "text": "DEAD",
+          "description": "the person is deceased",
+          "meaning": "PATO:0001422"
+        },
+        {
+          "text": "UNKNOWN",
+          "description": "the vital status is not known"
+        }
+      ]
+    },
+    {
+      "name": "Breeds",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Breeds",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "reachable_from": {
+        "source_ontology": "bioregistry:vbo",
+        "source_nodes": [
+          "VBO:00000000"
+        ],
+        "relationship_types": [
+          "rdfs:subClassOf"
+        ]
+      }
+    }
+  ],
   "slots": [
     {
       "name": "id",
@@ -288,7 +329,7 @@
       "domain_of": [
         "Person"
       ],
-      "range": "string",
+      "range": "PersonStatus",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -499,6 +540,48 @@
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Animal",
+      "unique_keys": [
+        {
+          "unique_key_name": "main",
+          "unique_key_slots": [
+            "name",
+            "birth_date"
+          ],
+          "description": "An animal is also be uniquely identified by their name and birth date",
+          "@type": "UniqueKey"
+        }
+      ],
+      "rules": [
+        {
+          "postconditions": {
+            "description": "At least one of breed or species should be populated.",
+            "any_of": [
+              {
+                "slot_conditions": [
+                  {
+                    "name": "breed",
+                    "required": true,
+                    "@type": "SlotDefinition"
+                  }
+                ],
+                "@type": "AnonymousClassExpression"
+              },
+              {
+                "slot_conditions": [
+                  {
+                    "name": "species",
+                    "required": true,
+                    "@type": "SlotDefinition"
+                  }
+                ],
+                "@type": "AnonymousClassExpression"
+              }
+            ],
+            "@type": "AnonymousClassExpression"
+          },
+          "@type": "ClassRule"
+        }
+      ],
       "@type": "ClassDefinition"
     },
     {
@@ -528,9 +611,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "linkml_tutorial_schema.yaml",
-  "source_file_date": "2022-09-22T13:32:11",
-  "source_file_size": 3023,
-  "generation_date": "2022-09-22T13:35:54",
+  "source_file_date": "2022-09-22T14:47:19",
+  "source_file_size": 4039,
+  "generation_date": "2022-09-22T14:47:29",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/linkml_tutorial_schema.context.jsonld",

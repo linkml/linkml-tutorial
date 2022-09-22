@@ -70,7 +70,7 @@ linkml:Nodeidentifier NONLITERAL
     (  $<Person_tes> (  &<NamedThing_tes> ;
           rdf:type [ schema:Thing ] ? ;
           schema:email @linkml:String ? ;
-          <vital_status> @linkml:String ;
+          <vital_status> @<PersonStatus> ;
           <pets> @<Animal> *
        ) ;
        rdf:type [ schema:Person ]

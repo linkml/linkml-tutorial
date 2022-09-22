@@ -60,6 +60,12 @@
          "title": "AnimalCollection",
          "type": "object"
       },
+      "Breeds": {
+         "description": "",
+         "enum": [],
+         "title": "Breeds",
+         "type": "string"
+      },
       "Person": {
          "additionalProperties": false,
          "description": "",
@@ -94,8 +100,8 @@
                "type": "string"
             },
             "vital_status": {
-               "description": "living or dead status",
-               "type": "string"
+               "$ref": "#/$defs/PersonStatus",
+               "description": "living or dead status"
             }
          },
          "required": [
@@ -120,6 +126,16 @@
          "required": [],
          "title": "PersonCollection",
          "type": "object"
+      },
+      "PersonStatus": {
+         "description": "",
+         "enum": [
+            "ALIVE",
+            "DEAD",
+            "UNKNOWN"
+         ],
+         "title": "PersonStatus",
+         "type": "string"
       }
    },
    "$id": "https://w3id.org/linkml/linkml-tutorial-schema",

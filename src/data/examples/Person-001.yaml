@@ -2,7 +2,7 @@ id: P:001
 name: fred bloggs
 primary_email: fred.blogs@example.com
 age_in_years: 33
-vital_status: alive
+vital_status: ALIVE
 pets:
   - animal:001
   - animal:002

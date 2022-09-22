@@ -29,7 +29,7 @@ type Person
     birthDate: Date
     ageInYears: Integer
     primaryEmail: String
-    vitalStatus: String!
+    vitalStatus: PersonStatus!
     pets: [Animal]
     id: String!
   }

@@ -22,7 +22,7 @@ CREATE TABLE "Person" (
 	birth_date DATE, 
 	age_in_years INTEGER, 
 	primary_email TEXT, 
-	vital_status TEXT NOT NULL, 
+	vital_status VARCHAR(7) NOT NULL, 
 	pets TEXT, 
 	id TEXT NOT NULL, 
 	PRIMARY KEY (id)

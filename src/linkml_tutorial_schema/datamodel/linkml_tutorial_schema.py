@@ -1,5 +1,5 @@
 # Auto generated from linkml_tutorial_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-09-22T13:36:03
+# Generation date: 2022-09-22T14:47:37
 # Schema: linkml-tutorial-schema
 #
 # id: https://w3id.org/linkml/linkml-tutorial-schema
@@ -34,6 +34,7 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 # Namespaces
 FOODON = CurieNamespace('FOODON', 'http://example.org/UNKNOWN/FOODON/')
 NCIT = CurieNamespace('NCIT', 'http://example.org/UNKNOWN/NCIT/')
+PATO = CurieNamespace('PATO', 'http://purl.obolibrary.org/obo/PATO_')
 WIKIDATA = CurieNamespace('WIKIDATA', 'http://example.org/UNKNOWN/WIKIDATA/')
 BIOLINK = CurieNamespace('biolink', 'http://example.org/UNKNOWN/biolink/')
 FOAF = CurieNamespace('foaf', 'http://example.org/UNKNOWN/foaf/')
@@ -104,7 +105,7 @@ class Person(NamedThing):
     class_model_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.Person
 
     id: Union[str, PersonId] = None
-    vital_status: str = None
+    vital_status: Union[str, "PersonStatus"] = None
     primary_email: Optional[str] = None
     pets: Optional[Union[Union[str, AnimalId], List[Union[str, AnimalId]]]] = empty_list()
 
@@ -116,8 +117,8 @@ class Person(NamedThing):
 
         if self._is_empty(self.vital_status):
             self.MissingRequiredField("vital_status")
-        if not isinstance(self.vital_status, str):
-            self.vital_status = str(self.vital_status)
+        if not isinstance(self.vital_status, PersonStatus):
+            self.vital_status = PersonStatus(self.vital_status)
 
         if self.primary_email is not None and not isinstance(self.primary_email, str):
             self.primary_email = str(self.primary_email)
@@ -203,7 +204,26 @@ class AnimalCollection(YAMLRoot):
 
 
 # Enumerations
+class PersonStatus(EnumDefinitionImpl):
 
+    ALIVE = PermissibleValue(text="ALIVE",
+                                 description="the person is living",
+                                 meaning=PATO["0001421"])
+    DEAD = PermissibleValue(text="DEAD",
+                               description="the person is deceased",
+                               meaning=PATO["0001422"])
+    UNKNOWN = PermissibleValue(text="UNKNOWN",
+                                     description="the vital status is not known")
+
+    _defn = EnumDefinition(
+        name="PersonStatus",
+    )
+
+class Breeds(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="Breeds",
+    )
 
 # Slots
 class slots:
@@ -226,7 +246,7 @@ slots.age_in_years = Slot(uri=LINKML_TUTORIAL_SCHEMA.age_in_years, name="age_in_
                    model_uri=LINKML_TUTORIAL_SCHEMA.age_in_years, domain=None, range=Optional[int])
 
 slots.vital_status = Slot(uri=LINKML_TUTORIAL_SCHEMA.vital_status, name="vital_status", curie=LINKML_TUTORIAL_SCHEMA.curie('vital_status'),
-                   model_uri=LINKML_TUTORIAL_SCHEMA.vital_status, domain=None, range=str)
+                   model_uri=LINKML_TUTORIAL_SCHEMA.vital_status, domain=None, range=Union[str, "PersonStatus"])
 
 slots.pets = Slot(uri=LINKML_TUTORIAL_SCHEMA.pets, name="pets", curie=LINKML_TUTORIAL_SCHEMA.curie('pets'),
                    model_uri=LINKML_TUTORIAL_SCHEMA.pets, domain=None, range=Optional[Union[Union[str, AnimalId], List[Union[str, AnimalId]]]])
