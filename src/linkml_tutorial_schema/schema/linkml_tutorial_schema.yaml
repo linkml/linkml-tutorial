@@ -18,10 +18,6 @@ default_range: string
 imports:
   - linkml:types
 
-settings:
-  float: "\\d+[\\.\\d+]"
-  unit.weight: "(kg|g|lbs|stone)"
-
 classes:
 
   NamedThing:
@@ -48,6 +44,12 @@ classes:
       - foaf:Person
       - WIKIDATA:Q215627 # person
       - WIKIDATA:Q5 # human
+    id_prefixes:
+      - orcid
+      - WIKIDATA
+    slot_usage:
+      id:
+        description: this is a unique identifier for a person.
 
   Animal:
     is_a: NamedThing
@@ -57,12 +59,22 @@ classes:
       - species
       - breed
       - color
-      - weight
+      - weight_in_mgs
     exact_mappings:
       - WIKIDATA:Q729 # animal
       - NCIT:C14182 # animal
     narrow_mappings:
       - FOODON:00003004 # animal as food
+    rules:
+      - postconditions:
+          any_of:
+            - slot_conditions:
+                breed:
+                  required: true
+            - slot_conditions:
+                species:
+                  required: true
+          description: At least one of breed or species should be populated.
 
   PersonCollection:
     description: >-
@@ -70,29 +82,43 @@ classes:
     slots:
       - entries
 
+  AnimalCollection:
+    tree_root: true
+    slots:
+      - animals
+
 slots:
   id:
     slot_uri: schema:identifier
     identifier: true
     required: true
     description: A unique identifier for a person
+
   name:
     slot_uri: schema:name
     description: A human-readable name for a person
+    range: string
+
   primary_email:
     slot_uri: schema:email
     description: The main email address of a person
     pattern: "^\\S+@[\\S+\\.]+\\S+"
+    range: string
+
   birth_date:
     slot_uri: schema:birthDate
     range: date
     description: Date on which a person is born
+
   age_in_years:
     range: integer
     description: Number of years since birth
+
   vital_status:
     description: living or dead status
     required: true
+    range: string
+
   pets:
     description: a collection of animals that lives with and is taken care of by a person.
     multivalued: true
@@ -102,23 +128,30 @@ slots:
     description: The species of an animal
     values_from:
       - NCBITaxon
+    range: uriorcurie
+
   breed:
     description: The breed of an animal
+    values_from:
+      - VBO # vertebrate breed ontology
+    range: uriorcurie
+
   color:
     description: The color of an animal
-  weight:
+    range: string
+
+  weight_in_mgs:
     description: The weight of an animal in milligrams
     range: string
-    structured_pattern:
-      syntax: "{float} {unit.weight}"
-      interpolated: true
-      partial_match: false
-      notes: >- 
-        By setting partial_match here to false, we are saying that the pattern must match the entire syntax
-        specified in the syntax field.
 
   entries:
     description: A collection of things
     multivalued: true
-    range: Person
-    inlined: true
+    range: NamedThing
+    inlined_as_list: true
+
+  animals:
+    description: A collection of animals
+    multivalued: true
+    range: Animal
+    inlined_as_list: true

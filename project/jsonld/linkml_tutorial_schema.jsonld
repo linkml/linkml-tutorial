@@ -319,7 +319,7 @@
       "domain_of": [
         "Animal"
       ],
-      "range": "string",
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -327,12 +327,15 @@
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/breed",
       "description": "The breed of an animal",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "values_from": [
+        "VBO"
+      ],
       "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/breed",
       "owner": "Animal",
       "domain_of": [
         "Animal"
       ],
-      "range": "string",
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -349,24 +352,16 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "weight",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/weight",
+      "name": "weight_in_mgs",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/weight_in_mgs",
       "description": "The weight of an animal in milligrams",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/weight",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/weight_in_mgs",
       "owner": "Animal",
       "domain_of": [
         "Animal"
       ],
       "range": "string",
-      "structured_pattern": {
-        "syntax": "{float} {unit.weight}",
-        "interpolated": true,
-        "notes": [
-          "By setting partial_match here to false, we are saying that the pattern must match the entire syntax specified in the syntax field."
-        ],
-        "@type": "PatternExpression"
-      },
       "@type": "SlotDefinition"
     },
     {
@@ -380,8 +375,48 @@
       "domain_of": [
         "PersonCollection"
       ],
-      "range": "Person",
+      "range": "NamedThing",
       "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "animals",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/animals",
+      "description": "A collection of animals",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/animals",
+      "multivalued": true,
+      "owner": "AnimalCollection",
+      "domain_of": [
+        "AnimalCollection"
+      ],
+      "range": "Animal",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Person_id",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/id",
+      "description": "this is a unique identifier for a person.",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "mappings": [
+        "http://schema.org/identifier"
+      ],
+      "is_a": "id",
+      "domain": "Person",
+      "slot_uri": "http://schema.org/identifier",
+      "identifier": true,
+      "alias": "id",
+      "owner": "Person",
+      "domain_of": [
+        "Person"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "id",
+      "range": "string",
+      "required": true,
       "@type": "SlotDefinition"
     }
   ],
@@ -407,6 +442,10 @@
     },
     {
       "name": "Person",
+      "id_prefixes": [
+        "orcid",
+        "WIKIDATA"
+      ],
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Person",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
       "mappings": [
@@ -421,13 +460,13 @@
       ],
       "is_a": "NamedThing",
       "slots": [
-        "id",
         "name",
         "birth_date",
         "age_in_years",
         "primary_email",
         "vital_status",
-        "pets"
+        "pets",
+        "Person_id"
       ],
       "slot_usage": {},
       "class_uri": "http://schema.org/Person",
@@ -456,7 +495,7 @@
         "species",
         "breed",
         "color",
-        "weight"
+        "weight_in_mgs"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Animal",
@@ -473,23 +512,25 @@
       "slot_usage": {},
       "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/PersonCollection",
       "@type": "ClassDefinition"
+    },
+    {
+      "name": "AnimalCollection",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/AnimalCollection",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slots": [
+        "animals"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/AnimalCollection",
+      "tree_root": true,
+      "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
   "source_file": "linkml_tutorial_schema.yaml",
-  "source_file_date": "2022-09-22T12:57:21",
-  "source_file_size": 2839,
-  "generation_date": "2022-09-22T12:58:53",
-  "settings": [
-    {
-      "setting_key": "float",
-      "setting_value": "\\d+[\\.\\d+]"
-    },
-    {
-      "setting_key": "unit.weight",
-      "setting_value": "(kg|g|lbs|stone)"
-    }
-  ],
+  "source_file_date": "2022-09-22T13:32:11",
+  "source_file_size": 3023,
+  "generation_date": "2022-09-22T13:35:54",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/linkml_tutorial_schema.context.jsonld",

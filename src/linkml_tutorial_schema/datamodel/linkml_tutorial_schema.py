@@ -1,5 +1,5 @@
 # Auto generated from linkml_tutorial_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-09-22T12:59:00
+# Generation date: 2022-09-22T13:36:03
 # Schema: linkml-tutorial-schema
 #
 # id: https://w3id.org/linkml/linkml-tutorial-schema
@@ -22,8 +22,8 @@ from linkml_runtime.utils.formatutils import camelcase, underscore, sfx
 from linkml_runtime.utils.enumerations import EnumDefinitionImpl
 from rdflib import Namespace, URIRef
 from linkml_runtime.utils.curienamespace import CurieNamespace
-from linkml_runtime.linkml_model.types import Date, Integer, String
-from linkml_runtime.utils.metamodelcore import XSDDate
+from linkml_runtime.linkml_model.types import Date, Integer, String, Uriorcurie
+from linkml_runtime.utils.metamodelcore import URIorCURIE, XSDDate
 
 metamodel_version = "1.7.0"
 version = None
@@ -39,6 +39,7 @@ BIOLINK = CurieNamespace('biolink', 'http://example.org/UNKNOWN/biolink/')
 FOAF = CurieNamespace('foaf', 'http://example.org/UNKNOWN/foaf/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 LINKML_TUTORIAL_SCHEMA = CurieNamespace('linkml_tutorial_schema', 'https://w3id.org/linkml/linkml-tutorial-schema/')
+ORCID = CurieNamespace('orcid', 'http://example.org/UNKNOWN/orcid/')
 SCHEMA = CurieNamespace('schema', 'http://schema.org/')
 DEFAULT_ = LINKML_TUTORIAL_SCHEMA
 
@@ -138,10 +139,10 @@ class Animal(NamedThing):
     class_model_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.Animal
 
     id: Union[str, AnimalId] = None
-    species: Optional[str] = None
-    breed: Optional[str] = None
+    species: Optional[Union[str, URIorCURIE]] = None
+    breed: Optional[Union[str, URIorCURIE]] = None
     color: Optional[str] = None
-    weight: Optional[str] = None
+    weight_in_mgs: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -149,17 +150,17 @@ class Animal(NamedThing):
         if not isinstance(self.id, AnimalId):
             self.id = AnimalId(self.id)
 
-        if self.species is not None and not isinstance(self.species, str):
-            self.species = str(self.species)
+        if self.species is not None and not isinstance(self.species, URIorCURIE):
+            self.species = URIorCURIE(self.species)
 
-        if self.breed is not None and not isinstance(self.breed, str):
-            self.breed = str(self.breed)
+        if self.breed is not None and not isinstance(self.breed, URIorCURIE):
+            self.breed = URIorCURIE(self.breed)
 
         if self.color is not None and not isinstance(self.color, str):
             self.color = str(self.color)
 
-        if self.weight is not None and not isinstance(self.weight, str):
-            self.weight = str(self.weight)
+        if self.weight_in_mgs is not None and not isinstance(self.weight_in_mgs, str):
+            self.weight_in_mgs = str(self.weight_in_mgs)
 
         super().__post_init__(**kwargs)
 
@@ -176,10 +177,27 @@ class PersonCollection(YAMLRoot):
     class_name: ClassVar[str] = "PersonCollection"
     class_model_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.PersonCollection
 
-    entries: Optional[Union[Dict[Union[str, PersonId], Union[dict, Person]], List[Union[dict, Person]]]] = empty_dict()
+    entries: Optional[Union[Dict[Union[str, NamedThingId], Union[dict, NamedThing]], List[Union[dict, NamedThing]]]] = empty_dict()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        self._normalize_inlined_as_dict(slot_name="entries", slot_type=Person, key_name="id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="entries", slot_type=NamedThing, key_name="id", keyed=True)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class AnimalCollection(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.AnimalCollection
+    class_class_curie: ClassVar[str] = "linkml_tutorial_schema:AnimalCollection"
+    class_name: ClassVar[str] = "AnimalCollection"
+    class_model_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.AnimalCollection
+
+    animals: Optional[Union[Dict[Union[str, AnimalId], Union[dict, Animal]], List[Union[dict, Animal]]]] = empty_dict()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        self._normalize_inlined_as_list(slot_name="animals", slot_type=Animal, key_name="id", keyed=True)
 
         super().__post_init__(**kwargs)
 
@@ -214,16 +232,22 @@ slots.pets = Slot(uri=LINKML_TUTORIAL_SCHEMA.pets, name="pets", curie=LINKML_TUT
                    model_uri=LINKML_TUTORIAL_SCHEMA.pets, domain=None, range=Optional[Union[Union[str, AnimalId], List[Union[str, AnimalId]]]])
 
 slots.species = Slot(uri=LINKML_TUTORIAL_SCHEMA.species, name="species", curie=LINKML_TUTORIAL_SCHEMA.curie('species'),
-                   model_uri=LINKML_TUTORIAL_SCHEMA.species, domain=None, range=Optional[str])
+                   model_uri=LINKML_TUTORIAL_SCHEMA.species, domain=None, range=Optional[Union[str, URIorCURIE]])
 
 slots.breed = Slot(uri=LINKML_TUTORIAL_SCHEMA.breed, name="breed", curie=LINKML_TUTORIAL_SCHEMA.curie('breed'),
-                   model_uri=LINKML_TUTORIAL_SCHEMA.breed, domain=None, range=Optional[str])
+                   model_uri=LINKML_TUTORIAL_SCHEMA.breed, domain=None, range=Optional[Union[str, URIorCURIE]])
 
 slots.color = Slot(uri=LINKML_TUTORIAL_SCHEMA.color, name="color", curie=LINKML_TUTORIAL_SCHEMA.curie('color'),
                    model_uri=LINKML_TUTORIAL_SCHEMA.color, domain=None, range=Optional[str])
 
-slots.weight = Slot(uri=LINKML_TUTORIAL_SCHEMA.weight, name="weight", curie=LINKML_TUTORIAL_SCHEMA.curie('weight'),
-                   model_uri=LINKML_TUTORIAL_SCHEMA.weight, domain=None, range=Optional[str])
+slots.weight_in_mgs = Slot(uri=LINKML_TUTORIAL_SCHEMA.weight_in_mgs, name="weight_in_mgs", curie=LINKML_TUTORIAL_SCHEMA.curie('weight_in_mgs'),
+                   model_uri=LINKML_TUTORIAL_SCHEMA.weight_in_mgs, domain=None, range=Optional[str])
 
 slots.entries = Slot(uri=LINKML_TUTORIAL_SCHEMA.entries, name="entries", curie=LINKML_TUTORIAL_SCHEMA.curie('entries'),
-                   model_uri=LINKML_TUTORIAL_SCHEMA.entries, domain=None, range=Optional[Union[Dict[Union[str, PersonId], Union[dict, Person]], List[Union[dict, Person]]]])
+                   model_uri=LINKML_TUTORIAL_SCHEMA.entries, domain=None, range=Optional[Union[Dict[Union[str, NamedThingId], Union[dict, NamedThing]], List[Union[dict, NamedThing]]]])
+
+slots.animals = Slot(uri=LINKML_TUTORIAL_SCHEMA.animals, name="animals", curie=LINKML_TUTORIAL_SCHEMA.curie('animals'),
+                   model_uri=LINKML_TUTORIAL_SCHEMA.animals, domain=None, range=Optional[Union[Dict[Union[str, AnimalId], Union[dict, Animal]], List[Union[dict, Animal]]]])
+
+slots.Person_id = Slot(uri=SCHEMA.identifier, name="Person_id", curie=SCHEMA.curie('identifier'),
+                   model_uri=LINKML_TUTORIAL_SCHEMA.Person_id, domain=Person, range=Union[str, PersonId])

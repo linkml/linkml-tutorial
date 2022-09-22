@@ -1,6 +1,15 @@
-id: animal:001
-name: garfield
-age_in_years: 42
-breed: Persian Tabby
-species: NCBITaxon:9685
-color: orange
+animals:
+  - id: animal:001
+    name: garfield
+    age_in_years: 42
+    breed: VRBO:000001
+    species: NCBITaxon:9685
+    color: orange
+    weight_in_mgs: 10.5
+  - id: animal:002
+    name: odie
+    age_in_years: 42
+    breed: VRBO:000002
+    species: NCBITaxon:9615
+    color: orange
+    weight_in_mgs: 10.5

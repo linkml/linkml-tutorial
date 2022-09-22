@@ -4,10 +4,15 @@ type Animal
     name: String
     birthDate: Date
     ageInYears: Integer
-    species: String
-    breed: String
+    species: Uriorcurie
+    breed: Uriorcurie
     color: String
-    weight: String
+    weightInMgs: String
+  }
+
+type AnimalCollection
+  {
+    animals: [Animal]
   }
 
 interface NamedThing
@@ -20,17 +25,17 @@ interface NamedThing
 
 type Person
   {
-    id: String!
     name: String
     birthDate: Date
     ageInYears: Integer
     primaryEmail: String
     vitalStatus: String!
     pets: [Animal]
+    id: String!
   }
 
 type PersonCollection
   {
-    entries: [Person]
+    entries: [NamedThing]
   }
 

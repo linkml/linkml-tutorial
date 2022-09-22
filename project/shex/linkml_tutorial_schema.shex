@@ -38,12 +38,18 @@ linkml:Nodeidentifier NONLITERAL
 <Animal> CLOSED {
     (  $<Animal_tes> (  &<NamedThing_tes> ;
           rdf:type [ schema:Thing ] ? ;
-          <species> @linkml:String ? ;
-          <breed> @linkml:String ? ;
+          <species> @linkml:Uriorcurie ? ;
+          <breed> @linkml:Uriorcurie ? ;
           <color> @linkml:String ? ;
-          <weight> @linkml:String ?
+          <weight_in_mgs> @linkml:String ?
        ) ;
        rdf:type [ <Animal> ]
+    )
+}
+
+<AnimalCollection> CLOSED {
+    (  $<AnimalCollection_tes> <animals> @<Animal> * ;
+       rdf:type [ <AnimalCollection> ] ?
     )
 }
 
@@ -72,7 +78,7 @@ linkml:Nodeidentifier NONLITERAL
 }
 
 <PersonCollection> CLOSED {
-    (  $<PersonCollection_tes> <entries> @<Person> * ;
+    (  $<PersonCollection_tes> <entries> @<NamedThing> * ;
        rdf:type [ <PersonCollection> ] ?
     )
 }
