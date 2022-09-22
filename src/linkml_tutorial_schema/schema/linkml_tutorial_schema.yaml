@@ -17,6 +17,10 @@ default_range: string
 imports:
   - linkml:types
 
+settings:
+  float: "\\d+[\\.\\d+]"
+  unit.weight: "(kg|g|lbs|stone)"
+
 classes:
 
   NamedThing:
@@ -52,7 +56,7 @@ classes:
       - species
       - breed
       - color
-      - weight_in_mgs
+      - weight
     exact_mappings:
       - WIKIDATA:Q729 # animal
       - NCIT:C14182 # animal
@@ -95,12 +99,21 @@ slots:
 
   species:
     description: The species of an animal
+    values_from:
+      - NCBITaxon
   breed:
     description: The breed of an animal
+    values_from:
+      - VBO # vertebrate breed ontology
   color:
     description: The color of an animal
-  weight_in_mgs:
+  weight:
     description: The weight of an animal in milligrams
+    range: string
+    structured_pattern:
+      syntax: "{float} {unit.weight}"
+      interpolated: true
+      partial_match: false  ## implicit ^...$
 
 
   entries:
