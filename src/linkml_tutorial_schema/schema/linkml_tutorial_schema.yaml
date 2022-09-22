@@ -60,14 +60,14 @@ slots:
     identifier: true
     required: true
     range: string
-    description: A unique identifier for a person
+    description: A unique identifier for a thing
   name:
-    description: A human-readable name for a person
+    description: A human-readable name for a thing
   primary_email:
     description: The main email address of a person
   birth_date:
     range: date
-    description: Date on which a person is born
+    description: Date on which a thing is born
   age_in_years:
     range: integer
     description: Number of years since birth
