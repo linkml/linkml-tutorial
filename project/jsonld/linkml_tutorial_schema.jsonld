@@ -18,22 +18,6 @@
     {
       "prefix_prefix": "linkml",
       "prefix_reference": "https://w3id.org/linkml/"
-    },
-    {
-      "prefix_prefix": "biolink",
-      "prefix_reference": "https://w3id.org/biolink/"
-    },
-    {
-      "prefix_prefix": "schema",
-      "prefix_reference": "http://schema.org/"
-    },
-    {
-      "prefix_prefix": "PATO",
-      "prefix_reference": "http://purl.obolibrary.org/obo/PATO_"
-    },
-    {
-      "prefix_prefix": "example",
-      "prefix_reference": "https://example.org/"
     }
   ],
   "default_prefix": "linkml_tutorial_schema",
@@ -215,7 +199,10 @@
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/id",
       "description": "A unique identifier for a person",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/id",
+      "mappings": [
+        "http://example.org/UNKNOWN/schema/identifier"
+      ],
+      "slot_uri": "http://example.org/UNKNOWN/schema/identifier",
       "identifier": true,
       "owner": "NamedThing",
       "domain_of": [
@@ -230,7 +217,10 @@
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/name",
       "description": "A human-readable name for a person",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/name",
+      "mappings": [
+        "http://example.org/UNKNOWN/schema/name"
+      ],
+      "slot_uri": "http://example.org/UNKNOWN/schema/name",
       "owner": "NamedThing",
       "domain_of": [
         "NamedThing"
@@ -243,7 +233,10 @@
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/primary_email",
       "description": "The main email address of a person",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/primary_email",
+      "mappings": [
+        "http://example.org/UNKNOWN/schema/email"
+      ],
+      "slot_uri": "http://example.org/UNKNOWN/schema/email",
       "owner": "Person",
       "domain_of": [
         "Person"
@@ -256,7 +249,10 @@
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/birth_date",
       "description": "Date on which a person is born",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/birth_date",
+      "mappings": [
+        "http://example.org/UNKNOWN/schema/birthDate"
+      ],
+      "slot_uri": "http://example.org/UNKNOWN/schema/birthDate",
       "owner": "NamedThing",
       "domain_of": [
         "NamedThing"
@@ -368,7 +364,8 @@
       "domain_of": [
         "PersonCollection"
       ],
-      "range": "NamedThing",
+      "range": "Person",
+      "inlined": true,
       "@type": "SlotDefinition"
     }
   ],
@@ -393,6 +390,16 @@
       "name": "Person",
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Person",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "mappings": [
+        "schema:Person"
+      ],
+      "exact_mappings": [
+        "schema:Person",
+        "biolink:Person",
+        "foaf:Person",
+        "WIKIDATA:Q215627",
+        "WIKIDATA:Q5"
+      ],
       "is_a": "NamedThing",
       "slots": [
         "id",
@@ -404,13 +411,23 @@
         "pets"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Person",
+      "class_uri": "http://example.org/UNKNOWN/schema/Person",
       "@type": "ClassDefinition"
     },
     {
       "name": "Animal",
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Animal",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "aliases": [
+        "pet"
+      ],
+      "exact_mappings": [
+        "WIKIDATA:Q729",
+        "NCIT:C14182"
+      ],
+      "narrow_mappings": [
+        "FOODON:00003004"
+      ],
       "is_a": "NamedThing",
       "slots": [
         "id",
@@ -441,9 +458,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "linkml_tutorial_schema.yaml",
-  "source_file_date": "2022-09-21T13:46:06",
-  "source_file_size": 2048,
-  "generation_date": "2022-09-21T13:47:35",
+  "source_file_date": "2022-09-21T17:25:52",
+  "source_file_size": 2360,
+  "generation_date": "2022-09-21T17:29:11",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/linkml_tutorial_schema.context.jsonld",

@@ -93,15 +93,57 @@
          "description": "A collection of things",
          "properties": {
             "entries": {
-               "description": "A collection of things",
-               "items": {
-                  "type": "string"
+               "additionalProperties": {
+                  "$ref": "#/$defs/Person__identifier_optional"
                },
-               "type": "array"
+               "description": "A collection of things"
             }
          },
          "required": [],
          "title": "PersonCollection",
+         "type": "object"
+      },
+      "Person__identifier_optional": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "age_in_years": {
+               "description": "Number of years since birth",
+               "type": "integer"
+            },
+            "birth_date": {
+               "description": "Date on which a person is born",
+               "format": "date",
+               "type": "string"
+            },
+            "id": {
+               "description": "A unique identifier for a person",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for a person",
+               "type": "string"
+            },
+            "pets": {
+               "description": "a collection of animals that lives with and is taken care of by a person.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "primary_email": {
+               "description": "The main email address of a person",
+               "type": "string"
+            },
+            "vital_status": {
+               "description": "living or dead status",
+               "type": "string"
+            }
+         },
+         "required": [
+            "vital_status"
+         ],
+         "title": "Person",
          "type": "object"
       }
    },

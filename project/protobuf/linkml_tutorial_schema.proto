@@ -22,5 +22,5 @@ message Person
 // A collection of things
 message PersonCollection
  {
- repeated  namedThing entries = 0
+ repeated  person entries = 0
  }

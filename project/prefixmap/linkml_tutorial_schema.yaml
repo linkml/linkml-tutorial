@@ -1,8 +1,13 @@
 {
-   "PATO": "http://purl.obolibrary.org/obo/PATO_",
-   "biolink": "https://w3id.org/biolink/",
-   "example": "https://example.org/",
+   "FOODON": "http://example.org/UNKNOWN/FOODON/",
+   "NCIT": "http://example.org/UNKNOWN/NCIT/",
+   "WIKIDATA": "http://example.org/UNKNOWN/WIKIDATA/",
+   "biolink": "http://example.org/UNKNOWN/biolink/",
+   "foaf": "http://example.org/UNKNOWN/foaf/",
    "linkml": "https://w3id.org/linkml/",
    "linkml_tutorial_schema": "https://w3id.org/linkml/linkml-tutorial-schema/",
-   "schema": "http://schema.org/"
+   "schema": "http://example.org/UNKNOWN/schema/",
+   "Person": {
+      "@id": "schema:Person"
+   }
 }

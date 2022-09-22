@@ -1,5 +1,5 @@
 # Auto generated from linkml_tutorial_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-09-21T13:47:43
+# Generation date: 2022-09-21T17:29:18
 # Schema: linkml-tutorial-schema
 #
 # id: https://w3id.org/linkml/linkml-tutorial-schema
@@ -32,12 +32,14 @@ version = None
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
-PATO = CurieNamespace('PATO', 'http://purl.obolibrary.org/obo/PATO_')
-BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/')
-EXAMPLE = CurieNamespace('example', 'https://example.org/')
+FOODON = CurieNamespace('FOODON', 'http://example.org/UNKNOWN/FOODON/')
+NCIT = CurieNamespace('NCIT', 'http://example.org/UNKNOWN/NCIT/')
+WIKIDATA = CurieNamespace('WIKIDATA', 'http://example.org/UNKNOWN/WIKIDATA/')
+BIOLINK = CurieNamespace('biolink', 'http://example.org/UNKNOWN/biolink/')
+FOAF = CurieNamespace('foaf', 'http://example.org/UNKNOWN/foaf/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 LINKML_TUTORIAL_SCHEMA = CurieNamespace('linkml_tutorial_schema', 'https://w3id.org/linkml/linkml-tutorial-schema/')
-SCHEMA = CurieNamespace('schema', 'http://schema.org/')
+SCHEMA = CurieNamespace('schema', 'http://example.org/UNKNOWN/schema/')
 DEFAULT_ = LINKML_TUTORIAL_SCHEMA
 
 
@@ -95,8 +97,8 @@ class NamedThing(YAMLRoot):
 class Person(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.Person
-    class_class_curie: ClassVar[str] = "linkml_tutorial_schema:Person"
+    class_class_uri: ClassVar[URIRef] = SCHEMA.Person
+    class_class_curie: ClassVar[str] = "schema:Person"
     class_name: ClassVar[str] = "Person"
     class_model_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.Person
 
@@ -174,12 +176,10 @@ class PersonCollection(YAMLRoot):
     class_name: ClassVar[str] = "PersonCollection"
     class_model_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.PersonCollection
 
-    entries: Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]] = empty_list()
+    entries: Optional[Union[Dict[Union[str, PersonId], Union[dict, Person]], List[Union[dict, Person]]]] = empty_dict()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if not isinstance(self.entries, list):
-            self.entries = [self.entries] if self.entries is not None else []
-        self.entries = [v if isinstance(v, NamedThingId) else NamedThingId(v) for v in self.entries]
+        self._normalize_inlined_as_dict(slot_name="entries", slot_type=Person, key_name="id", keyed=True)
 
         super().__post_init__(**kwargs)
 
@@ -191,16 +191,16 @@ class PersonCollection(YAMLRoot):
 class slots:
     pass
 
-slots.id = Slot(uri=LINKML_TUTORIAL_SCHEMA.id, name="id", curie=LINKML_TUTORIAL_SCHEMA.curie('id'),
+slots.id = Slot(uri=SCHEMA.identifier, name="id", curie=SCHEMA.curie('identifier'),
                    model_uri=LINKML_TUTORIAL_SCHEMA.id, domain=None, range=URIRef)
 
-slots.name = Slot(uri=LINKML_TUTORIAL_SCHEMA.name, name="name", curie=LINKML_TUTORIAL_SCHEMA.curie('name'),
+slots.name = Slot(uri=SCHEMA.name, name="name", curie=SCHEMA.curie('name'),
                    model_uri=LINKML_TUTORIAL_SCHEMA.name, domain=None, range=Optional[str])
 
-slots.primary_email = Slot(uri=LINKML_TUTORIAL_SCHEMA.primary_email, name="primary_email", curie=LINKML_TUTORIAL_SCHEMA.curie('primary_email'),
+slots.primary_email = Slot(uri=SCHEMA.email, name="primary_email", curie=SCHEMA.curie('email'),
                    model_uri=LINKML_TUTORIAL_SCHEMA.primary_email, domain=None, range=Optional[str])
 
-slots.birth_date = Slot(uri=LINKML_TUTORIAL_SCHEMA.birth_date, name="birth_date", curie=LINKML_TUTORIAL_SCHEMA.curie('birth_date'),
+slots.birth_date = Slot(uri=SCHEMA.birthDate, name="birth_date", curie=SCHEMA.curie('birthDate'),
                    model_uri=LINKML_TUTORIAL_SCHEMA.birth_date, domain=None, range=Optional[Union[str, XSDDate]])
 
 slots.age_in_years = Slot(uri=LINKML_TUTORIAL_SCHEMA.age_in_years, name="age_in_years", curie=LINKML_TUTORIAL_SCHEMA.curie('age_in_years'),
@@ -225,4 +225,4 @@ slots.weight_in_mgs = Slot(uri=LINKML_TUTORIAL_SCHEMA.weight_in_mgs, name="weigh
                    model_uri=LINKML_TUTORIAL_SCHEMA.weight_in_mgs, domain=None, range=Optional[str])
 
 slots.entries = Slot(uri=LINKML_TUTORIAL_SCHEMA.entries, name="entries", curie=LINKML_TUTORIAL_SCHEMA.curie('entries'),
-                   model_uri=LINKML_TUTORIAL_SCHEMA.entries, domain=None, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=LINKML_TUTORIAL_SCHEMA.entries, domain=None, range=Optional[Union[Dict[Union[str, PersonId], Union[dict, Person]], List[Union[dict, Person]]]])

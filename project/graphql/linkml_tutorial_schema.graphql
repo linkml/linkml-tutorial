@@ -31,6 +31,6 @@ type Person
 
 type PersonCollection
   {
-    entries: [NamedThing]
+    entries: [Person]
   }
 

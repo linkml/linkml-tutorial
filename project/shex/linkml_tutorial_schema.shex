@@ -2,6 +2,7 @@ BASE <https://w3id.org/linkml/linkml-tutorial-schema/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX linkml: <https://w3id.org/linkml/>
+PREFIX schema: <http://example.org/UNKNOWN/schema/>
 
 
 linkml:String xsd:string
@@ -51,8 +52,8 @@ linkml:Nodeidentifier NONLITERAL
 )
 
 <NamedThing_struct> {
-    (  $<NamedThing_tes> (  <name> @linkml:String ? ;
-          <birth_date> @linkml:Date ? ;
+    (  $<NamedThing_tes> (  schema:name @linkml:String ? ;
+          schema:birthDate @linkml:Date ? ;
           <age_in_years> @linkml:Integer ?
        ) ;
        rdf:type [ <NamedThing> ]
@@ -62,16 +63,16 @@ linkml:Nodeidentifier NONLITERAL
 <Person> CLOSED {
     (  $<Person_tes> (  &<NamedThing_tes> ;
           rdf:type [ <NamedThing> ] ? ;
-          <primary_email> @linkml:String ? ;
+          schema:email @linkml:String ? ;
           <vital_status> @linkml:String ;
           <pets> @<Animal> *
        ) ;
-       rdf:type [ <Person> ]
+       rdf:type [ schema:Person ]
     )
 }
 
 <PersonCollection> CLOSED {
-    (  $<PersonCollection_tes> <entries> @<NamedThing> * ;
+    (  $<PersonCollection_tes> <entries> @<Person> * ;
        rdf:type [ <PersonCollection> ] ?
     )
 }
