@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
    "_comments": "Auto generated from linkml_tutorial_schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-09-23T09:31:18\n    Schema: linkml-tutorial-schema\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://w3id.org/linkml/linkml-tutorial-schema\n    description: A repostitory that walks through schema generation.\n    license: MIT\n    ",
+=======
+   "_comments": "Auto generated from linkml_tutorial_schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-09-23T08:46:10\n    Schema: linkml-tutorial-schema\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://w3id.org/linkml/linkml-tutorial-schema\n    description: A repostitory that walks through schema generation.\n    license: MIT\n    ",
+>>>>>>> main
    "@context": {
       "FOODON": "http://example.org/UNKNOWN/FOODON/",
       "NCIT": "http://example.org/UNKNOWN/NCIT/",
@@ -14,6 +18,7 @@
       "linkml_tutorial_schema": "https://w3id.org/linkml/linkml-tutorial-schema/",
       "orcid": "http://example.org/UNKNOWN/orcid/",
       "schema": "http://schema.org/",
+<<<<<<< HEAD
       "skos": "http://www.w3.org/2004/02/skos/core#",
       "@vocab": "https://w3id.org/linkml/linkml-tutorial-schema/",
       "age_in_years": {
@@ -59,5 +64,8 @@
       "Person": {
          "@id": "schema:Person"
       }
+=======
+      "@vocab": "https://w3id.org/linkml/linkml-tutorial-schema/"
+>>>>>>> main
    }
 }

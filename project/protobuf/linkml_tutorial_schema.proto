@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // An organism in the biological kingdom Animalia
 message Animal
  {
@@ -31,3 +32,5 @@ message PersonCollection
  {
  repeated  person entries = 0
  }
+=======
+>>>>>>> main

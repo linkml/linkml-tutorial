@@ -21,6 +21,7 @@ imports:
 
 classes:
 
+
   NamedThing:
     class_uri: schema:Thing
     description: >-
@@ -91,6 +92,7 @@ classes:
     slots:
       - entries
 
+
   AnimalCollection:
     description: A collection of Animals
     tree_root: true
@@ -98,6 +100,7 @@ classes:
       - animals
 
 slots:
+
   id:
     slot_uri: schema:identifier
     identifier: true
@@ -189,3 +192,4 @@ enums:
       is_direct: false
       relationship_types:
         - rdfs:subClassOf
+

@@ -1,5 +1,9 @@
 # Auto generated from linkml_tutorial_schema.yaml by pythongen.py version: 0.9.0
+<<<<<<< HEAD
 # Generation date: 2022-09-23T09:31:27
+=======
+# Generation date: 2022-09-23T08:46:16
+>>>>>>> main
 # Schema: linkml-tutorial-schema
 #
 # id: https://w3id.org/linkml/linkml-tutorial-schema
@@ -22,8 +26,12 @@ from linkml_runtime.utils.formatutils import camelcase, underscore, sfx
 from linkml_runtime.utils.enumerations import EnumDefinitionImpl
 from rdflib import Namespace, URIRef
 from linkml_runtime.utils.curienamespace import CurieNamespace
+<<<<<<< HEAD
 from linkml_runtime.linkml_model.types import Date, Integer, String, Uriorcurie
 from linkml_runtime.utils.metamodelcore import URIorCURIE, XSDDate
+=======
+
+>>>>>>> main
 
 metamodel_version = "1.7.0"
 version = None
@@ -60,6 +68,7 @@ class AnimalId(NamedThingId):
     pass
 
 
+<<<<<<< HEAD
 @dataclass
 class NamedThing(YAMLRoot):
     """
@@ -100,6 +109,9 @@ class Person(NamedThing):
     """
     An individual human being
     """
+=======
+class Person(YAMLRoot):
+>>>>>>> main
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = SCHEMA.Person
@@ -107,6 +119,7 @@ class Person(NamedThing):
     class_name: ClassVar[str] = "Person"
     class_model_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.Person
 
+<<<<<<< HEAD
     id: Union[str, PersonId] = None
     vital_status: Union[str, "PersonStatus"] = None
     primary_email: Optional[str] = None
@@ -191,6 +204,8 @@ class PersonCollection(YAMLRoot):
 
         super().__post_init__(**kwargs)
 
+=======
+>>>>>>> main
 
 @dataclass
 class AnimalCollection(YAMLRoot):
@@ -244,6 +259,7 @@ class Breeds(EnumDefinitionImpl):
 class slots:
     pass
 
+<<<<<<< HEAD
 slots.id = Slot(uri=SCHEMA.identifier, name="id", curie=SCHEMA.curie('identifier'),
                    model_uri=LINKML_TUTORIAL_SCHEMA.id, domain=None, range=URIRef)
 
@@ -286,3 +302,5 @@ slots.animals = Slot(uri=LINKML_TUTORIAL_SCHEMA.animals, name="animals", curie=L
 
 slots.Person_id = Slot(uri=SCHEMA.identifier, name="Person_id", curie=SCHEMA.curie('identifier'),
                    model_uri=LINKML_TUTORIAL_SCHEMA.Person_id, domain=Person, range=Union[str, PersonId])
+=======
+>>>>>>> main

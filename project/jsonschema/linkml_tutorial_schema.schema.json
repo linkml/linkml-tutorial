@@ -1,5 +1,6 @@
 {
    "$defs": {
+<<<<<<< HEAD
       "Animal": {
          "additionalProperties": false,
          "description": "An organism in the biological kingdom Animalia",
@@ -136,12 +137,22 @@
          ],
          "title": "PersonStatus",
          "type": "string"
+=======
+      "Person": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "Person",
+         "type": "object"
+>>>>>>> main
       }
    },
    "$id": "https://w3id.org/linkml/linkml-tutorial-schema",
    "$schema": "http://json-schema.org/draft-07/schema#",
    "additionalProperties": true,
    "metamodel_version": "1.7.0",
+<<<<<<< HEAD
    "properties": {
       "animals": {
          "description": "A collection of animals",
@@ -151,6 +162,9 @@
          "type": "array"
       }
    },
+=======
+   "properties": {},
+>>>>>>> main
    "required": [],
    "title": "linkml-tutorial-schema",
    "type": "object",

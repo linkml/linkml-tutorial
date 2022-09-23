@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 type Animal
   {
     id: String!
@@ -37,5 +38,9 @@ type Person
 type PersonCollection
   {
     entries: [Person]
+=======
+type Person
+  {
+>>>>>>> main
   }
 

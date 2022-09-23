@@ -5,6 +5,7 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<<<<<<< HEAD
 schema:Thing a sh:NodeShape ;
     sh:closed true ;
     sh:description "The most generic type of entity that has a name" ;
@@ -127,4 +128,10 @@ linkml_tutorial_schema:Animal a sh:NodeShape ;
             sh:order 3 ;
             sh:path linkml_tutorial_schema:weight_in_mgs ] ;
     sh:targetClass linkml_tutorial_schema:Animal .
+=======
+linkml_tutorial_schema:Person a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass linkml_tutorial_schema:Person .
+>>>>>>> main
 

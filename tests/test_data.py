@@ -20,3 +20,4 @@ class TestData(unittest.TestCase):
         for path in EXAMPLE_FILES:
             obj = yaml_loader.load(path, target_class=PersonCollection)
             assert obj
+

@@ -6,9 +6,15 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+<<<<<<< HEAD
 @prefix schema: <http://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+=======
+>>>>>>> main
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+linkml:SlotDefinition a owl:Class ;
+    rdfs:label "slot_definition" .
 
 linkml:SubsetDefinition a owl:Class ;
     rdfs:label "subset_definition" .
@@ -18,6 +24,7 @@ linkml:TypeDefinition a owl:Class ;
 
 linkml:linkml-tutorial-schema a owl:Ontology ;
     rdfs:label "linkml-tutorial-schema" ;
+<<<<<<< HEAD
     IAO:0000700 linkml_tutorial_schema:AnimalCollection,
         linkml_tutorial_schema:NamedThing,
         linkml_tutorial_schema:PersonCollection ;
@@ -34,10 +41,22 @@ linkml_tutorial_schema:Breeds a owl:Class,
         linkml:EnumDefinition ;
     rdfs:label "Breeds" ;
     owl:unionOf [ rdf:rest () ] .
+=======
+    IAO:0000700 linkml_tutorial_schema:Person ;
+    dcterms:license "MIT" ;
+    dcterms:title "linkml-tutorial-schema" ;
+    rdfs:seeAlso "https://linkml.github.io/linkml-tutorial-schema" ;
+    linkml:generation_date "2022-09-23T08:46:14" ;
+    linkml:metamodel_version "1.7.0" ;
+    linkml:source_file "linkml_tutorial_schema.yaml" ;
+    linkml:source_file_date "2022-09-23T08:45:38" ;
+    linkml:source_file_size 635 .
+>>>>>>> main
 
 linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "value" .
 
+<<<<<<< HEAD
 linkml_tutorial_schema:AnimalCollection a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "AnimalCollection" ;
@@ -235,5 +254,13 @@ linkml_tutorial_schema:PersonStatus a owl:Class,
 
 linkml:SlotDefinition a owl:Class ;
     rdfs:label "slot_definition" .
+=======
+linkml:ClassDefinition a owl:Class ;
+    rdfs:label "class_definition" .
+
+linkml_tutorial_schema:Person a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Person" .
+>>>>>>> main
 
 

@@ -201,6 +201,7 @@
       "@type": "TypeDefinition"
     }
   ],
+<<<<<<< HEAD
   "enums": [
     {
       "name": "PersonStatus",
@@ -484,12 +485,17 @@
       "@type": "ClassDefinition"
     },
     {
+=======
+  "classes": [
+    {
+>>>>>>> main
       "name": "Person",
       "id_prefixes": [
         "orcid",
         "WIKIDATA"
       ],
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Person",
+<<<<<<< HEAD
       "description": "An individual human being",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
       "mappings": [
@@ -542,6 +548,9 @@
         "color",
         "weight_in_mgs"
       ],
+=======
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+>>>>>>> main
       "slot_usage": {},
       "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Animal",
       "unique_keys": [
@@ -587,6 +596,7 @@
         }
       ],
       "@type": "ClassDefinition"
+<<<<<<< HEAD
     },
     {
       "name": "PersonCollection",
@@ -612,13 +622,21 @@
       "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/AnimalCollection",
       "tree_root": true,
       "@type": "ClassDefinition"
+=======
+>>>>>>> main
     }
   ],
   "metamodel_version": "1.7.0",
   "source_file": "linkml_tutorial_schema.yaml",
+<<<<<<< HEAD
   "source_file_date": "2022-09-23T09:31:09",
   "source_file_size": 4272,
   "generation_date": "2022-09-23T09:31:19",
+=======
+  "source_file_date": "2022-09-23T08:45:38",
+  "source_file_size": 635,
+  "generation_date": "2022-09-23T08:46:11",
+>>>>>>> main
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/linkml_tutorial_schema.context.jsonld",
