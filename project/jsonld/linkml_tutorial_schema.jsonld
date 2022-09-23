@@ -418,7 +418,7 @@
       "domain_of": [
         "PersonCollection"
       ],
-      "range": "NamedThing",
+      "range": "Person",
       "inlined": true,
       "inlined_as_list": true,
       "@type": "SlotDefinition"
@@ -616,9 +616,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "linkml_tutorial_schema.yaml",
-  "source_file_date": "2022-09-23T08:37:03",
-  "source_file_size": 4276,
-  "generation_date": "2022-09-23T08:37:22",
+  "source_file_date": "2022-09-23T09:31:09",
+  "source_file_size": 4272,
+  "generation_date": "2022-09-23T09:31:19",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/linkml_tutorial_schema.context.jsonld",

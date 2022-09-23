@@ -1,8 +1,17 @@
-id: P:001
-name: fred bloggs
-primary_email: fred.blogs@example.com
-age_in_years: 33
-vital_status: ALIVE
-pets:
-  - animal:001
-  - animal:002
+entries:
+  - id: P:001
+    name: fred bloggs
+    primary_email: fred.bloggs@example.com
+    age_in_years: 33
+    vital_status: ALIVE
+    pets:
+     - animal:001
+     - animal:002
+  - id: P:002
+    name: louis bloggs
+    primary_email: louis.bloggs@example.com
+    age_in_years: 34
+    vital_status: ALIVE
+    pets:
+     - animal:001
+     - animal:002

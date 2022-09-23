@@ -158,7 +158,7 @@ slots:
   entries:
     description: A collection of things
     multivalued: true
-    range: NamedThing
+    range: Person
     inlined_as_list: true
 
   animals:
