@@ -200,16 +200,10 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="class-person">Class: Person</h1>
-<p><em>Represents a Person:</em></p>
 <p>URI: <a href="https://w3id.org/linkml/linkml-tutorial-schema/Person">linkml_tutorial_schema:Person</a></p>
 <div class="mermaid"> classDiagram
     class Person
-      Person : age_in_years
-      Person : birth_date
       Person : id
-      Person : name
-      Person : primary_email
-      Person : vital_status
 
 </div>
 <!-- no inheritance hierarchy -->
@@ -226,54 +220,11 @@
 <tr>
 <td><a href="../id/">id</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
-<td>A unique identifier for a thing</td>
-</tr>
-<tr>
-<td><a href="../name/">name</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
-<td>A human-readable name for a thing</td>
-</tr>
-<tr>
-<td><a href="../primary_email/">primary_email</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
-<td>The main email address of a person</td>
-</tr>
-<tr>
-<td><a href="../birth_date/">birth_date</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
-<td>Date on which a person is born</td>
-</tr>
-<tr>
-<td><a href="../age_in_years/">age_in_years</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
-<td>Number of years since birth</td>
-</tr>
-<tr>
-<td><a href="../vital_status/">vital_status</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
-<td>living or dead status</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 <h2 id="usages">Usages</h2>
-<table>
-<thead>
-<tr>
-<th>used by</th>
-<th>used in</th>
-<th>type</th>
-<th>used</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../PersonCollection/">PersonCollection</a></td>
-<td><a href="../entries/">entries</a></td>
-<td>range</td>
-<td>Person</td>
-</tr>
-</tbody>
-</table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -303,82 +254,24 @@
 <h3 id="direct">Direct</h3>
 <details>
 <pre><code class="language-yaml">name: Person
-description: 'Represents a Person:'
 from_schema: https://w3id.org/linkml/linkml-tutorial-schema
 rank: 1000
 slots:
 - id
-- name
-- primary_email
-- birth_date
-- age_in_years
-- vital_status
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
 <pre><code class="language-yaml">name: Person
-description: 'Represents a Person:'
 from_schema: https://w3id.org/linkml/linkml-tutorial-schema
 rank: 1000
 attributes:
   id:
     name: id
-    description: A unique identifier for a thing
     from_schema: https://w3id.org/linkml/linkml-tutorial-schema
     rank: 1000
     alias: id
-    owner: Person
-    domain_of:
-    - Person
-    range: string
-  name:
-    name: name
-    description: A human-readable name for a thing
-    from_schema: https://w3id.org/linkml/linkml-tutorial-schema
-    rank: 1000
-    alias: name
-    owner: Person
-    domain_of:
-    - Person
-    range: string
-  primary_email:
-    name: primary_email
-    description: The main email address of a person
-    from_schema: https://w3id.org/linkml/linkml-tutorial-schema
-    rank: 1000
-    alias: primary_email
-    owner: Person
-    domain_of:
-    - Person
-    range: string
-  birth_date:
-    name: birth_date
-    description: Date on which a person is born
-    from_schema: https://w3id.org/linkml/linkml-tutorial-schema
-    rank: 1000
-    alias: birth_date
-    owner: Person
-    domain_of:
-    - Person
-    range: string
-  age_in_years:
-    name: age_in_years
-    description: Number of years since birth
-    from_schema: https://w3id.org/linkml/linkml-tutorial-schema
-    rank: 1000
-    alias: age_in_years
-    owner: Person
-    domain_of:
-    - Person
-    range: string
-  vital_status:
-    name: vital_status
-    description: living or dead status
-    from_schema: https://w3id.org/linkml/linkml-tutorial-schema
-    rank: 1000
-    alias: vital_status
     owner: Person
     domain_of:
     - Person
