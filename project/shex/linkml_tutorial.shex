@@ -35,7 +35,7 @@ linkml:Objectidentifier IRI
 linkml:Nodeidentifier NONLITERAL
 
 <Person> CLOSED {
-    (  $<Person_tes> rdf:type . * ;
+    (  $<Person_tes> <id> @linkml:String ? ;
        rdf:type [ <Person> ] ?
     )
 }

@@ -18,22 +18,6 @@
     {
       "prefix_prefix": "linkml",
       "prefix_reference": "https://w3id.org/linkml/"
-    },
-    {
-      "prefix_prefix": "biolink",
-      "prefix_reference": "https://w3id.org/biolink/"
-    },
-    {
-      "prefix_prefix": "schema",
-      "prefix_reference": "http://schema.org/"
-    },
-    {
-      "prefix_prefix": "PATO",
-      "prefix_reference": "http://purl.obolibrary.org/obo/PATO_"
-    },
-    {
-      "prefix_prefix": "example",
-      "prefix_reference": "https://example.org/"
     }
   ],
   "default_prefix": "linkml_tutorial",
@@ -209,11 +193,28 @@
       "@type": "TypeDefinition"
     }
   ],
+  "slots": [
+    {
+      "name": "id",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial/id",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial/id",
+      "owner": "Person",
+      "domain_of": [
+        "Person"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    }
+  ],
   "classes": [
     {
       "name": "Person",
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial/Person",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial",
+      "slots": [
+        "id"
+      ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/linkml/linkml-tutorial/Person",
       "@type": "ClassDefinition"
@@ -221,9 +222,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "linkml_tutorial.yaml",
-  "source_file_date": "2022-09-23T08:45:38",
-  "source_file_size": 635,
-  "generation_date": "2022-09-23T08:46:11",
+  "source_file_date": "2022-09-23T16:29:26",
+  "source_file_size": 473,
+  "generation_date": "2022-09-23T16:33:27",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/linkml_tutorial.context.jsonld",

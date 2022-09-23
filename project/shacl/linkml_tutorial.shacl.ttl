@@ -6,5 +6,8 @@
 linkml_tutorial:Person a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path linkml_tutorial:id ] ;
     sh:targetClass linkml_tutorial:Person .
 

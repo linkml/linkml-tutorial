@@ -3,7 +3,11 @@
       "Person": {
          "additionalProperties": false,
          "description": "",
-         "properties": {},
+         "properties": {
+            "id": {
+               "type": "string"
+            }
+         },
          "required": [],
          "title": "Person",
          "type": "object"

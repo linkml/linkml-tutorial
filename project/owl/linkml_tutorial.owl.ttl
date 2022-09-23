@@ -6,9 +6,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-linkml:SlotDefinition a owl:Class ;
-    rdfs:label "slot_definition" .
-
 linkml:SubsetDefinition a owl:Class ;
     rdfs:label "subset_definition" .
 
@@ -21,11 +18,11 @@ linkml:linkml-tutorial a owl:Ontology ;
     dcterms:license "MIT" ;
     dcterms:title "linkml-tutorial" ;
     rdfs:seeAlso "https://linkml.github.io/linkml-tutorial" ;
-    linkml:generation_date "2022-09-23T08:46:14" ;
+    linkml:generation_date "2022-09-23T16:33:30" ;
     linkml:metamodel_version "1.7.0" ;
     linkml:source_file "linkml_tutorial.yaml" ;
-    linkml:source_file_date "2022-09-23T08:45:38" ;
-    linkml:source_file_size 635 .
+    linkml:source_file_date "2022-09-23T16:29:26" ;
+    linkml:source_file_size 473 .
 
 linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "value" .
@@ -33,8 +30,20 @@ linkml:topValue a owl:DatatypeProperty ;
 linkml:ClassDefinition a owl:Class ;
     rdfs:label "class_definition" .
 
+linkml:SlotDefinition a owl:Class ;
+    rdfs:label "slot_definition" .
+
 linkml_tutorial:Person a owl:Class,
         linkml:ClassDefinition ;
-    rdfs:label "Person" .
+    rdfs:label "Person" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty linkml_tutorial:id ] .
+
+linkml_tutorial:id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "id" ;
+    rdfs:range linkml:String .
 
 
