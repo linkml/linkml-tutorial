@@ -12,30 +12,30 @@ you could refer to the `step_5_validation` branch.
 For reference, the available sections are:
 
 ### Section 1: Setting up a LinkML project from scratch 
-- [step_0_basic_project_creation](https://github.com/linkml/linkml-tutorial-schema/tree/step_0_basic_project_creation)
+- [step_0_basic_project_creation](https://github.com/linkml/linkml-tutorial/tree/step_0_basic_project_creation)
 
 ### Section 2: Developing a model, validating the model with test data
 
-- [step_1_model_components](https://github.com/linkml/linkml-tutorial-schema/tree/step_1_model_components)
-- [step_2_classes_and_slots](https://github.com/linkml/linkml-tutorial-schema/tree/step_2_classes_and_slots)
-- [step_3_hierarchies](https://github.com/linkml/linkml-tutorial-schema/tree/step_3_hierarchies)
-- [step_4_mappings_and_uris](https://github.com/linkml/linkml-tutorial-schema/tree/step_4_mappings_and_uris)
-- [step_5_validation](https://github.com/linkml/linkml-tutorial-schema/tree/step_5_validation)
-- [step_6_enumerations](https://github.com/linkml/linkml-tutorial-schema/tree/step_6_enumerations)
+- [step_1_model_components](https://github.com/linkml/linkml-tutorial/tree/step_1_model_components)
+- [step_2_classes_and_slots](https://github.com/linkml/linkml-tutorial/tree/step_2_classes_and_slots)
+- [step_3_hierarchies](https://github.com/linkml/linkml-tutorial/tree/step_3_hierarchies)
+- [step_4_mappings_and_uris](https://github.com/linkml/linkml-tutorial/tree/step_4_mappings_and_uris)
+- [step_5_validation](https://github.com/linkml/linkml-tutorial/tree/step_5_validation)
+- [step_6_enumerations](https://github.com/linkml/linkml-tutorial/tree/step_6_enumerations)
 
 ### Section 3: Checking the model for best practices (linting)
-- [step_7_linting](https://github.com/linkml/linkml-tutorial-schema/tree/step_7_linting)
+- [step_7_linting](https://github.com/linkml/linkml-tutorial/tree/step_7_linting)
 
 ### Section 4: Generating model documentation
-- [step_8_documentation](https://github.com/linkml/linkml-tutorial-schema/tree/step_8_documentation)
+- [step_8_documentation](https://github.com/linkml/linkml-tutorial/tree/step_8_documentation)
 
 ### Section 5: Schemasheets
-- [step_9_schemasheets](https://github.com/linkml/linkml-tutorial-schema/tree/step_9_schemasheets)
+- [step_9_schemasheets](https://github.com/linkml/linkml-tutorial/tree/step_9_schemasheets)
 
 
 ## Website
 
-* [https://linkml.github.io/linkml-tutorial-schema](https://linkml.github.io/linkml-tutorial-schema)
+* [https://linkml.github.io/linkml-tutorial-schema](https://linkml.github.io/linkml-tutorial)
 
 ## Repository Structure
 
