@@ -205,6 +205,7 @@
     {
       "name": "PersonStatus",
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/PersonStatus",
+      "description": "The vital status of a person",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
       "permissible_values": [
         {
@@ -226,6 +227,7 @@
     {
       "name": "Breeds",
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Breeds",
+      "description": "Any breed from the VBO",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
       "reachable_from": {
         "source_ontology": "bioregistry:pato",
@@ -488,6 +490,7 @@
         "WIKIDATA"
       ],
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Person",
+      "description": "An individual human being",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
       "mappings": [
         "schema:Person"
@@ -516,6 +519,7 @@
     {
       "name": "Animal",
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Animal",
+      "description": "An organism in the biological kingdom Animalia",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
       "aliases": [
         "pet"
@@ -599,6 +603,7 @@
     {
       "name": "AnimalCollection",
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/AnimalCollection",
+      "description": "A collection of Animals",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
       "slots": [
         "animals"
@@ -611,9 +616,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "linkml_tutorial_schema.yaml",
-  "source_file_date": "2022-09-22T14:51:30",
-  "source_file_size": 4042,
-  "generation_date": "2022-09-22T14:51:59",
+  "source_file_date": "2022-09-23T08:37:03",
+  "source_file_size": 4276,
+  "generation_date": "2022-09-23T08:37:22",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/linkml_tutorial_schema.context.jsonld",

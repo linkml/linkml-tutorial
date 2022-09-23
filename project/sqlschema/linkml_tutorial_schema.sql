@@ -28,7 +28,7 @@ CREATE TABLE "Person" (
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE "Person_Collection" (
+CREATE TABLE "PersonCollection" (
 	entries TEXT, 
 	PRIMARY KEY (entries)
 );

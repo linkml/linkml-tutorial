@@ -1,5 +1,5 @@
 # Auto generated from linkml_tutorial_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-09-22T14:52:07
+# Generation date: 2022-09-23T08:37:30
 # Schema: linkml-tutorial-schema
 #
 # id: https://w3id.org/linkml/linkml-tutorial-schema
@@ -97,6 +97,9 @@ class NamedThing(YAMLRoot):
 
 @dataclass
 class Person(NamedThing):
+    """
+    An individual human being
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = SCHEMA.Person
@@ -132,6 +135,9 @@ class Person(NamedThing):
 
 @dataclass
 class Animal(NamedThing):
+    """
+    An organism in the biological kingdom Animalia
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.Animal
@@ -175,7 +181,7 @@ class PersonCollection(YAMLRoot):
 
     class_class_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.PersonCollection
     class_class_curie: ClassVar[str] = "linkml_tutorial_schema:PersonCollection"
-    class_name: ClassVar[str] = "Person_Collection"
+    class_name: ClassVar[str] = "PersonCollection"
     class_model_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.PersonCollection
 
     entries: Optional[Union[Dict[Union[str, NamedThingId], Union[dict, NamedThing]], List[Union[dict, NamedThing]]]] = empty_dict()
@@ -188,6 +194,9 @@ class PersonCollection(YAMLRoot):
 
 @dataclass
 class AnimalCollection(YAMLRoot):
+    """
+    A collection of Animals
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.AnimalCollection
@@ -205,7 +214,9 @@ class AnimalCollection(YAMLRoot):
 
 # Enumerations
 class PersonStatus(EnumDefinitionImpl):
-
+    """
+    The vital status of a person
+    """
     ALIVE = PermissibleValue(text="ALIVE",
                                  description="the person is living",
                                  meaning=PATO["0001421"])
@@ -217,12 +228,16 @@ class PersonStatus(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="PersonStatus",
+        description="The vital status of a person",
     )
 
 class Breeds(EnumDefinitionImpl):
-
+    """
+    Any breed from the VBO
+    """
     _defn = EnumDefinition(
         name="Breeds",
+        description="Any breed from the VBO",
     )
 
 # Slots
