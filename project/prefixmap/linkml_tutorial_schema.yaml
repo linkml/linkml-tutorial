@@ -1,8 +1,4 @@
 {
-   "PATO": "http://purl.obolibrary.org/obo/PATO_",
-   "biolink": "https://w3id.org/biolink/",
-   "example": "https://example.org/",
    "linkml": "https://w3id.org/linkml/",
-   "linkml_tutorial_schema": "https://w3id.org/linkml/linkml-tutorial-schema/",
-   "schema": "http://schema.org/"
+   "linkml_tutorial_schema": "https://w3id.org/linkml/linkml-tutorial-schema/"
 }

@@ -4,7 +4,6 @@
 @prefix linkml_tutorial_schema: <https://w3id.org/linkml/linkml-tutorial-schema/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 linkml:SubsetDefinition a owl:Class ;
@@ -15,91 +14,24 @@ linkml:TypeDefinition a owl:Class ;
 
 linkml:linkml-tutorial-schema a owl:Ontology ;
     rdfs:label "linkml-tutorial-schema" ;
-    IAO:0000700 linkml_tutorial_schema:NamedThing,
-        linkml_tutorial_schema:PersonCollection ;
+    IAO:0000700 linkml_tutorial_schema:Person ;
     dcterms:license "MIT" ;
     dcterms:title "linkml-tutorial-schema" ;
     rdfs:seeAlso "https://linkml.github.io/linkml-tutorial-schema" ;
-    linkml:generation_date "2022-09-16T11:34:48" ;
+    linkml:generation_date "2022-09-23T09:36:22" ;
     linkml:metamodel_version "1.7.0" ;
     linkml:source_file "linkml_tutorial_schema.yaml" ;
-    linkml:source_file_date "2022-09-16T11:23:58" ;
-    linkml:source_file_size 1572 .
+    linkml:source_file_date "2022-09-23T09:35:35" ;
+    linkml:source_file_size 521 .
 
 linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "value" .
 
-linkml_tutorial_schema:PersonCollection a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "PersonCollection" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom linkml_tutorial_schema:Person ;
-            owl:onProperty linkml_tutorial_schema:entries ] ;
-    skos:definition "A holder for Person objects" .
+linkml:ClassDefinition a owl:Class ;
+    rdfs:label "class_definition" .
 
-linkml_tutorial_schema:age_in_years a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "age_in_years" ;
-    rdfs:range linkml:String ;
-    skos:definition "Number of years since birth" .
-
-linkml_tutorial_schema:birth_date a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "birth_date" ;
-    rdfs:range linkml:String ;
-    skos:definition "Date on which a person is born" .
-
-linkml_tutorial_schema:description a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "description" ;
-    rdfs:range linkml:String ;
-    skos:definition "A human-readable description for a thing" .
-
-linkml_tutorial_schema:entries a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "entries" ;
-    rdfs:range linkml_tutorial_schema:Person .
-
-linkml_tutorial_schema:id a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "id" ;
-    rdfs:range linkml:String ;
-    skos:definition "A unique identifier for a thing" .
-
-linkml_tutorial_schema:name a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "name" ;
-    rdfs:range linkml:String ;
-    skos:definition "A human-readable name for a thing" .
-
-linkml_tutorial_schema:primary_email a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "primary_email" ;
-    rdfs:range linkml:String ;
-    skos:definition "The main email address of a person" .
-
-linkml_tutorial_schema:vital_status a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "vital_status" ;
-    rdfs:range linkml:String ;
-    skos:definition "living or dead status" .
-
-linkml_tutorial_schema:NamedThing a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "NamedThing" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty linkml_tutorial_schema:description ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty linkml_tutorial_schema:id ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty linkml_tutorial_schema:name ] ;
-    skos:definition "A generic grouping for any identifiable entity" .
+linkml:SlotDefinition a owl:Class ;
+    rdfs:label "slot_definition" .
 
 linkml_tutorial_schema:Person a owl:Class,
         linkml:ClassDefinition ;
@@ -107,26 +39,11 @@ linkml_tutorial_schema:Person a owl:Class,
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty linkml_tutorial_schema:vital_status ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty linkml_tutorial_schema:birth_date ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty linkml_tutorial_schema:primary_email ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty linkml_tutorial_schema:age_in_years ],
-        linkml_tutorial_schema:NamedThing ;
-    skos:definition "Represents a Person:" .
+            owl:onProperty linkml_tutorial_schema:id ] .
 
-linkml:ClassDefinition a owl:Class ;
-    rdfs:label "class_definition" .
-
-linkml:SlotDefinition a owl:Class ;
-    rdfs:label "slot_definition" .
+linkml_tutorial_schema:id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "id" ;
+    rdfs:range linkml:String .
 
 

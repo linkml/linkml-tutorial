@@ -1,76 +1,15 @@
 {
    "$defs": {
-      "NamedThing": {
-         "additionalProperties": false,
-         "description": "A generic grouping for any identifiable entity",
-         "properties": {
-            "description": {
-               "description": "A human-readable description for a thing",
-               "type": "string"
-            },
-            "id": {
-               "description": "A unique identifier for a thing",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for a thing",
-               "type": "string"
-            }
-         },
-         "required": [],
-         "title": "NamedThing",
-         "type": "object"
-      },
       "Person": {
          "additionalProperties": false,
-         "description": "Represents a Person:",
+         "description": "",
          "properties": {
-            "age_in_years": {
-               "description": "Number of years since birth",
-               "type": "string"
-            },
-            "birth_date": {
-               "description": "Date on which a person is born",
-               "type": "string"
-            },
-            "description": {
-               "description": "A human-readable description for a thing",
-               "type": "string"
-            },
             "id": {
-               "description": "A unique identifier for a thing",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for a thing",
-               "type": "string"
-            },
-            "primary_email": {
-               "description": "The main email address of a person",
-               "type": "string"
-            },
-            "vital_status": {
-               "description": "living or dead status",
                "type": "string"
             }
          },
          "required": [],
          "title": "Person",
-         "type": "object"
-      },
-      "PersonCollection": {
-         "additionalProperties": false,
-         "description": "A holder for Person objects",
-         "properties": {
-            "entries": {
-               "items": {
-                  "$ref": "#/$defs/Person"
-               },
-               "type": "array"
-            }
-         },
-         "required": [],
-         "title": "PersonCollection",
          "type": "object"
       }
    },
@@ -78,14 +17,7 @@
    "$schema": "http://json-schema.org/draft-07/schema#",
    "additionalProperties": true,
    "metamodel_version": "1.7.0",
-   "properties": {
-      "entries": {
-         "items": {
-            "$ref": "#/$defs/Person"
-         },
-         "type": "array"
-      }
-   },
+   "properties": {},
    "required": [],
    "title": "linkml-tutorial-schema",
    "type": "object",

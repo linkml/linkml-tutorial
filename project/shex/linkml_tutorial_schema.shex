@@ -34,32 +34,9 @@ linkml:Objectidentifier IRI
 
 linkml:Nodeidentifier NONLITERAL
 
-<NamedThing>  (
-    CLOSED {
-       (  $<NamedThing_tes> (  <id> @linkml:String ? ;
-             <name> @linkml:String ? ;
-             <description> @linkml:String ?
-          ) ;
-          rdf:type [ <NamedThing> ] ?
-       )
-    } OR @<Person>
-)
-
 <Person> CLOSED {
-    (  $<Person_tes> (  &<NamedThing_tes> ;
-          rdf:type [ <NamedThing> ] ? ;
-          <primary_email> @linkml:String ? ;
-          <birth_date> @linkml:String ? ;
-          <age_in_years> @linkml:String ? ;
-          <vital_status> @linkml:String ?
-       ) ;
+    (  $<Person_tes> <id> @linkml:String ? ;
        rdf:type [ <Person> ] ?
-    )
-}
-
-<PersonCollection> CLOSED {
-    (  $<PersonCollection_tes> <entries> @<Person> * ;
-       rdf:type [ <PersonCollection> ] ?
     )
 }
 

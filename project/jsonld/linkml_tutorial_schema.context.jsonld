@@ -1,18 +1,8 @@
 {
-   "_comments": "Auto generated from linkml_tutorial_schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-09-16T11:34:43\n    Schema: linkml-tutorial-schema\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://w3id.org/linkml/linkml-tutorial-schema\n    description: A repostitory that walks through schema generation.\n    license: MIT\n    ",
+   "_comments": "Auto generated from linkml_tutorial_schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-09-23T09:36:18\n    Schema: linkml-tutorial-schema\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://w3id.org/linkml/linkml-tutorial-schema\n    description: A repostitory that walks through schema generation.\n    license: MIT\n    ",
    "@context": {
-      "PATO": {
-         "@id": "http://purl.obolibrary.org/obo/PATO_",
-         "@prefix": true
-      },
-      "biolink": "https://w3id.org/biolink/",
-      "example": "https://example.org/",
       "linkml": "https://w3id.org/linkml/",
       "linkml_tutorial_schema": "https://w3id.org/linkml/linkml-tutorial-schema/",
-      "schema": "http://schema.org/",
-      "@vocab": "https://w3id.org/linkml/linkml-tutorial-schema/",
-      "entries": {
-         "@type": "@id"
-      }
+      "@vocab": "https://w3id.org/linkml/linkml-tutorial-schema/"
    }
 }
