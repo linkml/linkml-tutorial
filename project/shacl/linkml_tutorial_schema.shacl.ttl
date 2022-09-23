@@ -5,44 +5,28 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-schema:Person a sh:NodeShape ;
+schema:Thing a sh:NodeShape ;
     sh:closed true ;
-    sh:description "An individual human being" ;
+    sh:description "The most generic type of entity that has a name" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:description "this is a unique identifier for a person." ;
+    sh:property [ sh:description "Number of years since birth" ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path linkml_tutorial_schema:age_in_years ],
+        [ sh:description "A unique identifier for a person" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:order 3 ;
+            sh:order 0 ;
             sh:path schema:identifier ],
-        [ sh:class linkml_tutorial_schema:Animal ;
-            sh:description "a collection of animals that lives with and is taken care of by a person." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path linkml_tutorial_schema:pets ],
-        [ sh:description "Number of years since birth" ;
-            sh:maxCount 1 ;
-            sh:order 6 ;
-            sh:path linkml_tutorial_schema:age_in_years ],
-        [ sh:description "A human-readable name for a person" ;
-            sh:maxCount 1 ;
-            sh:order 4 ;
-            sh:path schema:name ],
         [ sh:description "Date on which a person is born" ;
             sh:maxCount 1 ;
-            sh:order 5 ;
+            sh:order 2 ;
             sh:path schema:birthDate ],
-        [ sh:description "living or dead status" ;
-            sh:in ( PATO:0001421 PATO:0001422 "UNKNOWN" ) ;
+        [ sh:description "A human-readable name for a person" ;
             sh:maxCount 1 ;
-            sh:minCount 1 ;
             sh:order 1 ;
-            sh:path linkml_tutorial_schema:vital_status ],
-        [ sh:description "The main email address of a person" ;
-            sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path schema:email ;
-            sh:pattern "^\\S+@[\\S+\\.]+\\S+" ] ;
-    sh:targetClass schema:Person .
+            sh:path schema:name ] ;
+    sh:targetClass schema:Thing .
 
 linkml_tutorial_schema:AnimalCollection a sh:NodeShape ;
     sh:closed true ;
@@ -59,48 +43,77 @@ linkml_tutorial_schema:PersonCollection a sh:NodeShape ;
     sh:closed true ;
     sh:description "A collection of things" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class schema:Thing ;
+    sh:property [ sh:class schema:Person ;
             sh:description "A collection of things" ;
             sh:nodeKind sh:IRI ;
             sh:order 0 ;
             sh:path linkml_tutorial_schema:entries ] ;
     sh:targetClass linkml_tutorial_schema:PersonCollection .
 
-schema:Thing a sh:NodeShape ;
+schema:Person a sh:NodeShape ;
     sh:closed true ;
-    sh:description "The most generic type of entity that has a name" ;
+    sh:description "An individual human being" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:description "Number of years since birth" ;
+    sh:property [ sh:description "this is a unique identifier for a person." ;
             sh:maxCount 1 ;
+            sh:minCount 1 ;
             sh:order 3 ;
+            sh:path schema:identifier ],
+        [ sh:description "The main email address of a person" ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path schema:email ;
+            sh:pattern "^\\S+@[\\S+\\.]+\\S+" ],
+        [ sh:description "living or dead status" ;
+            sh:in ( PATO:0001421 PATO:0001422 "UNKNOWN" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path linkml_tutorial_schema:vital_status ],
+        [ sh:description "Date on which a person is born" ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path schema:birthDate ],
+        [ sh:description "Number of years since birth" ;
+            sh:maxCount 1 ;
+            sh:order 6 ;
             sh:path linkml_tutorial_schema:age_in_years ],
         [ sh:description "A human-readable name for a person" ;
             sh:maxCount 1 ;
-            sh:order 1 ;
+            sh:order 4 ;
             sh:path schema:name ],
-        [ sh:description "A unique identifier for a person" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 0 ;
-            sh:path schema:identifier ],
-        [ sh:description "Date on which a person is born" ;
-            sh:maxCount 1 ;
+        [ sh:class linkml_tutorial_schema:Animal ;
+            sh:description "a collection of animals that lives with and is taken care of by a person." ;
+            sh:nodeKind sh:IRI ;
             sh:order 2 ;
-            sh:path schema:birthDate ] ;
-    sh:targetClass schema:Thing .
+            sh:path linkml_tutorial_schema:pets ] ;
+    sh:targetClass schema:Person .
 
 linkml_tutorial_schema:Animal a sh:NodeShape ;
     sh:closed true ;
     sh:description "An organism in the biological kingdom Animalia" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:description "The weight of an animal in milligrams" ;
+    sh:property [ sh:description "Number of years since birth" ;
             sh:maxCount 1 ;
-            sh:order 3 ;
-            sh:path linkml_tutorial_schema:weight_in_mgs ],
+            sh:order 7 ;
+            sh:path linkml_tutorial_schema:age_in_years ],
         [ sh:description "The breed of an animal" ;
             sh:maxCount 1 ;
             sh:order 1 ;
             sh:path linkml_tutorial_schema:breed ],
+        [ sh:description "The weight of an animal in milligrams" ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path linkml_tutorial_schema:weight_in_mgs ],
+        [ sh:description "A unique identifier for a person" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 4 ;
+            sh:path schema:identifier ],
+        [ sh:description "The color of an animal" ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path linkml_tutorial_schema:color ],
         [ sh:description "A human-readable name for a person" ;
             sh:maxCount 1 ;
             sh:order 5 ;
@@ -109,19 +122,6 @@ linkml_tutorial_schema:Animal a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:order 0 ;
             sh:path linkml_tutorial_schema:species ],
-        [ sh:description "The color of an animal" ;
-            sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path linkml_tutorial_schema:color ],
-        [ sh:description "Number of years since birth" ;
-            sh:maxCount 1 ;
-            sh:order 7 ;
-            sh:path linkml_tutorial_schema:age_in_years ],
-        [ sh:description "A unique identifier for a person" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 4 ;
-            sh:path schema:identifier ],
         [ sh:description "Date on which a person is born" ;
             sh:maxCount 1 ;
             sh:order 6 ;

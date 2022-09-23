@@ -24,42 +24,16 @@ linkml:linkml-tutorial-schema a owl:Ontology ;
     dcterms:license "MIT" ;
     dcterms:title "linkml-tutorial-schema" ;
     rdfs:seeAlso "https://linkml.github.io/linkml-tutorial-schema" ;
-    linkml:generation_date "2022-09-23T08:36:23" ;
+    linkml:generation_date "2022-09-23T09:21:36" ;
     linkml:metamodel_version "1.7.0" ;
     linkml:source_file "linkml_tutorial_schema.yaml" ;
-    linkml:source_file_date "2022-09-23T08:36:12" ;
-    linkml:source_file_size 4276 .
+    linkml:source_file_date "2022-09-23T09:21:23" ;
+    linkml:source_file_size 4272 .
 
 linkml_tutorial_schema:Breeds a owl:Class,
         linkml:EnumDefinition ;
     rdfs:label "Breeds" ;
     owl:unionOf [ rdf:rest () ] .
-
-linkml_tutorial_schema:Person a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "Person" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty schema:email ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml_tutorial_schema:Animal ;
-            owl:onProperty linkml_tutorial_schema:pets ],
-        [ a owl:Restriction ;
-            owl:onClass linkml_tutorial_schema:PersonStatus ;
-            owl:onProperty linkml_tutorial_schema:vital_status ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty schema:identifier ;
-            owl:qualifiedCardinality 1 ],
-        linkml_tutorial_schema:NamedThing ;
-    skos:definition "An individual human being" ;
-    skos:exactMatch <http://example.org/UNKNOWN/WIKIDATA/Q215627>,
-        <http://example.org/UNKNOWN/WIKIDATA/Q5>,
-        <http://example.org/UNKNOWN/biolink/Person>,
-        <http://example.org/UNKNOWN/foaf/Person>,
-        schema:Person .
 
 linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "value" .
@@ -76,7 +50,7 @@ linkml_tutorial_schema:PersonCollection a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "PersonCollection" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom linkml_tutorial_schema:NamedThing ;
+            owl:allValuesFrom linkml_tutorial_schema:Person ;
             owl:onProperty linkml_tutorial_schema:entries ] ;
     skos:definition "A collection of things" .
 
@@ -107,7 +81,7 @@ linkml_tutorial_schema:color a owl:ObjectProperty,
 linkml_tutorial_schema:entries a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "entries" ;
-    rdfs:range linkml_tutorial_schema:NamedThing ;
+    rdfs:range linkml_tutorial_schema:Person ;
     skos:definition "A collection of things" .
 
 linkml_tutorial_schema:pets a owl:ObjectProperty,
@@ -163,6 +137,32 @@ schema:name a owl:ObjectProperty,
     skos:definition "A human-readable name for a person" ;
     skos:exactMatch schema:name .
 
+linkml_tutorial_schema:Person a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Person" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom linkml_tutorial_schema:Animal ;
+            owl:onProperty linkml_tutorial_schema:pets ],
+        [ a owl:Restriction ;
+            owl:onClass linkml_tutorial_schema:PersonStatus ;
+            owl:onProperty linkml_tutorial_schema:vital_status ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty schema:identifier ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty schema:email ],
+        linkml_tutorial_schema:NamedThing ;
+    skos:definition "An individual human being" ;
+    skos:exactMatch <http://example.org/UNKNOWN/WIKIDATA/Q215627>,
+        <http://example.org/UNKNOWN/WIKIDATA/Q5>,
+        <http://example.org/UNKNOWN/biolink/Person>,
+        <http://example.org/UNKNOWN/foaf/Person>,
+        schema:Person .
+
 <https://w3id.org/linkml/linkml-tutorial-schema/PersonStatus#UNKNOWN> a owl:Class,
         linkml_tutorial_schema:PersonStatus ;
     rdfs:label "UNKNOWN" .
@@ -174,39 +174,14 @@ schema:identifier a owl:ObjectProperty,
     skos:definition "A unique identifier for a person" ;
     skos:exactMatch schema:identifier .
 
-linkml_tutorial_schema:Animal a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "Animal" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty linkml_tutorial_schema:color ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty linkml_tutorial_schema:weight_in_mgs ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty linkml_tutorial_schema:species ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty linkml_tutorial_schema:breed ],
-        linkml_tutorial_schema:NamedThing ;
-    skos:altLabel "pet" ;
-    skos:definition "An organism in the biological kingdom Animalia" ;
-    skos:exactMatch <http://example.org/UNKNOWN/NCIT/C14182>,
-        <http://example.org/UNKNOWN/WIKIDATA/Q729> ;
-    skos:narrowMatch <http://example.org/UNKNOWN/FOODON/00003004> .
-
-linkml:ClassDefinition a owl:Class ;
-    rdfs:label "class_definition" .
-
 linkml_tutorial_schema:NamedThing a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "NamedThing" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Date ;
+            owl:onProperty schema:birthDate ],
+        [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty schema:identifier ;
             owl:qualifiedCardinality 1 ],
@@ -216,14 +191,39 @@ linkml_tutorial_schema:NamedThing a owl:Class,
             owl:onProperty linkml_tutorial_schema:age_in_years ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Date ;
-            owl:onProperty schema:birthDate ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty schema:name ] ;
     skos:definition "The most generic type of entity that has a name" ;
     skos:exactMatch schema:Thing .
+
+linkml_tutorial_schema:Animal a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Animal" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty linkml_tutorial_schema:breed ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty linkml_tutorial_schema:color ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty linkml_tutorial_schema:species ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty linkml_tutorial_schema:weight_in_mgs ],
+        linkml_tutorial_schema:NamedThing ;
+    skos:altLabel "pet" ;
+    skos:definition "An organism in the biological kingdom Animalia" ;
+    skos:exactMatch <http://example.org/UNKNOWN/NCIT/C14182>,
+        <http://example.org/UNKNOWN/WIKIDATA/Q729> ;
+    skos:narrowMatch <http://example.org/UNKNOWN/FOODON/00003004> .
+
+linkml:ClassDefinition a owl:Class ;
+    rdfs:label "class_definition" .
 
 linkml_tutorial_schema:PersonStatus a owl:Class,
         linkml:EnumDefinition ;
