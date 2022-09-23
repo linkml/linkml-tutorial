@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from linkml_tutorial_schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-09-21T13:42:38\n    Schema: linkml-tutorial-schema\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://w3id.org/linkml/linkml-tutorial-schema\n    description: A repostitory that walks through schema generation.\n    license: MIT\n    ",
+   "_comments": "Auto generated from linkml_tutorial_schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-09-23T09:47:23\n    Schema: linkml-tutorial-schema\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://w3id.org/linkml/linkml-tutorial-schema\n    description: A repostitory that walks through schema generation.\n    license: MIT\n    ",
    "@context": {
       "PATO": {
          "@id": "http://purl.obolibrary.org/obo/PATO_",
@@ -18,6 +18,9 @@
          "@type": "xsd:date"
       },
       "entries": {
+         "@type": "@id"
+      },
+      "household_members": {
          "@type": "@id"
       },
       "id": "@id",

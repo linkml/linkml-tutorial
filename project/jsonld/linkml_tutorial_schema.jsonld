@@ -213,7 +213,7 @@
     {
       "name": "id",
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/id",
-      "description": "A unique identifier for a person",
+      "description": "A unique identifier for a thing",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
       "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/id",
       "identifier": true,
@@ -228,7 +228,7 @@
     {
       "name": "name",
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/name",
-      "description": "A human-readable name for a person",
+      "description": "A human-readable name for a thing",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
       "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/name",
       "owner": "NamedThing",
@@ -254,7 +254,7 @@
     {
       "name": "birth_date",
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/birth_date",
-      "description": "Date on which a person is born",
+      "description": "Date on which a thing is born",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
       "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/birth_date",
       "owner": "NamedThing",
@@ -303,6 +303,16 @@
         "Person"
       ],
       "range": "Animal",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "household_members",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/household_members",
+      "description": "a collection of people and pets that lives in the same house",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/household_members",
+      "multivalued": true,
+      "range": "NamedThing",
       "@type": "SlotDefinition"
     },
     {
@@ -369,6 +379,8 @@
         "PersonCollection"
       ],
       "range": "Person",
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     }
   ],
@@ -442,9 +454,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "linkml_tutorial_schema.yaml",
-  "source_file_date": "2022-09-21T13:42:25",
-  "source_file_size": 2063,
-  "generation_date": "2022-09-21T13:42:39",
+  "source_file_date": "2022-09-23T09:47:17",
+  "source_file_size": 2232,
+  "generation_date": "2022-09-23T09:47:24",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/linkml_tutorial_schema.context.jsonld",
