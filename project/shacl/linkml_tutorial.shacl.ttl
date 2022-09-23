@@ -1,0 +1,13 @@
+@prefix linkml_tutorial: <https://w3id.org/linkml/linkml-tutorial/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+linkml_tutorial:Person a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path linkml_tutorial:id ] ;
+    sh:targetClass linkml_tutorial:Person .
+
