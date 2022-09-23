@@ -33,6 +33,7 @@ classes:
       - age_in_years
 
   Person:
+    description: An individual human being 
     class_uri: schema:Person
     is_a: NamedThing
     slots:
@@ -53,6 +54,7 @@ classes:
         description: this is a unique identifier for a person.
 
   Animal:
+    description: An organism in the biological kingdom Animalia
     is_a: NamedThing
     aliases:
       - pet
@@ -83,13 +85,14 @@ classes:
           - name
           - birth_date
 
-  Person_Collection:
+  PersonCollection:
     description: >-
       A collection of things
     slots:
       - entries
 
   AnimalCollection:
+    description: A collection of Animals
     tree_root: true
     slots:
       - animals
@@ -112,7 +115,7 @@ slots:
     pattern: "^\\S+@[\\S+\\.]+\\S+"
     range: string
 
-  birth date:
+  birth_date:
     slot_uri: schema:birthDate
     range: date
     description: Date on which a person is born
@@ -166,6 +169,7 @@ slots:
 
 enums:
   PersonStatus:
+    description: The vital status of a person
     permissible_values:
       ALIVE:
         description: the person is living
@@ -177,6 +181,7 @@ enums:
         description: the vital status is not known
 
   Breeds:
+    description: Any breed from the VBO
     reachable_from:
       source_ontology: bioregistry:pato
       source_nodes:

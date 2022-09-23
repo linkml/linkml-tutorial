@@ -1,0 +1,5 @@
+extends: recommended
+rules:
+  standard_naming:
+    level: error
+    permissible_values_upper_case: true
