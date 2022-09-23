@@ -209,175 +209,21 @@
       "@type": "TypeDefinition"
     }
   ],
-  "slots": [
-    {
-      "name": "id",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/id",
-      "description": "A unique identifier for a thing",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/id",
-      "owner": "NamedThing",
-      "domain_of": [
-        "NamedThing"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "name",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/name",
-      "description": "A human-readable name for a thing",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/name",
-      "owner": "NamedThing",
-      "domain_of": [
-        "NamedThing"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "description",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/description",
-      "description": "A human-readable description for a thing",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/description",
-      "owner": "NamedThing",
-      "domain_of": [
-        "NamedThing"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "primary_email",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/primary_email",
-      "description": "The main email address of a person",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/primary_email",
-      "owner": "Person",
-      "domain_of": [
-        "Person"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "birth_date",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/birth_date",
-      "description": "Date on which a person is born",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/birth_date",
-      "owner": "Person",
-      "domain_of": [
-        "Person"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "age_in_years",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/age_in_years",
-      "description": "Number of years since birth",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/age_in_years",
-      "owner": "Person",
-      "domain_of": [
-        "Person"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "vital_status",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/vital_status",
-      "description": "living or dead status",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/vital_status",
-      "owner": "Person",
-      "domain_of": [
-        "Person"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "personCollection__entries",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/entries",
-      "multivalued": true,
-      "alias": "entries",
-      "owner": "PersonCollection",
-      "domain_of": [
-        "PersonCollection"
-      ],
-      "range": "Person",
-      "inlined": true,
-      "@type": "SlotDefinition"
-    }
-  ],
   "classes": [
-    {
-      "name": "NamedThing",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/NamedThing",
-      "description": "A generic grouping for any identifiable entity",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "slots": [
-        "id",
-        "name",
-        "description"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/NamedThing",
-      "@type": "ClassDefinition"
-    },
     {
       "name": "Person",
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Person",
-      "description": "Represents a Person:",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "is_a": "NamedThing",
-      "slots": [
-        "id",
-        "name",
-        "description",
-        "primary_email",
-        "birth_date",
-        "age_in_years",
-        "vital_status"
-      ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Person",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "PersonCollection",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/PersonCollection",
-      "description": "A holder for Person objects",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "slots": [
-        "personCollection__entries"
-      ],
-      "slot_usage": {},
-      "attributes": [
-        {
-          "name": "entries",
-          "multivalued": true,
-          "range": "Person",
-          "inlined": true,
-          "@type": "SlotDefinition"
-        }
-      ],
-      "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/PersonCollection",
-      "tree_root": true,
       "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
   "source_file": "linkml_tutorial_schema.yaml",
-  "source_file_date": "2022-09-16T11:23:58",
-  "source_file_size": 1572,
-  "generation_date": "2022-09-16T11:34:44",
+  "source_file_date": "2022-09-23T08:45:38",
+  "source_file_size": 635,
+  "generation_date": "2022-09-23T08:46:11",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/linkml_tutorial_schema.context.jsonld",
