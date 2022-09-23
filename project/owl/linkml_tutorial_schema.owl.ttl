@@ -20,10 +20,10 @@ linkml:linkml-tutorial-schema a owl:Ontology ;
     dcterms:license "MIT" ;
     dcterms:title "linkml-tutorial-schema" ;
     rdfs:seeAlso "https://linkml.github.io/linkml-tutorial-schema" ;
-    linkml:generation_date "2022-09-23T09:12:09" ;
+    linkml:generation_date "2022-09-23T09:55:05" ;
     linkml:metamodel_version "1.7.0" ;
     linkml:source_file "linkml_tutorial_schema.yaml" ;
-    linkml:source_file_date "2022-09-23T09:12:01" ;
+    linkml:source_file_date "2022-09-23T09:54:45" ;
     linkml:source_file_size 2532 .
 
 linkml_tutorial_schema:household_members a owl:ObjectProperty,
@@ -125,11 +125,11 @@ linkml_tutorial_schema:Animal a owl:Class,
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty linkml_tutorial_schema:color ],
+            owl:onProperty linkml_tutorial_schema:breed ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty linkml_tutorial_schema:weight_in_mgs ],
+            owl:onProperty linkml_tutorial_schema:color ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
@@ -137,7 +137,7 @@ linkml_tutorial_schema:Animal a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty linkml_tutorial_schema:breed ],
+            owl:onProperty linkml_tutorial_schema:weight_in_mgs ],
         linkml_tutorial_schema:NamedThing ;
     skos:altLabel "pet" ;
     skos:exactMatch <http://example.org/UNKNOWN/NCIT/C14182>,
@@ -177,16 +177,16 @@ linkml_tutorial_schema:NamedThing a owl:Class,
             owl:onProperty linkml_tutorial_schema:age_in_years ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Date ;
-            owl:onProperty <http://example.org/UNKNOWN/schema/birthDate> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty <http://example.org/UNKNOWN/schema/name> ],
         [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty <http://example.org/UNKNOWN/schema/identifier> ;
-            owl:qualifiedCardinality 1 ] ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Date ;
+            owl:onProperty <http://example.org/UNKNOWN/schema/birthDate> ] ;
     skos:definition "The most generic type of entity that has a name" ;
     skos:exactMatch <http://example.org/UNKNOWN/schema/Thing> .
 
