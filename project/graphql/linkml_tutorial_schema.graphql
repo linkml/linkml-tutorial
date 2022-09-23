@@ -1,23 +1,4 @@
-type NamedThing
-  {
-    id: String
-    name: String
-    description: String
-  }
-
 type Person
   {
-    id: String
-    name: String
-    description: String
-    primaryEmail: String
-    birthDate: String
-    ageInYears: String
-    vitalStatus: String
-  }
-
-type PersonCollection
-  {
-    entries: [Person]
   }
 

@@ -22,7 +22,6 @@ imports:
   - linkml:types
 
 classes:
-
   Person:
     slots:
       - id
@@ -76,3 +75,4 @@ slots:
   weight_in_mgs:
     description: The weight of an animal in milligrams
     range: integer
+
