@@ -118,7 +118,7 @@
             "entries": {
                "description": "A collection of things",
                "items": {
-                  "$ref": "#/$defs/NamedThing"
+                  "$ref": "#/$defs/Person"
                },
                "type": "array"
             }

@@ -81,7 +81,7 @@ classes:
         description: An animal is also be uniquely identified by their name and birth date
         unique_key_slots:
           - name
-          - birth_date
+          - birth date
 
   Person_Collection:
     description: >-
@@ -155,7 +155,7 @@ slots:
   entries:
     description: A collection of things
     multivalued: true
-    range: NamedThing
+    range: Person
     inlined_as_list: true
 
   animals:
