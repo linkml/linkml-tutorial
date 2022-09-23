@@ -228,7 +228,7 @@
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Breeds",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
       "reachable_from": {
-        "source_ontology": "bioregistry:pato",
+        "source_ontology": "bioregistry:vbo",
         "source_nodes": [
           "VBO:00000000"
         ],
@@ -611,9 +611,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "linkml_tutorial_schema.yaml",
-  "source_file_date": "2022-09-23T09:18:41",
-  "source_file_size": 4038,
-  "generation_date": "2022-09-23T09:18:58",
+  "source_file_date": "2022-09-23T09:42:54",
+  "source_file_size": 4037,
+  "generation_date": "2022-09-23T09:43:16",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/linkml_tutorial_schema.context.jsonld",
