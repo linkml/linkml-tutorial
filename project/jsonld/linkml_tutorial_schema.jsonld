@@ -230,7 +230,7 @@
       "description": "Any breed from the VBO",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
       "reachable_from": {
-        "source_ontology": "bioregistry:pato",
+        "source_ontology": "bioregistry:vbo",
         "source_nodes": [
           "VBO:00000000"
         ],
@@ -616,9 +616,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "linkml_tutorial_schema.yaml",
-  "source_file_date": "2022-09-23T09:28:57",
-  "source_file_size": 4272,
-  "generation_date": "2022-09-23T09:29:29",
+  "source_file_date": "2022-09-23T10:03:43",
+  "source_file_size": 4275,
+  "generation_date": "2022-09-23T10:03:49",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/linkml_tutorial_schema.context.jsonld",
