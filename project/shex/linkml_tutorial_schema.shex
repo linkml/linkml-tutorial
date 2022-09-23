@@ -2,6 +2,7 @@ BASE <https://w3id.org/linkml/linkml-tutorial-schema/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX linkml: <https://w3id.org/linkml/>
+PREFIX schema: <http://schema.org/>
 
 
 linkml:String xsd:string
@@ -34,9 +35,51 @@ linkml:Objectidentifier IRI
 
 linkml:Nodeidentifier NONLITERAL
 
+<Animal> CLOSED {
+    (  $<Animal_tes> (  &<NamedThing_tes> ;
+          rdf:type [ schema:Thing ] ? ;
+          <species> @linkml:Uriorcurie ? ;
+          <breed> @linkml:Uriorcurie ? ;
+          <color> @linkml:String ? ;
+          <weight_in_mgs> @linkml:String ?
+       ) ;
+       rdf:type [ <Animal> ]
+    )
+}
+
+<AnimalCollection> CLOSED {
+    (  $<AnimalCollection_tes> <animals> @<Animal> * ;
+       rdf:type [ <AnimalCollection> ] ?
+    )
+}
+
+<NamedThing>  (
+    @<Animal> OR @<Person>
+)
+
+<NamedThing_struct> {
+    (  $<NamedThing_tes> (  schema:name @linkml:String ? ;
+          schema:birthDate @linkml:Date ? ;
+          <age_in_years> @linkml:Integer ?
+       ) ;
+       rdf:type [ schema:Thing ]
+    )
+}
+
 <Person> CLOSED {
-    (  $<Person_tes> rdf:type . * ;
-       rdf:type [ <Person> ] ?
+    (  $<Person_tes> (  &<NamedThing_tes> ;
+          rdf:type [ schema:Thing ] ? ;
+          schema:email @linkml:String ? ;
+          <vital_status> @<PersonStatus> ;
+          <pets> @<Animal> *
+       ) ;
+       rdf:type [ schema:Person ]
+    )
+}
+
+<PersonCollection> CLOSED {
+    (  $<PersonCollection_tes> <entries> @<Person> * ;
+       rdf:type [ <PersonCollection> ] ?
     )
 }
 

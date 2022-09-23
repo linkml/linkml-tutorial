@@ -1,4 +1,41 @@
+type Animal
+  {
+    id: String!
+    name: String
+    birthDate: Date
+    ageInYears: Integer
+    species: Uriorcurie
+    breed: Uriorcurie
+    color: String
+    weightInMgs: String
+  }
+
+type AnimalCollection
+  {
+    animals: [Animal]
+  }
+
+interface NamedThing
+  {
+    id: String!
+    name: String
+    birthDate: Date
+    ageInYears: Integer
+  }
+
 type Person
   {
+    name: String
+    birthDate: Date
+    ageInYears: Integer
+    primaryEmail: String
+    vitalStatus: PersonStatus!
+    pets: [Animal]
+    id: String!
+  }
+
+type PersonCollection
+  {
+    entries: [Person]
   }
 

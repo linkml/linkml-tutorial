@@ -10,21 +10,186 @@ see_also:
 prefixes:
   linkml_tutorial_schema: https://w3id.org/linkml/linkml-tutorial-schema/
   linkml: https://w3id.org/linkml/
-  biolink: https://w3id.org/biolink/
   schema: http://schema.org/
   PATO: http://purl.obolibrary.org/obo/PATO_
-  example: https://example.org/
+
 default_prefix: linkml_tutorial_schema
 default_range: string
 
 imports:
   - linkml:types
 
-
 classes:
-  Person:
+
+
+  NamedThing:
+    class_uri: schema:Thing
+    description: >-
+      The most generic type of entity that has a name
+    abstract: true
     slots:
       - id
+      - name
+      - birth_date
+      - age_in_years
+
+  Person:
+    description: An individual human being 
+    class_uri: schema:Person
+    is_a: NamedThing
+    slots:
+      - primary_email
+      - vital_status
+      - pets
+    exact_mappings:
+      - schema:Person
+      - biolink:Person
+      - foaf:Person
+      - WIKIDATA:Q215627 # person
+      - WIKIDATA:Q5 # human
+    id_prefixes:
+      - orcid
+      - WIKIDATA
+    slot_usage:
+      id:
+        description: this is a unique identifier for a person.
+
+  Animal:
+    description: An organism in the biological kingdom Animalia
+    is_a: NamedThing
+    aliases:
+      - pet
+    slots:
+      - species
+      - breed
+      - color
+      - weight_in_mgs
+    exact_mappings:
+      - WIKIDATA:Q729 # animal
+      - NCIT:C14182 # animal
+    narrow_mappings:
+      - FOODON:00003004 # animal as food
+    rules:
+      - postconditions:
+          any_of:
+            - slot_conditions:
+                breed:
+                  required: true
+            - slot_conditions:
+                species:
+                  required: true
+          description: At least one of breed or species should be populated.
+    unique_keys:
+      main:
+        description: An animal is also be uniquely identified by their name and birth date
+        unique_key_slots:
+          - name
+          - birth_date
+
+  PersonCollection:
+    description: >-
+      A collection of things
+    slots:
+      - entries
+
+
+  AnimalCollection:
+    description: A collection of Animals
+    tree_root: true
+    slots:
+      - animals
 
 slots:
+
   id:
+    slot_uri: schema:identifier
+    identifier: true
+    required: true
+    description: A unique identifier for a person
+
+  name:
+    slot_uri: schema:name
+    description: A human-readable name for a person
+    range: string
+
+  primary_email:
+    slot_uri: schema:email
+    description: The main email address of a person
+    pattern: "^\\S+@[\\S+\\.]+\\S+"
+    range: string
+
+  birth_date:
+    slot_uri: schema:birthDate
+    range: date
+    description: Date on which a person is born
+
+  age_in_years:
+    range: integer
+    description: Number of years since birth
+
+  vital_status:
+    description: living or dead status
+    required: true
+    range: PersonStatus
+
+  pets:
+    description: a collection of animals that lives with and is taken care of by a person.
+    multivalued: true
+    range: Animal
+
+  species:
+    description: The species of an animal
+    values_from:
+      - NCBITaxon
+    range: uriorcurie
+
+  breed:
+    description: The breed of an animal
+    values_from:
+      - VBO # vertebrate breed ontology
+    range: uriorcurie
+
+
+  color:
+    description: The color of an animal
+    range: string
+
+  weight_in_mgs:
+    description: The weight of an animal in milligrams
+    range: string
+
+  entries:
+    description: A collection of things
+    multivalued: true
+    range: Person
+    inlined_as_list: true
+
+  animals:
+    description: A collection of animals
+    multivalued: true
+    range: Animal
+    inlined_as_list: true
+
+enums:
+  PersonStatus:
+    description: The vital status of a person
+    permissible_values:
+      ALIVE:
+        description: the person is living
+        meaning: PATO:0001421
+      DEAD:
+        description: the person is deceased
+        meaning: PATO:0001422
+      UNKNOWN:
+        description: the vital status is not known
+
+  Breeds:
+    description: Any breed from the VBO
+    reachable_from:
+      source_ontology: bioregistry:vbo
+      source_nodes:
+        - VBO:00000000
+      is_direct: false
+      relationship_types:
+        - rdfs:subClassOf
+
