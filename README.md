@@ -36,6 +36,36 @@ poetry run linkml-validate -s src/linkml_tutorial_schema/schema/linkml_tutorial_
 make test
 ```
 
+To generate documentation locally (requires mkdocs):
+
+```bash
+make testdoc
+```
+and navigate to `http://127.0.0.1:8000/linkml-tutorial-schema/`
+
+To convert the test data from YAML to JSON, run:
+
+```bash
+poetry run linkml-convert -s src/linkml_tutorial_schema/schema/linkml_tutorial_schema.yaml -t json src/data/examples/Animal-001.yaml --target-class AnimalCollection
+poetry run linkml-convert -s src/linkml_tutorial_schema/schema/linkml_tutorial_schema.yaml -t json src/data/examples/Person-001.yaml --target-class PersonCollection
+```
+
+To convert the test data from YAML to RDF, run:
+
+```bash
+poetry run linkml-convert -s src/linkml_tutorial_schema/schema/linkml_tutorial_schema.yaml -t rdf src/data/examples/Animal-001.yaml --target-class AnimalCollection
+poetry run linkml-convert -s src/linkml_tutorial_schema/schema/linkml_tutorial_schema.yaml -t rdf src/data/examples/Person-001.yaml --target-class PersonCollection
+```
+
+To compile changed schemasheets, run:
+
+```
+make compile-sheets
+```
+
+For more information, please consult the [online LinkML tutorial](https://linkml.io/linkml/intro/tutorial01.html)
+A link to a video tutorial is coming soon!
+
 
 ## Credits
 
