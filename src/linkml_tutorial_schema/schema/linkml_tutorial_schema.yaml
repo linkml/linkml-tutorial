@@ -29,6 +29,8 @@ classes:
       - name
       - primary_email
       - vital_status
+      - age_in_years
+      - birth_date
       - pets
 
   Animal:
@@ -38,7 +40,9 @@ classes:
       - species
       - breed
       - color
-      - weight
+      - weight_in_mgs
+      - age_in_years
+      - birth_date
 
 slots:
   id:
