@@ -78,7 +78,7 @@ linkml:Nodeidentifier NONLITERAL
 }
 
 <PersonCollection> CLOSED {
-    (  $<PersonCollection_tes> <entries> @<NamedThing> * ;
+    (  $<PersonCollection_tes> <entries> @<Person> * ;
        rdf:type [ <PersonCollection> ] ?
     )
 }

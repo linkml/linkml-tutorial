@@ -410,7 +410,7 @@
     {
       "name": "entries",
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/entries",
-      "description": "A collection of things",
+      "description": "A collection of people",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
       "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/entries",
       "multivalued": true,
@@ -418,7 +418,7 @@
       "domain_of": [
         "PersonCollection"
       ],
-      "range": "NamedThing",
+      "range": "Person",
       "inlined": true,
       "inlined_as_list": true,
       "@type": "SlotDefinition"
@@ -616,9 +616,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "linkml_tutorial_schema.yaml",
-  "source_file_date": "2022-09-23T08:37:03",
-  "source_file_size": 4276,
-  "generation_date": "2022-09-23T08:37:22",
+  "source_file_date": "2022-09-23T09:28:57",
+  "source_file_size": 4272,
+  "generation_date": "2022-09-23T09:29:29",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/linkml_tutorial_schema.context.jsonld",

@@ -1,5 +1,5 @@
 # Auto generated from linkml_tutorial_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-09-23T08:37:30
+# Generation date: 2022-09-23T09:29:36
 # Schema: linkml-tutorial-schema
 #
 # id: https://w3id.org/linkml/linkml-tutorial-schema
@@ -184,10 +184,10 @@ class PersonCollection(YAMLRoot):
     class_name: ClassVar[str] = "PersonCollection"
     class_model_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.PersonCollection
 
-    entries: Optional[Union[Dict[Union[str, NamedThingId], Union[dict, NamedThing]], List[Union[dict, NamedThing]]]] = empty_dict()
+    entries: Optional[Union[Dict[Union[str, PersonId], Union[dict, Person]], List[Union[dict, Person]]]] = empty_dict()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        self._normalize_inlined_as_list(slot_name="entries", slot_type=NamedThing, key_name="id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="entries", slot_type=Person, key_name="id", keyed=True)
 
         super().__post_init__(**kwargs)
 
@@ -279,7 +279,7 @@ slots.weight_in_mgs = Slot(uri=LINKML_TUTORIAL_SCHEMA.weight_in_mgs, name="weigh
                    model_uri=LINKML_TUTORIAL_SCHEMA.weight_in_mgs, domain=None, range=Optional[str])
 
 slots.entries = Slot(uri=LINKML_TUTORIAL_SCHEMA.entries, name="entries", curie=LINKML_TUTORIAL_SCHEMA.curie('entries'),
-                   model_uri=LINKML_TUTORIAL_SCHEMA.entries, domain=None, range=Optional[Union[Dict[Union[str, NamedThingId], Union[dict, NamedThing]], List[Union[dict, NamedThing]]]])
+                   model_uri=LINKML_TUTORIAL_SCHEMA.entries, domain=None, range=Optional[Union[Dict[Union[str, PersonId], Union[dict, Person]], List[Union[dict, Person]]]])
 
 slots.animals = Slot(uri=LINKML_TUTORIAL_SCHEMA.animals, name="animals", curie=LINKML_TUTORIAL_SCHEMA.curie('animals'),
                    model_uri=LINKML_TUTORIAL_SCHEMA.animals, domain=None, range=Optional[Union[Dict[Union[str, AnimalId], Union[dict, Animal]], List[Union[dict, Animal]]]])

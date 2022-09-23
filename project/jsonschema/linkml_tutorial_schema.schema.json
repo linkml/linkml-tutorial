@@ -116,9 +116,9 @@
          "description": "A collection of things",
          "properties": {
             "entries": {
-               "description": "A collection of things",
+               "description": "A collection of people",
                "items": {
-                  "$ref": "#/$defs/NamedThing"
+                  "$ref": "#/$defs/Person"
                },
                "type": "array"
             }
