@@ -29,7 +29,7 @@ classes:
     slots:
       - id
       - name
-      - birth date
+      - birth_date
       - age_in_years
 
   Person:

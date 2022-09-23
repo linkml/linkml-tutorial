@@ -2,7 +2,7 @@
    "$defs": {
       "Animal": {
          "additionalProperties": false,
-         "description": "",
+         "description": "An organism in the biological kingdom Animalia",
          "properties": {
             "age_in_years": {
                "description": "Number of years since birth",
@@ -46,7 +46,7 @@
       },
       "AnimalCollection": {
          "additionalProperties": false,
-         "description": "",
+         "description": "A collection of Animals",
          "properties": {
             "animals": {
                "description": "A collection of animals",
@@ -61,14 +61,14 @@
          "type": "object"
       },
       "Breeds": {
-         "description": "",
+         "description": "Any breed from the VBO",
          "enum": [],
          "title": "Breeds",
          "type": "string"
       },
       "Person": {
          "additionalProperties": false,
-         "description": "",
+         "description": "An individual human being",
          "properties": {
             "age_in_years": {
                "description": "Number of years since birth",
@@ -128,7 +128,7 @@
          "type": "object"
       },
       "PersonStatus": {
-         "description": "",
+         "description": "The vital status of a person",
          "enum": [
             "ALIVE",
             "DEAD",
