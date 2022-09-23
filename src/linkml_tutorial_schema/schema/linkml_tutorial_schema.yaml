@@ -88,6 +88,7 @@ classes:
       - animals
 
 slots:
+
   id:
     slot_uri: schema:identifier
     identifier: true

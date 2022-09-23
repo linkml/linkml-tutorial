@@ -559,9 +559,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "linkml_tutorial_schema.yaml",
-  "source_file_date": "2022-09-23T09:15:41",
-  "source_file_size": 3326,
-  "generation_date": "2022-09-23T09:15:46",
+  "source_file_date": "2022-09-23T09:58:50",
+  "source_file_size": 3328,
+  "generation_date": "2022-09-23T09:58:59",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/linkml_tutorial_schema.context.jsonld",

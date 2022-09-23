@@ -22,11 +22,11 @@ linkml:linkml-tutorial-schema a owl:Ontology ;
     dcterms:license "MIT" ;
     dcterms:title "linkml-tutorial-schema" ;
     rdfs:seeAlso "https://linkml.github.io/linkml-tutorial-schema" ;
-    linkml:generation_date "2022-09-23T09:15:51" ;
+    linkml:generation_date "2022-09-23T09:59:04" ;
     linkml:metamodel_version "1.7.0" ;
     linkml:source_file "linkml_tutorial_schema.yaml" ;
-    linkml:source_file_date "2022-09-23T09:15:41" ;
-    linkml:source_file_size 3326 .
+    linkml:source_file_date "2022-09-23T09:58:50" ;
+    linkml:source_file_size 3328 .
 
 linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "value" .
@@ -129,12 +129,12 @@ linkml_tutorial_schema:Person a owl:Class,
             owl:onProperty linkml_tutorial_schema:vital_status ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
+            owl:allValuesFrom linkml_tutorial_schema:Animal ;
+            owl:onProperty linkml_tutorial_schema:pets ],
+        [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty schema:identifier ;
             owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml_tutorial_schema:Animal ;
-            owl:onProperty linkml_tutorial_schema:pets ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
@@ -180,8 +180,8 @@ linkml_tutorial_schema:Animal a owl:Class,
     rdfs:label "Animal" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty linkml_tutorial_schema:weight_in_mgs ],
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty linkml_tutorial_schema:breed ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Uriorcurie ;
@@ -189,11 +189,11 @@ linkml_tutorial_schema:Animal a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty linkml_tutorial_schema:color ],
+            owl:onProperty linkml_tutorial_schema:weight_in_mgs ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty linkml_tutorial_schema:breed ],
+            owl:onClass linkml:String ;
+            owl:onProperty linkml_tutorial_schema:color ],
         linkml_tutorial_schema:NamedThing ;
     skos:altLabel "pet" ;
     skos:exactMatch <http://example.org/UNKNOWN/NCIT/C14182>,
