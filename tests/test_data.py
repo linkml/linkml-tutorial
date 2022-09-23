@@ -18,5 +18,6 @@ class TestData(unittest.TestCase):
     def test_data(self):
         """Date test."""
         for path in EXAMPLE_FILES:
+
             obj = yaml_loader.load(path, target_class=PersonCollection)
             assert obj
