@@ -92,3 +92,4 @@ slots:
     description: A collection of things
     multivalued: true
     range: Person
+    inlined_as_list: true

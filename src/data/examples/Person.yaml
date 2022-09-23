@@ -1,7 +1,0 @@
-id: P:001
-name: fred bloggs
-primary_email: fred.bloggs@example.com
-age_in_years: 33
-pets:
-  - animal:001
-  - animal:002
