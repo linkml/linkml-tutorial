@@ -1,19 +1,19 @@
-# linkml-tutorial-schema
+# linkml-tutorial
 
 A repostitory that walks through schema generation. 
 
 ## Website
 
-* [https://linkml.github.io/linkml-tutorial-schema](https://linkml.github.io/linkml-tutorial-schema)
+* [https://linkml.github.io/linkml-tutorial](https://linkml.github.io/linkml-tutorial)
 
 ## Repository Structure
 
 * [examples/](examples/) - example data
 * [project/](project/) - project files (do not edit these)
 * [src/](src/) - source files (edit these)
-    * [linkml_tutorial_schema](src/linkml_tutorial_schema)
-        * [schema](src/linkml_tutorial_schema/schema) -- LinkML schema (edit this)
-* [datamodel](src/linkml_tutorial_schema/datamodel) -- Generated python datamodel
+    * [linkml_tutorial](src/linkml_tutorial)
+        * [schema](src/linkml_tutorial/schema) -- LinkML schema (edit this)
+* [datamodel](src/linkml_tutorial/datamodel) -- Generated python datamodel
 * [tests](tests/) - python tests
 
 ## Developer Documentation
