@@ -30,7 +30,7 @@ classes:
       - primary_email
       - vital_status
       - age_in_years
-      - birth_date
+      - birth date
       - pets
 
   Animal:
@@ -53,7 +53,7 @@ slots:
     description: A human-readable name for a person
   primary_email:
     description: The main email address of a person
-  birth_date:
+  birth date:
     range: date
     description: Date on which a person is born
   age_in_years:
