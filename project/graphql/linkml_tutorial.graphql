@@ -1,0 +1,36 @@
+type Animal
+  {
+    id: String!
+    name: String
+    birthDate: Date
+    ageInYears: Integer
+    species: String
+    breed: String
+    color: String
+    weightInMgs: String
+  }
+
+interface NamedThing
+  {
+    id: String!
+    name: String
+    birthDate: Date
+    ageInYears: Integer
+  }
+
+type Person
+  {
+    id: String!
+    name: String
+    birthDate: Date
+    ageInYears: Integer
+    primaryEmail: String
+    vitalStatus: String!
+    pets: [Animal]
+  }
+
+type PersonCollection
+  {
+    entries: [Person]
+  }
+
