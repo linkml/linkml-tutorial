@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "linkml_tutorial_schema"
+name = "linkml_tutorial"
 version = "0.1.0"
 description = "A repostitory that walks through schema generation. "
 authors = ["LinkML Team <admin@linkml.org>"]
 license = "MIT"
 readme = "README.md"
-include = ["README.md", "src/linkml_tutorial_schema/schema", "project"]
+include = ["README.md", "src/linkml_tutorial/schema", "project"]
 
 [tool.poetry.dependencies]
 python = "^3.9"

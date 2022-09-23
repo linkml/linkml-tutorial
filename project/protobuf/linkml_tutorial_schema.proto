@@ -1,4 +1,0 @@
-message Person
- {
-  string id = 0
- }

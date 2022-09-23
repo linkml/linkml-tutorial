@@ -1,8 +1,8 @@
-# Auto generated from linkml_tutorial_schema.yaml by pythongen.py version: 0.9.0
+# Auto generated from linkml_tutorial.yaml by pythongen.py version: 0.9.0
 # Generation date: 2022-09-23T09:36:25
-# Schema: linkml-tutorial-schema
+# Schema: linkml-tutorial
 #
-# id: https://w3id.org/linkml/linkml-tutorial-schema
+# id: https://w3id.org/linkml/linkml-tutorial
 # description: A repostitory that walks through schema generation.
 # license: MIT
 
@@ -32,8 +32,8 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
-LINKML_TUTORIAL_SCHEMA = CurieNamespace('linkml_tutorial_schema', 'https://w3id.org/linkml/linkml-tutorial-schema/')
-DEFAULT_ = LINKML_TUTORIAL_SCHEMA
+linkml_tutorial = CurieNamespace('linkml_tutorial', 'https://w3id.org/linkml/linkml-tutorial/')
+DEFAULT_ = linkml_tutorial
 
 
 # Types
@@ -46,10 +46,10 @@ DEFAULT_ = LINKML_TUTORIAL_SCHEMA
 class Person(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.Person
-    class_class_curie: ClassVar[str] = "linkml_tutorial_schema:Person"
+    class_class_uri: ClassVar[URIRef] = linkml_tutorial.Person
+    class_class_curie: ClassVar[str] = "linkml_tutorial:Person"
     class_name: ClassVar[str] = "Person"
-    class_model_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.Person
+    class_model_uri: ClassVar[URIRef] = linkml_tutorial.Person
 
     id: Optional[str] = None
 
@@ -67,5 +67,5 @@ class Person(YAMLRoot):
 class slots:
     pass
 
-slots.id = Slot(uri=LINKML_TUTORIAL_SCHEMA.id, name="id", curie=LINKML_TUTORIAL_SCHEMA.curie('id'),
-                   model_uri=LINKML_TUTORIAL_SCHEMA.id, domain=None, range=Optional[str])
+slots.id = Slot(uri=linkml_tutorial.id, name="id", curie=linkml_tutorial.curie('id'),
+                   model_uri=linkml_tutorial.id, domain=None, range=Optional[str])

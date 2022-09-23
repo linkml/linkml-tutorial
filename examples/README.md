@@ -1,5 +1,5 @@
-# Examples of use of linkml_tutorial_schema
+# Examples of use of linkml_tutorial
 
-This folder contains example data conforming to linkml_tutorial_schema
+This folder contains example data conforming to linkml_tutorial
 
 The source for these is in [src/data](../src/data/examples)

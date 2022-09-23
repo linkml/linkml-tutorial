@@ -1,5 +1,0 @@
-type Person
-  {
-    id: String
-  }
-

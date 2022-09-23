@@ -1,4 +1,4 @@
-site_name: "linkml-tutorial-schema"
+site_name: "linkml-tutorial"
 theme:
   name: material
   analytics:
@@ -15,5 +15,5 @@ nav:
 #  - Home: home.md
   - Index: index.md
   - About: about.md
-site_url: https://linkml.github.io/linkml-tutorial-schema
-repo_url: https://github.com/linkml/linkml-tutorial-schema
+site_url: https://linkml.github.io/linkml-tutorial
+repo_url: https://github.com/linkml/linkml-tutorial
