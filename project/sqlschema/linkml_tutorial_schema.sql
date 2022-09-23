@@ -10,7 +10,7 @@ CREATE TABLE "Person" (
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE "PersonCollection" (
+CREATE TABLE "Person_Collection" (
 	entries TEXT, 
 	PRIMARY KEY (entries)
 );

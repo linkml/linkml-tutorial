@@ -20,18 +20,24 @@ linkml:linkml-tutorial-schema a owl:Ontology ;
     dcterms:license "MIT" ;
     dcterms:title "linkml-tutorial-schema" ;
     rdfs:seeAlso "https://linkml.github.io/linkml-tutorial-schema" ;
-    linkml:generation_date "2022-09-21T17:29:16" ;
+    linkml:generation_date "2022-09-23T09:12:09" ;
     linkml:metamodel_version "1.7.0" ;
     linkml:source_file "linkml_tutorial_schema.yaml" ;
-    linkml:source_file_date "2022-09-21T17:25:52" ;
-    linkml:source_file_size 2360 .
+    linkml:source_file_date "2022-09-23T09:12:01" ;
+    linkml:source_file_size 2532 .
+
+linkml_tutorial_schema:household_members a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "household_members" ;
+    rdfs:range linkml_tutorial_schema:NamedThing ;
+    skos:definition "a collection of people and pets that lives in the same house" .
 
 linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "value" .
 
 linkml_tutorial_schema:PersonCollection a owl:Class,
         linkml:ClassDefinition ;
-    rdfs:label "PersonCollection" ;
+    rdfs:label "Person_Collection" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom linkml_tutorial_schema:Person ;
             owl:onProperty linkml_tutorial_schema:entries ] ;
@@ -87,7 +93,7 @@ linkml_tutorial_schema:weight_in_mgs a owl:ObjectProperty,
 
 <http://example.org/UNKNOWN/schema/birthDate> a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "birth_date" ;
+    rdfs:label "birth date" ;
     rdfs:range linkml:Date ;
     skos:definition "Date on which a person is born" ;
     skos:exactMatch <http://example.org/UNKNOWN/schema/birthDate> .
@@ -119,7 +125,7 @@ linkml_tutorial_schema:Animal a owl:Class,
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty linkml_tutorial_schema:breed ],
+            owl:onProperty linkml_tutorial_schema:color ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
@@ -127,11 +133,11 @@ linkml_tutorial_schema:Animal a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty linkml_tutorial_schema:color ],
+            owl:onProperty linkml_tutorial_schema:species ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty linkml_tutorial_schema:species ],
+            owl:onProperty linkml_tutorial_schema:breed ],
         linkml_tutorial_schema:NamedThing ;
     skos:altLabel "pet" ;
     skos:exactMatch <http://example.org/UNKNOWN/NCIT/C14182>,
@@ -142,6 +148,9 @@ linkml_tutorial_schema:Person a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Person" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom linkml_tutorial_schema:Animal ;
+            owl:onProperty linkml_tutorial_schema:pets ],
+        [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty linkml_tutorial_schema:vital_status ;
             owl:qualifiedCardinality 1 ],
@@ -149,9 +158,6 @@ linkml_tutorial_schema:Person a owl:Class,
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty <http://example.org/UNKNOWN/schema/email> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml_tutorial_schema:Animal ;
-            owl:onProperty linkml_tutorial_schema:pets ],
         linkml_tutorial_schema:NamedThing ;
     skos:exactMatch <http://example.org/UNKNOWN/WIKIDATA/Q215627>,
         <http://example.org/UNKNOWN/WIKIDATA/Q5>,
@@ -159,29 +165,30 @@ linkml_tutorial_schema:Person a owl:Class,
         <http://example.org/UNKNOWN/foaf/Person>,
         <http://example.org/UNKNOWN/schema/Person> .
 
+linkml:ClassDefinition a owl:Class ;
+    rdfs:label "class_definition" .
+
 linkml_tutorial_schema:NamedThing a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "NamedThing" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty <http://example.org/UNKNOWN/schema/identifier> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
             owl:onProperty linkml_tutorial_schema:age_in_years ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Date ;
+            owl:onProperty <http://example.org/UNKNOWN/schema/birthDate> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty <http://example.org/UNKNOWN/schema/name> ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Date ;
-            owl:onProperty <http://example.org/UNKNOWN/schema/birthDate> ] ;
-    skos:definition "The most generic type of entity that has a name" .
-
-linkml:ClassDefinition a owl:Class ;
-    rdfs:label "class_definition" .
+            owl:onClass linkml:String ;
+            owl:onProperty <http://example.org/UNKNOWN/schema/identifier> ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:definition "The most generic type of entity that has a name" ;
+    skos:exactMatch <http://example.org/UNKNOWN/schema/Thing> .
 
 linkml:SlotDefinition a owl:Class ;
     rdfs:label "slot_definition" .

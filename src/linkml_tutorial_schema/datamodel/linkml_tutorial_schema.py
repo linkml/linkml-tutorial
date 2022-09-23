@@ -1,5 +1,5 @@
 # Auto generated from linkml_tutorial_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-09-21T17:29:18
+# Generation date: 2022-09-23T09:12:11
 # Schema: linkml-tutorial-schema
 #
 # id: https://w3id.org/linkml/linkml-tutorial-schema
@@ -65,8 +65,8 @@ class NamedThing(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.NamedThing
-    class_class_curie: ClassVar[str] = "linkml_tutorial_schema:NamedThing"
+    class_class_uri: ClassVar[URIRef] = SCHEMA.Thing
+    class_class_curie: ClassVar[str] = "schema:Thing"
     class_name: ClassVar[str] = "NamedThing"
     class_model_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.NamedThing
 
@@ -173,7 +173,7 @@ class PersonCollection(YAMLRoot):
 
     class_class_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.PersonCollection
     class_class_curie: ClassVar[str] = "linkml_tutorial_schema:PersonCollection"
-    class_name: ClassVar[str] = "PersonCollection"
+    class_name: ClassVar[str] = "Person_Collection"
     class_model_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.PersonCollection
 
     entries: Optional[Union[Dict[Union[str, PersonId], Union[dict, Person]], List[Union[dict, Person]]]] = empty_dict()
@@ -200,7 +200,7 @@ slots.name = Slot(uri=SCHEMA.name, name="name", curie=SCHEMA.curie('name'),
 slots.primary_email = Slot(uri=SCHEMA.email, name="primary_email", curie=SCHEMA.curie('email'),
                    model_uri=LINKML_TUTORIAL_SCHEMA.primary_email, domain=None, range=Optional[str])
 
-slots.birth_date = Slot(uri=SCHEMA.birthDate, name="birth_date", curie=SCHEMA.curie('birthDate'),
+slots.birth_date = Slot(uri=SCHEMA.birthDate, name="birth date", curie=SCHEMA.curie('birthDate'),
                    model_uri=LINKML_TUTORIAL_SCHEMA.birth_date, domain=None, range=Optional[Union[str, XSDDate]])
 
 slots.age_in_years = Slot(uri=LINKML_TUTORIAL_SCHEMA.age_in_years, name="age_in_years", curie=LINKML_TUTORIAL_SCHEMA.curie('age_in_years'),
@@ -211,6 +211,9 @@ slots.vital_status = Slot(uri=LINKML_TUTORIAL_SCHEMA.vital_status, name="vital_s
 
 slots.pets = Slot(uri=LINKML_TUTORIAL_SCHEMA.pets, name="pets", curie=LINKML_TUTORIAL_SCHEMA.curie('pets'),
                    model_uri=LINKML_TUTORIAL_SCHEMA.pets, domain=None, range=Optional[Union[Union[str, AnimalId], List[Union[str, AnimalId]]]])
+
+slots.household_members = Slot(uri=LINKML_TUTORIAL_SCHEMA.household_members, name="household_members", curie=LINKML_TUTORIAL_SCHEMA.curie('household_members'),
+                   model_uri=LINKML_TUTORIAL_SCHEMA.household_members, domain=None, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.species = Slot(uri=LINKML_TUTORIAL_SCHEMA.species, name="species", curie=LINKML_TUTORIAL_SCHEMA.curie('species'),
                    model_uri=LINKML_TUTORIAL_SCHEMA.species, domain=None, range=Optional[str])

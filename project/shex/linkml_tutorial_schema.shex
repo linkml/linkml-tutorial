@@ -37,7 +37,7 @@ linkml:Nodeidentifier NONLITERAL
 
 <Animal> CLOSED {
     (  $<Animal_tes> (  &<NamedThing_tes> ;
-          rdf:type [ <NamedThing> ] ? ;
+          rdf:type [ schema:Thing ] ? ;
           <species> @linkml:String ? ;
           <breed> @linkml:String ? ;
           <color> @linkml:String ? ;
@@ -56,13 +56,13 @@ linkml:Nodeidentifier NONLITERAL
           schema:birthDate @linkml:Date ? ;
           <age_in_years> @linkml:Integer ?
        ) ;
-       rdf:type [ <NamedThing> ]
+       rdf:type [ schema:Thing ]
     )
 }
 
 <Person> CLOSED {
     (  $<Person_tes> (  &<NamedThing_tes> ;
-          rdf:type [ <NamedThing> ] ? ;
+          rdf:type [ schema:Thing ] ? ;
           schema:email @linkml:String ? ;
           <vital_status> @linkml:String ;
           <pets> @<Animal> *

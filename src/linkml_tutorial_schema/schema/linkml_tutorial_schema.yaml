@@ -27,7 +27,7 @@ classes:
     slots:
       - id
       - name
-      - birth_date
+      - birth date
       - age_in_years
 
   Person:
@@ -59,7 +59,7 @@ classes:
     narrow_mappings:
       - FOODON:00003004 # animal as food
 
-  PersonCollection:
+  Person_Collection:
     description: >-
       A collection of things
     slots:
@@ -77,7 +77,7 @@ slots:
   primary_email:
     slot_uri: schema:email
     description: The main email address of a person
-  birth_date:
+  birth date:
     slot_uri: schema:birthDate
     range: date
     description: Date on which a person is born
@@ -91,6 +91,10 @@ slots:
     description: a collection of animals that lives with and is taken care of by a person.
     multivalued: true
     range: Animal
+  household_members:
+    description: a collection of people and pets that lives in the same house
+    multivalued: true
+    range: NamedThing
 
   species:
     description: The species of an animal

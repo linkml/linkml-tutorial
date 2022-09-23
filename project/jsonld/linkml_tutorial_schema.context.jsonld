@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from linkml_tutorial_schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-09-21T17:29:11\n    Schema: linkml-tutorial-schema\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://w3id.org/linkml/linkml-tutorial-schema\n    description: A repostitory that walks through schema generation.\n    license: MIT\n    ",
+   "_comments": "Auto generated from linkml_tutorial_schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-09-23T09:12:04\n    Schema: linkml-tutorial-schema\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://w3id.org/linkml/linkml-tutorial-schema\n    description: A repostitory that walks through schema generation.\n    license: MIT\n    ",
    "@context": {
       "FOODON": "http://example.org/UNKNOWN/FOODON/",
       "NCIT": "http://example.org/UNKNOWN/NCIT/",
@@ -20,6 +20,9 @@
       "entries": {
          "@type": "@id"
       },
+      "household_members": {
+         "@type": "@id"
+      },
       "id": "@id",
       "name": {
          "@id": "schema:name"
@@ -29,6 +32,9 @@
       },
       "primary_email": {
          "@id": "schema:email"
+      },
+      "NamedThing": {
+         "@id": "schema:Thing"
       },
       "Person": {
          "@id": "schema:Person"

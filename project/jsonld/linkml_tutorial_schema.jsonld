@@ -302,6 +302,16 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "household_members",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/household_members",
+      "description": "a collection of people and pets that lives in the same house",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/household_members",
+      "multivalued": true,
+      "range": "NamedThing",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "species",
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/species",
       "description": "The species of an animal",
@@ -375,6 +385,9 @@
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/NamedThing",
       "description": "The most generic type of entity that has a name",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "mappings": [
+        "schema:Thing"
+      ],
       "abstract": true,
       "slots": [
         "id",
@@ -383,7 +396,7 @@
         "age_in_years"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/NamedThing",
+      "class_uri": "http://example.org/UNKNOWN/schema/Thing",
       "@type": "ClassDefinition"
     },
     {
@@ -458,9 +471,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "linkml_tutorial_schema.yaml",
-  "source_file_date": "2022-09-21T17:25:52",
-  "source_file_size": 2360,
-  "generation_date": "2022-09-21T17:29:11",
+  "source_file_date": "2022-09-23T09:12:01",
+  "source_file_size": 2532,
+  "generation_date": "2022-09-23T09:12:05",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/linkml_tutorial_schema.context.jsonld",
