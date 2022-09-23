@@ -1,4 +1,23 @@
+type Animal
+  {
+    id: Uriorcurie!
+    name: String
+    species: String
+    breed: String
+    color: String
+    weightInMgs: Integer
+    ageInYears: Integer
+    birthDate: Date
+  }
+
 type Person
   {
+    id: Uriorcurie!
+    name: String
+    primaryEmail: String
+    vitalStatus: String!
+    ageInYears: Integer
+    birthDate: Date
+    pets: [Animal]
   }
 

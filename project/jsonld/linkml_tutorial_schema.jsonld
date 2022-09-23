@@ -209,21 +209,201 @@
       "@type": "TypeDefinition"
     }
   ],
+  "slots": [
+    {
+      "name": "id",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/id",
+      "description": "A unique identifier for a person",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/id",
+      "owner": "Animal",
+      "domain_of": [
+        "Person",
+        "Animal"
+      ],
+      "range": "uriorcurie",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "name",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/name",
+      "description": "A human-readable name for a person",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/name",
+      "owner": "Animal",
+      "domain_of": [
+        "Person",
+        "Animal"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "primary_email",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/primary_email",
+      "description": "The main email address of a person",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/primary_email",
+      "owner": "Person",
+      "domain_of": [
+        "Person"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "birth_date",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/birth_date",
+      "description": "Date on which a person is born",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/birth_date",
+      "owner": "Animal",
+      "domain_of": [
+        "Person",
+        "Animal"
+      ],
+      "range": "date",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "age_in_years",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/age_in_years",
+      "description": "Number of years since birth",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/age_in_years",
+      "owner": "Animal",
+      "domain_of": [
+        "Person",
+        "Animal"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "vital_status",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/vital_status",
+      "description": "living or dead status",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/vital_status",
+      "owner": "Person",
+      "domain_of": [
+        "Person"
+      ],
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "pets",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/pets",
+      "description": "a collection of animals that lives with and is taken care of by a person.",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/pets",
+      "multivalued": true,
+      "owner": "Person",
+      "domain_of": [
+        "Person"
+      ],
+      "range": "Animal",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "species",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/species",
+      "description": "The species of an animal",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/species",
+      "owner": "Animal",
+      "domain_of": [
+        "Animal"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "breed",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/breed",
+      "description": "The breed of an animal",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/breed",
+      "owner": "Animal",
+      "domain_of": [
+        "Animal"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "color",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/color",
+      "description": "The color of an animal",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/color",
+      "owner": "Animal",
+      "domain_of": [
+        "Animal"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "weight_in_mgs",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/weight_in_mgs",
+      "description": "The weight of an animal in milligrams",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/weight_in_mgs",
+      "owner": "Animal",
+      "domain_of": [
+        "Animal"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    }
+  ],
   "classes": [
     {
       "name": "Person",
       "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Person",
       "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slots": [
+        "id",
+        "name",
+        "primary_email",
+        "vital_status",
+        "age_in_years",
+        "birth_date",
+        "pets"
+      ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Person",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Animal",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Animal",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "slots": [
+        "id",
+        "name",
+        "species",
+        "breed",
+        "color",
+        "weight_in_mgs",
+        "age_in_years",
+        "birth_date"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Animal",
       "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
   "source_file": "linkml_tutorial_schema.yaml",
-  "source_file_date": "2022-09-23T08:45:38",
-  "source_file_size": 635,
-  "generation_date": "2022-09-23T08:46:11",
+  "source_file_date": "2022-09-23T09:49:12",
+  "source_file_size": 1760,
+  "generation_date": "2022-09-23T09:49:21",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/linkml_tutorial_schema.context.jsonld",

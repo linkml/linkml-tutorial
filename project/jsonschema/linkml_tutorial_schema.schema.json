@@ -1,10 +1,90 @@
 {
    "$defs": {
+      "Animal": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "age_in_years": {
+               "description": "Number of years since birth",
+               "type": "integer"
+            },
+            "birth_date": {
+               "description": "Date on which a person is born",
+               "format": "date",
+               "type": "string"
+            },
+            "breed": {
+               "description": "The breed of an animal",
+               "type": "string"
+            },
+            "color": {
+               "description": "The color of an animal",
+               "type": "string"
+            },
+            "id": {
+               "description": "A unique identifier for a person",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for a person",
+               "type": "string"
+            },
+            "species": {
+               "description": "The species of an animal",
+               "type": "string"
+            },
+            "weight_in_mgs": {
+               "description": "The weight of an animal in milligrams",
+               "type": "integer"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Animal",
+         "type": "object"
+      },
       "Person": {
          "additionalProperties": false,
          "description": "",
-         "properties": {},
-         "required": [],
+         "properties": {
+            "age_in_years": {
+               "description": "Number of years since birth",
+               "type": "integer"
+            },
+            "birth_date": {
+               "description": "Date on which a person is born",
+               "format": "date",
+               "type": "string"
+            },
+            "id": {
+               "description": "A unique identifier for a person",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for a person",
+               "type": "string"
+            },
+            "pets": {
+               "description": "a collection of animals that lives with and is taken care of by a person.",
+               "items": {
+                  "$ref": "#/$defs/Animal"
+               },
+               "type": "array"
+            },
+            "primary_email": {
+               "description": "The main email address of a person",
+               "type": "string"
+            },
+            "vital_status": {
+               "description": "living or dead status",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "vital_status"
+         ],
          "title": "Person",
          "type": "object"
       }

@@ -1,0 +1,21 @@
+message Animal
+ {
+  uriorcurie id = 0
+  string name = 0
+  string species = 0
+  string breed = 0
+  string color = 0
+  integer weightInMgs = 0
+  integer ageInYears = 0
+  date birthDate = 0
+ }
+message Person
+ {
+  uriorcurie id = 0
+  string name = 0
+  string primaryEmail = 0
+  string vitalStatus = 0
+  integer ageInYears = 0
+  date birthDate = 0
+ repeated  animal pets = 0
+ }

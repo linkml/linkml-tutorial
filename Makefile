@@ -89,7 +89,7 @@ gen-examples:
 gen-project: $(PYMODEL) compile-sheets
 	$(RUN) gen-project -d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 
-test: gen-project test-python
+test: test-schema test-python
 test-schema:
 	$(RUN) gen-project -d tmp $(SOURCE_SCHEMA_PATH) 
 

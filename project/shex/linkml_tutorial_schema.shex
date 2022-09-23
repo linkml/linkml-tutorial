@@ -34,8 +34,29 @@ linkml:Objectidentifier IRI
 
 linkml:Nodeidentifier NONLITERAL
 
+<Animal> CLOSED {
+    (  $<Animal_tes> (  <id> @linkml:Uriorcurie ;
+          <name> @linkml:String ? ;
+          <species> @linkml:String ? ;
+          <breed> @linkml:String ? ;
+          <color> @linkml:String ? ;
+          <weight_in_mgs> @linkml:Integer ? ;
+          <age_in_years> @linkml:Integer ? ;
+          <birth_date> @linkml:Date ?
+       ) ;
+       rdf:type [ <Animal> ] ?
+    )
+}
+
 <Person> CLOSED {
-    (  $<Person_tes> rdf:type . * ;
+    (  $<Person_tes> (  <id> @linkml:Uriorcurie ;
+          <name> @linkml:String ? ;
+          <primary_email> @linkml:String ? ;
+          <vital_status> @linkml:String ;
+          <age_in_years> @linkml:Integer ? ;
+          <birth_date> @linkml:Date ? ;
+          <pets> @<Animal> *
+       ) ;
        rdf:type [ <Person> ] ?
     )
 }
