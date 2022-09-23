@@ -1,8 +1,8 @@
-# Auto generated from linkml_tutorial_schema.yaml by pythongen.py version: 0.9.0
+# Auto generated from linkml_tutorial.yaml by pythongen.py version: 0.9.0
 # Generation date: 2022-09-23T08:46:16
-# Schema: linkml-tutorial-schema
+# Schema: linkml-tutorial
 #
-# id: https://w3id.org/linkml/linkml-tutorial-schema
+# id: https://w3id.org/linkml/linkml-tutorial
 # description: A repostitory that walks through schema generation.
 # license: MIT
 
@@ -35,9 +35,9 @@ PATO = CurieNamespace('PATO', 'http://purl.obolibrary.org/obo/PATO_')
 BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/')
 EXAMPLE = CurieNamespace('example', 'https://example.org/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
-LINKML_TUTORIAL_SCHEMA = CurieNamespace('linkml_tutorial_schema', 'https://w3id.org/linkml/linkml-tutorial-schema/')
+linkml_tutorial = CurieNamespace('linkml_tutorial', 'https://w3id.org/linkml/linkml-tutorial/')
 SCHEMA = CurieNamespace('schema', 'http://schema.org/')
-DEFAULT_ = LINKML_TUTORIAL_SCHEMA
+DEFAULT_ = linkml_tutorial
 
 
 # Types
@@ -49,10 +49,10 @@ DEFAULT_ = LINKML_TUTORIAL_SCHEMA
 class Person(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.Person
-    class_class_curie: ClassVar[str] = "linkml_tutorial_schema:Person"
+    class_class_uri: ClassVar[URIRef] = linkml_tutorial.Person
+    class_class_curie: ClassVar[str] = "linkml_tutorial:Person"
     class_name: ClassVar[str] = "Person"
-    class_model_uri: ClassVar[URIRef] = LINKML_TUTORIAL_SCHEMA.Person
+    class_model_uri: ClassVar[URIRef] = linkml_tutorial.Person
 
 
 # Enumerations

@@ -1,19 +1,19 @@
 {
-  "name": "linkml-tutorial-schema",
+  "name": "linkml-tutorial",
   "description": "A repostitory that walks through schema generation. ",
-  "title": "linkml-tutorial-schema",
+  "title": "linkml-tutorial",
   "see_also": [
-    "https://linkml.github.io/linkml-tutorial-schema"
+    "https://linkml.github.io/linkml-tutorial"
   ],
-  "id": "https://w3id.org/linkml/linkml-tutorial-schema",
+  "id": "https://w3id.org/linkml/linkml-tutorial",
   "imports": [
     "linkml:types"
   ],
   "license": "MIT",
   "prefixes": [
     {
-      "prefix_prefix": "linkml_tutorial_schema",
-      "prefix_reference": "https://w3id.org/linkml/linkml-tutorial-schema/"
+      "prefix_prefix": "linkml_tutorial",
+      "prefix_reference": "https://w3id.org/linkml/linkml-tutorial/"
     },
     {
       "prefix_prefix": "linkml",
@@ -36,7 +36,7 @@
       "prefix_reference": "https://example.org/"
     }
   ],
-  "default_prefix": "linkml_tutorial_schema",
+  "default_prefix": "linkml_tutorial",
   "default_range": "string",
   "types": [
     {
@@ -212,24 +212,24 @@
   "classes": [
     {
       "name": "Person",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Person",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial/Person",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial",
       "slot_usage": {},
-      "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Person",
+      "class_uri": "https://w3id.org/linkml/linkml-tutorial/Person",
       "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
-  "source_file": "linkml_tutorial_schema.yaml",
+  "source_file": "linkml_tutorial.yaml",
   "source_file_date": "2022-09-23T08:45:38",
   "source_file_size": 635,
   "generation_date": "2022-09-23T08:46:11",
   "@type": "SchemaDefinition",
   "@context": [
-    "project/jsonld/linkml_tutorial_schema.context.jsonld",
+    "project/jsonld/linkml_tutorial.context.jsonld",
     "https://w3id.org/linkml/types.context.jsonld",
     {
-      "@base": "https://w3id.org/linkml/linkml-tutorial-schema/"
+      "@base": "https://w3id.org/linkml/linkml-tutorial/"
     }
   ]
 }
