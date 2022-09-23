@@ -20,7 +20,6 @@ imports:
   - linkml:types
 
 classes:
-
   NamedThing:
     class_uri: schema:Thing
     description: >-
@@ -89,12 +88,14 @@ classes:
     slots:
       - entries
 
+
   AnimalCollection:
     tree_root: true
     slots:
       - animals
 
 slots:
+
   id:
     slot_uri: schema:identifier
     identifier: true
