@@ -35,7 +35,6 @@ linkml:Objectidentifier IRI
 
 linkml:Nodeidentifier NONLITERAL
 
-<<<<<<< HEAD
 <Animal> CLOSED {
     (  $<Animal_tes> (  &<NamedThing_tes> ;
           rdf:type [ schema:Thing ] ? ;
@@ -75,11 +74,12 @@ linkml:Nodeidentifier NONLITERAL
           <pets> @<Animal> *
        ) ;
        rdf:type [ schema:Person ]
-=======
-<Person> CLOSED {
-    (  $<Person_tes> rdf:type . * ;
-       rdf:type [ <Person> ] ?
->>>>>>> main
+    )
+}
+
+<PersonCollection> CLOSED {
+    (  $<PersonCollection_tes> <entries> @<Person> * ;
+       rdf:type [ <PersonCollection> ] ?
     )
 }
 

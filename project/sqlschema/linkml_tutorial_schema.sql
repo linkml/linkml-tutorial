@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 
 CREATE TABLE "Animal" (
 	id TEXT NOT NULL, 
@@ -33,5 +32,3 @@ CREATE TABLE "PersonCollection" (
 	entries TEXT, 
 	PRIMARY KEY (entries)
 );
-=======
->>>>>>> main
