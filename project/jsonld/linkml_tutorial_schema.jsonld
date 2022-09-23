@@ -375,7 +375,7 @@
       "domain_of": [
         "PersonCollection"
       ],
-      "range": "NamedThing",
+      "range": "Person",
       "inlined": true,
       "inlined_as_list": true,
       "@type": "SlotDefinition"
@@ -499,6 +499,37 @@
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Animal",
+      "rules": [
+        {
+          "postconditions": {
+            "description": "At least one of breed or species should be populated.",
+            "any_of": [
+              {
+                "slot_conditions": [
+                  {
+                    "name": "breed",
+                    "required": true,
+                    "@type": "SlotDefinition"
+                  }
+                ],
+                "@type": "AnonymousClassExpression"
+              },
+              {
+                "slot_conditions": [
+                  {
+                    "name": "species",
+                    "required": true,
+                    "@type": "SlotDefinition"
+                  }
+                ],
+                "@type": "AnonymousClassExpression"
+              }
+            ],
+            "@type": "AnonymousClassExpression"
+          },
+          "@type": "ClassRule"
+        }
+      ],
       "@type": "ClassDefinition"
     },
     {
@@ -528,9 +559,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "linkml_tutorial_schema.yaml",
-  "source_file_date": "2022-09-22T13:32:11",
-  "source_file_size": 3023,
-  "generation_date": "2022-09-22T13:35:54",
+  "source_file_date": "2022-09-23T09:15:41",
+  "source_file_size": 3326,
+  "generation_date": "2022-09-23T09:15:46",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/linkml_tutorial_schema.context.jsonld",

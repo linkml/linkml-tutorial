@@ -28,7 +28,7 @@ classes:
     slots:
       - id
       - name
-      - birth_date
+      - birth date
       - age_in_years
 
   Person:
@@ -76,7 +76,7 @@ classes:
                   required: true
           description: At least one of breed or species should be populated.
 
-  PersonCollection:
+  Person_Collection:
     description: >-
       A collection of things
     slots:
@@ -105,7 +105,7 @@ slots:
     pattern: "^\\S+@[\\S+\\.]+\\S+"
     range: string
 
-  birth_date:
+  birth date:
     slot_uri: schema:birthDate
     range: date
     description: Date on which a person is born
@@ -147,7 +147,7 @@ slots:
   entries:
     description: A collection of things
     multivalued: true
-    range: NamedThing
+    range: Person
     inlined_as_list: true
 
   animals:
