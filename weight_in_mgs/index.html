@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/linkml-tutorial-schema/id/">
+        <link rel="canonical" href="https://linkml.github.io/linkml-tutorial-schema/weight_in_mgs/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.1">
     
     
       
-        <title>Slot: id - linkml-tutorial-schema</title>
+        <title>Slot: weight_in_mgs - linkml-tutorial-schema</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-id" class="md-skip">
+        <a href="#slot-weight_in_mgs" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: id
+              Slot: weight_in_mgs
             
           </span>
         </div>
@@ -303,26 +303,21 @@
                 
                   
 
-  <a href="https://github.com/linkml/linkml-tutorial-schema/edit/master/docs/id.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/linkml/linkml-tutorial-schema/edit/master/docs/weight_in_mgs.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="slot-id">Slot: id</h1>
-<p><em>A unique identifier for a person</em></p>
-<p>URI: <a href="http://schema.org/identifier">http://schema.org/identifier</a></p>
+<h1 id="slot-weight_in_mgs">Slot: weight_in_mgs</h1>
+<p><em>The weight of an animal in milligrams</em></p>
+<p>URI: <a href="https://w3id.org/linkml/linkml-tutorial-schema/weight_in_mgs">https://w3id.org/linkml/linkml-tutorial-schema/weight_in_mgs</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="properties">Properties</h2>
 <ul>
 <li>Range: <a href="xsd:string">xsd:string</a></li>
-<li>
-<p>Multivalued: None</p>
-</li>
-<li>
-<p>Required: True</p>
-</li>
+<li>Multivalued: None</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -332,17 +327,14 @@
 <h2 id="linkml-specification">LinkML Specification</h2>
 <details>
 
-<pre><code class="language-yaml">name: id
-description: A unique identifier for a person
+<pre><code class="language-yaml">name: weight_in_mgs
+description: The weight of an animal in milligrams
 from_schema: https://w3id.org/linkml/linkml-tutorial-schema
 rank: 1000
-slot_uri: schema:identifier
-identifier: true
-alias: id
+alias: weight_in_mgs
 domain_of:
-- NamedThing
+- Animal
 range: string
-required: true
 
 </code></pre>
 

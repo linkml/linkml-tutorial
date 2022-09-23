@@ -6,7 +6,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://linkml.github.io/linkml-tutorial-schema/Animal/</loc>
+         <lastmod>2022-09-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/linkml-tutorial-schema/AnimalCollection/</loc>
+         <lastmod>2022-09-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://linkml.github.io/linkml-tutorial-schema/Boolean/</loc>
+         <lastmod>2022-09-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/linkml-tutorial-schema/Breeds/</loc>
          <lastmod>2022-09-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -46,6 +61,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://linkml.github.io/linkml-tutorial-schema/NamedThing/</loc>
+         <lastmod>2022-09-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://linkml.github.io/linkml-tutorial-schema/Ncname/</loc>
          <lastmod>2022-09-23</lastmod>
          <changefreq>daily</changefreq>
@@ -62,6 +82,16 @@
     </url>
     <url>
          <loc>https://linkml.github.io/linkml-tutorial-schema/Person/</loc>
+         <lastmod>2022-09-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/linkml-tutorial-schema/PersonCollection/</loc>
+         <lastmod>2022-09-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/linkml-tutorial-schema/PersonStatus/</loc>
          <lastmod>2022-09-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -86,6 +116,36 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://linkml.github.io/linkml-tutorial-schema/age_in_years/</loc>
+         <lastmod>2022-09-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/linkml-tutorial-schema/animals/</loc>
+         <lastmod>2022-09-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/linkml-tutorial-schema/birth_date/</loc>
+         <lastmod>2022-09-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/linkml-tutorial-schema/breed/</loc>
+         <lastmod>2022-09-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/linkml-tutorial-schema/color/</loc>
+         <lastmod>2022-09-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/linkml-tutorial-schema/entries/</loc>
+         <lastmod>2022-09-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://linkml.github.io/linkml-tutorial-schema/id/</loc>
          <lastmod>2022-09-23</lastmod>
          <changefreq>daily</changefreq>
@@ -96,7 +156,37 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://linkml.github.io/linkml-tutorial-schema/name/</loc>
+         <lastmod>2022-09-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/linkml-tutorial-schema/pets/</loc>
+         <lastmod>2022-09-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/linkml-tutorial-schema/primary_email/</loc>
+         <lastmod>2022-09-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/linkml-tutorial-schema/species/</loc>
+         <lastmod>2022-09-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://linkml.github.io/linkml-tutorial-schema/types/</loc>
+         <lastmod>2022-09-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/linkml-tutorial-schema/vital_status/</loc>
+         <lastmod>2022-09-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/linkml-tutorial-schema/weight_in_mgs/</loc>
          <lastmod>2022-09-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
