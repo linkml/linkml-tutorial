@@ -30,21 +30,21 @@ For reference, the available sections are:
 - [step_8_documentation](https://github.com/linkml/linkml-tutorial/tree/step_8_documentation)
 
 ### Section 5: Schemasheets
-- [step_9_schemasheets](https://github.com/linkml/linkml-tutorial/tree/step_9_schemasheets)
+- [step_9_schemasheets](https://github.com/linkml/linkml-tutorial/tree/schemasheets)
 
 
 ## Website
 
-* [https://linkml.github.io/linkml-tutorial-schema](https://linkml.github.io/linkml-tutorial)
+* [https://linkml.github.io/linkml-tutorial](https://linkml.github.io/linkml-tutorial)
 
 ## Repository Structure
 
 * [src/data/examples/](src/data/examples/Person-001.yaml) - example data
 * [project/](project/) - project files (do not edit these)
 * [src/](src/) - source files (edit these)
-    * [linkml_tutorial_schema](src/linkml_tutorial_schema)
-        * [schema](src/linkml_tutorial_schema/schema) -- LinkML schema (edit this)
-* [datamodel](src/linkml_tutorial_schema/datamodel) -- Generated python datamodel
+    * [linkml_tutorial](src/linkml_tutorial)
+        * [schema](src/linkml_tutorial/schema) -- LinkML schema (edit this)
+* [datamodel](src/linkml_tutorial/datamodel) -- Generated python datamodel
 * [tests](tests/) - python tests
 
 ## Developer Documentation
@@ -59,8 +59,8 @@ run the tests and/or linkml-validate.
 
 ```bash
 poetry install
-poetry run linkml-validate -s src/linkml_tutorial_schema/schema/linkml_tutorial_schema.yaml src/data/examples/Person-001.yaml --target-class PersonCollection
-poetry run linkml-validate -s src/linkml_tutorial_schema/schema/linkml_tutorial_schema.yaml src/data/examples/Animal-001.yaml --target-class AnimalCollection
+poetry run linkml-validate -s src/linkml_tutorial/schema/linkml_tutorial.yaml src/data/examples/Person-001.yaml --target-class PersonCollection
+poetry run linkml-validate -s src/linkml_tutorial/schema/linkml_tutorial.yaml src/data/examples/Animal-001.yaml --target-class AnimalCollection
 ```
 
 ```bash
@@ -72,20 +72,20 @@ To generate documentation locally (requires mkdocs):
 ```bash
 make testdoc
 ```
-and navigate to `http://127.0.0.1:8000/linkml-tutorial-schema/`
+and navigate to `http://127.0.0.1:8000/linkml-tutorial/`
 
 To convert the test data from YAML to JSON, run:
 
 ```bash
-poetry run linkml-convert -s src/linkml_tutorial_schema/schema/linkml_tutorial_schema.yaml -t json src/data/examples/Animal-001.yaml --target-class AnimalCollection
-poetry run linkml-convert -s src/linkml_tutorial_schema/schema/linkml_tutorial_schema.yaml -t json src/data/examples/Person-001.yaml --target-class PersonCollection
+poetry run linkml-convert -s src/linkml_tutorial/schema/linkml_tutorial.yaml -t json src/data/examples/Animal-001.yaml --target-class AnimalCollection
+poetry run linkml-convert -s src/linkml_tutorial/schema/linkml_tutorial.yaml -t json src/data/examples/Person-001.yaml --target-class PersonCollection
 ```
 
 To convert the test data from YAML to RDF, run:
 
 ```bash
-poetry run linkml-convert -s src/linkml_tutorial_schema/schema/linkml_tutorial_schema.yaml -t rdf src/data/examples/Animal-001.yaml --target-class AnimalCollection
-poetry run linkml-convert -s src/linkml_tutorial_schema/schema/linkml_tutorial_schema.yaml -t rdf src/data/examples/Person-001.yaml --target-class PersonCollection
+poetry run linkml-convert -s src/linkml_tutorial/schema/linkml_tutorial.yaml -t rdf src/data/examples/Animal-001.yaml --target-class AnimalCollection
+poetry run linkml-convert -s src/linkml_tutorial/schema/linkml_tutorial.yaml -t rdf src/data/examples/Person-001.yaml --target-class PersonCollection
 ```
 
 To compile changed schemasheets, run:
