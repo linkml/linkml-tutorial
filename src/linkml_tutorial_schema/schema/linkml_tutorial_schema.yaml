@@ -178,7 +178,7 @@ enums:
 
   Breeds:
     reachable_from:
-      source_ontology: bioregistry:pato
+      source_ontology: bioregistry:vbo
       source_nodes:
         - VBO:00000000
       is_direct: false
