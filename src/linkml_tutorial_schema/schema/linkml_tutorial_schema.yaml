@@ -42,7 +42,7 @@ classes:
       - color
       - weight_in_mgs
       - age_in_years
-      - birth_date
+      - birth date
 
 slots:
   id:
