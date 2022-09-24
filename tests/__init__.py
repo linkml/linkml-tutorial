@@ -1,1 +1,1 @@
-"""Tests for linkml-tutorial-schema."""
+"""Tests for linkml-tutorial."""

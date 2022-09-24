@@ -138,7 +138,7 @@ git-init-add: git-init git-add git-commit git-status
 git-init:
 	git init
 git-add: .cruft.json
-	git add .gitignore .github .cruft.json Makefile LICENSE *.md examples utils about.yaml mkdocs.yml poetry.lock project.Makefile pyproject.toml src/linkml_tutorial_schema/schema/*yaml src/*/datamodel/*py src/data src/docs tests
+	git add .gitignore .github .cruft.json Makefile LICENSE *.md examples utils about.yaml mkdocs.yml poetry.lock project.Makefile pyproject.toml src/linkml_tutorial/schema/*yaml src/*/datamodel/*py src/data src/docs tests
 	git add $(patsubst %, project/%, $(PROJECT_FOLDERS))
 git-commit:
 	git commit -m 'Initial commit' -a

@@ -4,10 +4,10 @@
   "checkout": null,
   "context": {
     "cookiecutter": {
-      "project_name": "linkml-tutorial-schema",
-      "__project_slug": "linkml_tutorial_schema",
+      "project_name": "linkml-tutorial",
+      "__project_slug": "linkml_tutorial",
       "github_org": "linkml",
-      "__source_path": "src/linkml_tutorial_schema/schema/linkml_tutorial_schema.yaml",
+      "__source_path": "src/linkml_tutorial/schema/linkml_tutorial.yaml",
       "project_description": "A repostitory that walks through schema generation. ",
       "full_name": "LinkML Team",
       "email": "admin@linkml.org",
