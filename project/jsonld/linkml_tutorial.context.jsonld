@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from linkml_tutorial_schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-09-23T10:00:22\n    Schema: linkml-tutorial-schema\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://w3id.org/linkml/linkml-tutorial-schema\n    description: A repostitory that walks through schema generation.\n    license: MIT\n    ",
+   "_comments": "Auto generated from linkml_tutorial.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-09-23T17:04:01\n    Schema: linkml-tutorial\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://w3id.org/linkml/linkml-tutorial\n    description: A repostitory that walks through schema generation.\n    license: MIT\n    ",
    "@context": {
       "FOODON": "http://example.org/UNKNOWN/FOODON/",
       "NCIT": "http://example.org/UNKNOWN/NCIT/",
@@ -11,11 +11,11 @@
       "biolink": "http://example.org/UNKNOWN/biolink/",
       "foaf": "http://example.org/UNKNOWN/foaf/",
       "linkml": "https://w3id.org/linkml/",
-      "linkml_tutorial_schema": "https://w3id.org/linkml/linkml-tutorial-schema/",
+      "linkml_tutorial": "https://w3id.org/linkml/linkml-tutorial/",
       "orcid": "http://example.org/UNKNOWN/orcid/",
       "schema": "http://schema.org/",
       "skos": "http://www.w3.org/2004/02/skos/core#",
-      "@vocab": "https://w3id.org/linkml/linkml-tutorial-schema/",
+      "@vocab": "https://w3id.org/linkml/linkml-tutorial/",
       "age_in_years": {
          "@type": "xsd:integer"
       },
