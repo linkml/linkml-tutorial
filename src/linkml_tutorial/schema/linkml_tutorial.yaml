@@ -1,18 +1,18 @@
-id: https://w3id.org/linkml/linkml-tutorial-schema
-name: linkml-tutorial-schema
-title: linkml-tutorial-schema
+id: https://w3id.org/linkml/linkml-tutorial
+name: linkml-tutorial
+title: linkml-tutorial
 description: |-
   A repostitory that walks through schema generation. 
 license: MIT
 see_also:
-  - https://linkml.github.io/linkml-tutorial-schema
+  - https://linkml.github.io/linkml-tutorial
 
 prefixes:
-  linkml_tutorial_schema: https://w3id.org/linkml/linkml-tutorial-schema/
+  linkml_tutorial: https://w3id.org/linkml/linkml-tutorial/
   linkml: https://w3id.org/linkml/
   schema: http://schema.org/
 
-default_prefix: linkml_tutorial_schema
+default_prefix: linkml_tutorial
 default_range: string
 
 imports:

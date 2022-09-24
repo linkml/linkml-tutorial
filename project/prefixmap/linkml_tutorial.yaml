@@ -5,7 +5,7 @@
    "biolink": "http://example.org/UNKNOWN/biolink/",
    "foaf": "http://example.org/UNKNOWN/foaf/",
    "linkml": "https://w3id.org/linkml/",
-   "linkml_tutorial_schema": "https://w3id.org/linkml/linkml-tutorial-schema/",
+   "linkml_tutorial": "https://w3id.org/linkml/linkml-tutorial/",
    "orcid": "http://example.org/UNKNOWN/orcid/",
    "schema": "http://schema.org/",
    "NamedThing": {

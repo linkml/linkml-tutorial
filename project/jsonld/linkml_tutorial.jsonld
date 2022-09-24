@@ -1,19 +1,19 @@
 {
-  "name": "linkml-tutorial-schema",
+  "name": "linkml-tutorial",
   "description": "A repostitory that walks through schema generation. ",
-  "title": "linkml-tutorial-schema",
+  "title": "linkml-tutorial",
   "see_also": [
-    "https://linkml.github.io/linkml-tutorial-schema"
+    "https://linkml.github.io/linkml-tutorial"
   ],
-  "id": "https://w3id.org/linkml/linkml-tutorial-schema",
+  "id": "https://w3id.org/linkml/linkml-tutorial",
   "imports": [
     "linkml:types"
   ],
   "license": "MIT",
   "prefixes": [
     {
-      "prefix_prefix": "linkml_tutorial_schema",
-      "prefix_reference": "https://w3id.org/linkml/linkml-tutorial-schema/"
+      "prefix_prefix": "linkml_tutorial",
+      "prefix_reference": "https://w3id.org/linkml/linkml-tutorial/"
     },
     {
       "prefix_prefix": "linkml",
@@ -24,7 +24,7 @@
       "prefix_reference": "http://schema.org/"
     }
   ],
-  "default_prefix": "linkml_tutorial_schema",
+  "default_prefix": "linkml_tutorial",
   "default_range": "string",
   "types": [
     {
@@ -200,9 +200,9 @@
   "slots": [
     {
       "name": "id",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/id",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial/id",
       "description": "A unique identifier for a person",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial",
       "mappings": [
         "http://schema.org/identifier"
       ],
@@ -218,9 +218,9 @@
     },
     {
       "name": "name",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/name",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial/name",
       "description": "A human-readable name for a person",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial",
       "mappings": [
         "http://schema.org/name"
       ],
@@ -234,9 +234,9 @@
     },
     {
       "name": "primary_email",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/primary_email",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial/primary_email",
       "description": "The main email address of a person",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial",
       "mappings": [
         "http://schema.org/email"
       ],
@@ -251,9 +251,9 @@
     },
     {
       "name": "birth_date",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/birth_date",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial/birth_date",
       "description": "Date on which a person is born",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial",
       "mappings": [
         "http://schema.org/birthDate"
       ],
@@ -267,10 +267,10 @@
     },
     {
       "name": "age_in_years",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/age_in_years",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial/age_in_years",
       "description": "Number of years since birth",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/age_in_years",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial/age_in_years",
       "owner": "NamedThing",
       "domain_of": [
         "NamedThing"
@@ -280,10 +280,10 @@
     },
     {
       "name": "vital_status",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/vital_status",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial/vital_status",
       "description": "living or dead status",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/vital_status",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial/vital_status",
       "owner": "Person",
       "domain_of": [
         "Person"
@@ -294,10 +294,10 @@
     },
     {
       "name": "pets",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/pets",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial/pets",
       "description": "a collection of animals that lives with and is taken care of by a person.",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/pets",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial/pets",
       "multivalued": true,
       "owner": "Person",
       "domain_of": [
@@ -308,13 +308,13 @@
     },
     {
       "name": "species",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/species",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial/species",
       "description": "The species of an animal",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial",
       "values_from": [
         "NCBITaxon"
       ],
-      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/species",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial/species",
       "owner": "Animal",
       "domain_of": [
         "Animal"
@@ -324,13 +324,13 @@
     },
     {
       "name": "breed",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/breed",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial/breed",
       "description": "The breed of an animal",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial",
       "values_from": [
         "VBO"
       ],
-      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/breed",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial/breed",
       "owner": "Animal",
       "domain_of": [
         "Animal"
@@ -340,10 +340,10 @@
     },
     {
       "name": "color",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/color",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial/color",
       "description": "The color of an animal",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/color",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial/color",
       "owner": "Animal",
       "domain_of": [
         "Animal"
@@ -353,10 +353,10 @@
     },
     {
       "name": "weight_in_mgs",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/weight_in_mgs",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial/weight_in_mgs",
       "description": "The weight of an animal in milligrams",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/weight_in_mgs",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial/weight_in_mgs",
       "owner": "Animal",
       "domain_of": [
         "Animal"
@@ -366,10 +366,10 @@
     },
     {
       "name": "entries",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/entries",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial/entries",
       "description": "A collection of things",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/entries",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial/entries",
       "multivalued": true,
       "owner": "PersonCollection",
       "domain_of": [
@@ -382,10 +382,10 @@
     },
     {
       "name": "animals",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/animals",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial/animals",
       "description": "A collection of animals",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
-      "slot_uri": "https://w3id.org/linkml/linkml-tutorial-schema/animals",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial",
+      "slot_uri": "https://w3id.org/linkml/linkml-tutorial/animals",
       "multivalued": true,
       "owner": "AnimalCollection",
       "domain_of": [
@@ -398,9 +398,9 @@
     },
     {
       "name": "Person_id",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/id",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial/id",
       "description": "this is a unique identifier for a person.",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial",
       "mappings": [
         "http://schema.org/identifier"
       ],
@@ -423,9 +423,9 @@
   "classes": [
     {
       "name": "NamedThing",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/NamedThing",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial/NamedThing",
       "description": "The most generic type of entity that has a name",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial",
       "mappings": [
         "schema:Thing"
       ],
@@ -446,8 +446,8 @@
         "orcid",
         "WIKIDATA"
       ],
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Person",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial/Person",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial",
       "mappings": [
         "schema:Person"
       ],
@@ -474,8 +474,8 @@
     },
     {
       "name": "Animal",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Animal",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial/Animal",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial",
       "aliases": [
         "pet"
       ],
@@ -498,7 +498,7 @@
         "weight_in_mgs"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/Animal",
+      "class_uri": "https://w3id.org/linkml/linkml-tutorial/Animal",
       "rules": [
         {
           "postconditions": {
@@ -534,40 +534,40 @@
     },
     {
       "name": "PersonCollection",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/PersonCollection",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial/PersonCollection",
       "description": "A collection of things",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial",
       "slots": [
         "entries"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/PersonCollection",
+      "class_uri": "https://w3id.org/linkml/linkml-tutorial/PersonCollection",
       "@type": "ClassDefinition"
     },
     {
       "name": "AnimalCollection",
-      "definition_uri": "https://w3id.org/linkml/linkml-tutorial-schema/AnimalCollection",
-      "from_schema": "https://w3id.org/linkml/linkml-tutorial-schema",
+      "definition_uri": "https://w3id.org/linkml/linkml-tutorial/AnimalCollection",
+      "from_schema": "https://w3id.org/linkml/linkml-tutorial",
       "slots": [
         "animals"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/linkml/linkml-tutorial-schema/AnimalCollection",
+      "class_uri": "https://w3id.org/linkml/linkml-tutorial/AnimalCollection",
       "tree_root": true,
       "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
-  "source_file": "linkml_tutorial_schema.yaml",
-  "source_file_date": "2022-09-23T09:58:50",
-  "source_file_size": 3328,
-  "generation_date": "2022-09-23T09:58:59",
+  "source_file": "linkml_tutorial.yaml",
+  "source_file_date": "2022-09-23T17:00:09",
+  "source_file_size": 3279,
+  "generation_date": "2022-09-23T17:01:17",
   "@type": "SchemaDefinition",
   "@context": [
-    "project/jsonld/linkml_tutorial_schema.context.jsonld",
+    "project/jsonld/linkml_tutorial.context.jsonld",
     "https://w3id.org/linkml/types.context.jsonld",
     {
-      "@base": "https://w3id.org/linkml/linkml-tutorial-schema/"
+      "@base": "https://w3id.org/linkml/linkml-tutorial/"
     }
   ]
 }
