@@ -222,7 +222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about.md" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -310,8 +310,7 @@
 
 
 <h1 id="slot-name">Slot: name</h1>
-<p><em>A human-readable name for a person</em></p>
-<p>URI: <a href="http://schema.org/name">http://schema.org/name</a></p>
+<p>URI: <a href="https://w3id.org/linkml/examples/personinfo/name">https://w3id.org/linkml/examples/personinfo/name</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="properties">Properties</h2>
@@ -322,19 +321,18 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/linkml/linkml-tutorial</li>
+<li>from schema: https://w3id.org/linkml/examples/personinfo</li>
 </ul>
 <h2 id="linkml-specification">LinkML Specification</h2>
 <details>
 
 <pre><code class="language-yaml">name: name
-description: A human-readable name for a person
-from_schema: https://w3id.org/linkml/linkml-tutorial
+from_schema: https://w3id.org/linkml/examples/personinfo
 rank: 1000
-slot_uri: schema:name
 alias: name
 domain_of:
-- NamedThing
+- Person
+- Organization
 range: string
 
 </code></pre>

@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#linkml-tutorial" class="md-skip">
+        <a href="#personinfo" class="md-skip">
           Skip to content
         </a>
       
@@ -291,7 +291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="about.md" class="md-nav__link">
+      <a href="about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -379,10 +379,10 @@
   </a>
 
 
-<h1 id="linkml-tutorial">linkml-tutorial</h1>
-<p>A repostitory that walks through schema generation. </p>
-<p>URI: https://w3id.org/linkml/linkml-tutorial
-Name: linkml-tutorial</p>
+<h1 id="personinfo">PersonInfo</h1>
+<p>Information about people, based on <a href="http://schema.org">schema.org</a></p>
+<p>URI: https://w3id.org/linkml/examples/personinfo
+Name: PersonInfo</p>
 <h2 id="classes">Classes</h2>
 <table>
 <thead>
@@ -393,24 +393,28 @@ Name: linkml-tutorial</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="Animal/">Animal</a></td>
-<td>An organism in the biological kingdom Animalia</td>
+<td><a href="Event/">Event</a></td>
+<td>grouping class for events</td>
 </tr>
 <tr>
-<td><a href="AnimalCollection/">AnimalCollection</a></td>
-<td>A collection of Animals</td>
+<td><a href="ForProfit/">ForProfit</a></td>
+<td></td>
 </tr>
 <tr>
-<td><a href="NamedThing/">NamedThing</a></td>
-<td>The most generic type of entity that has a name</td>
+<td><a href="MedicalEvent/">MedicalEvent</a></td>
+<td>a medical encounter</td>
+</tr>
+<tr>
+<td><a href="NonProfit/">NonProfit</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Organization/">Organization</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="Person/">Person</a></td>
-<td>An individual human being</td>
-</tr>
-<tr>
-<td><a href="PersonCollection/">PersonCollection</a></td>
-<td>A collection of things</td>
+<td>a person,living or dead</td>
 </tr>
 </tbody>
 </table>
@@ -424,56 +428,32 @@ Name: linkml-tutorial</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="age_in_years/">age_in_years</a></td>
-<td>Number of years since birth</td>
+<td><a href="age/">age</a></td>
+<td></td>
 </tr>
 <tr>
-<td><a href="animals/">animals</a></td>
-<td>A collection of animals</td>
+<td><a href="description/">description</a></td>
+<td>a textual description</td>
 </tr>
 <tr>
-<td><a href="birth_date/">birth_date</a></td>
-<td>Date on which a person is born</td>
+<td><a href="gender/">gender</a></td>
+<td></td>
 </tr>
 <tr>
-<td><a href="breed/">breed</a></td>
-<td>The breed of an animal</td>
+<td><a href="handedness/">handedness</a></td>
+<td></td>
 </tr>
 <tr>
-<td><a href="color/">color</a></td>
-<td>The color of an animal</td>
-</tr>
-<tr>
-<td><a href="entries/">entries</a></td>
-<td>A collection of things</td>
+<td><a href="has_medical_history/">has_medical_history</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="id/">id</a></td>
-<td>A unique identifier for a person</td>
+<td>any identifier</td>
 </tr>
 <tr>
 <td><a href="name/">name</a></td>
-<td>A human-readable name for a person</td>
-</tr>
-<tr>
-<td><a href="pets/">pets</a></td>
-<td>a collection of animals that lives with and is taken care of by a person</td>
-</tr>
-<tr>
-<td><a href="primary_email/">primary_email</a></td>
-<td>The main email address of a person</td>
-</tr>
-<tr>
-<td><a href="species/">species</a></td>
-<td>The species of an animal</td>
-</tr>
-<tr>
-<td><a href="vital_status/">vital_status</a></td>
-<td>living or dead status</td>
-</tr>
-<tr>
-<td><a href="weight_in_mgs/">weight_in_mgs</a></td>
-<td>The weight of an animal in milligrams</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -487,12 +467,8 @@ Name: linkml-tutorial</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="Breeds/">Breeds</a></td>
-<td>Any breed from the VBO</td>
-</tr>
-<tr>
-<td><a href="PersonStatus/">PersonStatus</a></td>
-<td>The vital status of a person</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -577,7 +553,11 @@ Name: linkml-tutorial</p>
 </thead>
 <tbody>
 <tr>
+<td><a href="A/">A</a></td>
 <td></td>
+</tr>
+<tr>
+<td><a href="B/">B</a></td>
 <td></td>
 </tr>
 </tbody>
@@ -599,6 +579,27 @@ Name: linkml-tutorial</p>
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+      
+        
+        <a href="about/" class="md-footer__link md-footer__link--next" aria-label="Next: About" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              About
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

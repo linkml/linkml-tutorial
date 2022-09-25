@@ -222,7 +222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about.md" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -310,15 +310,15 @@
 
 
 <h1 id="slot-id">Slot: id</h1>
-<p><em>A unique identifier for a person</em></p>
-<p>URI: <a href="http://schema.org/identifier">http://schema.org/identifier</a></p>
+<p><em>any identifier</em></p>
+<p>URI: <a href="https://w3id.org/linkml/examples/personinfo/id">https://w3id.org/linkml/examples/personinfo/id</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="properties">Properties</h2>
 <ul>
 <li>Range: <a href="xsd:string">xsd:string</a></li>
 <li>
-<p>Multivalued: None</p>
+<p>Multivalued: False</p>
 </li>
 <li>
 <p>Required: True</p>
@@ -327,20 +327,23 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/linkml/linkml-tutorial</li>
+<li>from schema: https://w3id.org/linkml/examples/personinfo</li>
 </ul>
 <h2 id="linkml-specification">LinkML Specification</h2>
 <details>
 
 <pre><code class="language-yaml">name: id
-description: A unique identifier for a person
-from_schema: https://w3id.org/linkml/linkml-tutorial
+description: any identifier
+from_schema: https://w3id.org/linkml/examples/personinfo
+exact_mappings:
+- sdo:identifier
+- sdo:identifier
 rank: 1000
-slot_uri: schema:identifier
+multivalued: false
 identifier: true
 alias: id
 domain_of:
-- NamedThing
+- Person
 range: string
 required: true
 
