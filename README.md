@@ -1,6 +1,8 @@
 # LinkML Tutorial 1: Introduction to LinkML
 
-This is a repository that walks through the LinkML modeling language, helpful LinkML command line tools, and 
+This is a repo
+si
+tory that walks through the LinkML modeling language, helpful LinkML command line tools, and 
 automatic schema documentation generation. The main branch of this repository has the resulting
 structure of a LinkML project that follows the tutorial to its completion.  If you want to walk through
 the tutorial step by step, or refer back to a section of the tutorial at a later time, you can 
@@ -12,9 +14,19 @@ you could refer to the `step_5_validation` branch.
 For reference, the available sections are:
 
 ### Section 1: Setting up a LinkML project from scratch 
+
+![1-cookiecutter.jpg](tutorial_slides%2F1-cookiecutter.jpg)
+![2-cookiecutter.jpg](tutorial_slides%2F2-cookiecutter.jpg)
+![3-cookiecutter.jpg](tutorial_slides%2F3-cookiecutter.jpg)
+![4-cookiecutter.jpg](tutorial_slides%2F4-cookiecutter.jpg)
+![5-cookiecutter.jpg](tutorial_slides%2F5-cookiecutter.jpg)
+
 - [step_0_basic_project_creation](https://github.com/linkml/linkml-tutorial/tree/step_0_basic_project_creation)
 
+
 ### Section 2: Developing a model, validating the model with test data
+![1a-modeling.jpg](tutorial_slides%2F1a-modeling.jpg)
+![1-modeling.jpg](tutorial_slides%2F1-modeling.jpg)
 
 - [step_1_model_components](https://github.com/linkml/linkml-tutorial/tree/step_1_model_components)
 - [step_2_classes_and_slots](https://github.com/linkml/linkml-tutorial/tree/step_2_classes_and_slots)
@@ -23,13 +35,31 @@ For reference, the available sections are:
 - [step_5_validation](https://github.com/linkml/linkml-tutorial/tree/step_5_validation)
 - [step_6_enumerations](https://github.com/linkml/linkml-tutorial/tree/step_6_enumerations)
 
+
+
 ### Section 3: Checking the model for best practices (linting)
 - [step_7_linting](https://github.com/linkml/linkml-tutorial/tree/step_7_linting)
+![1-linting.jpg](tutorial_slides%2F1-linting.jpg)
+![1-validation.jpg](tutorial_slides%2F1-validation.jpg)
+![1a-modeling.jpg](tutorial_slides%2F1a-modeling.jpg)
+
 
 ### Section 4: Generating model documentation
+![1-doc.jpg](tutorial_slides%2F1-doc.jpg)
+![2-doc-details.jpg](tutorial_slides%2F2-doc-details.jpg)
+![3-doc-varieties.jpg](tutorial_slides%2F3-doc-varieties.jpg)
+![4-doc-reststop.jpg](tutorial_slides%2F4-doc-reststop.jpg)
+
 - [step_8_documentation](https://github.com/linkml/linkml-tutorial/tree/step_8_documentation)
 
 ### Section 5: Schemasheets
+![1-schemasheets.jpg](tutorial_slides%2F1-schemasheets.jpg)
+![2-schemasheets.jpg](tutorial_slides%2F2-schemasheets.jpg)
+![3-schemasheets.jpg](tutorial_slides%2F3-schemasheets.jpg)
+![4-schemasheets.jpg](tutorial_slides%2F4-schemasheets.jpg)
+![5-schemasheets.jpg](tutorial_slides%2F5-schemasheets.jpg)
+![6-schemasheets.jpg](tutorial_slides%2F6-schemasheets.jpg)
+
 - [step_9_schemasheets](https://github.com/linkml/linkml-tutorial/tree/schemasheets)
 
 
