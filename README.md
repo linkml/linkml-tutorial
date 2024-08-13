@@ -1,8 +1,6 @@
 # LinkML Tutorial 1: Introduction to LinkML
 
-This is a repo
-si
-tory that walks through the LinkML modeling language, helpful LinkML command line tools, and 
+This is a repository that walks through the LinkML modeling language, helpful LinkML command line tools, and 
 automatic schema documentation generation. The main branch of this repository has the resulting
 structure of a LinkML project that follows the tutorial to its completion.  If you want to walk through
 the tutorial step by step, or refer back to a section of the tutorial at a later time, you can 
