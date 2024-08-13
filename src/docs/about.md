@@ -1,5 +1,3 @@
 # linkml-tutorial
 
-A repostitory that walks through schema generation. 
-
-
+A repository that walks through schema generation. 
