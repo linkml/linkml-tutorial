@@ -8,24 +8,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@main
+      uses: actions/checkout@v4
       with:
-        fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
-    
+        fetch-depth: 0
+
     - name: Set up Python 3.
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v5
       with:
         python-version: 3.9
 
-    - name: Install Poetry.
-      uses: snok/install-poetry@v1.3
+    - name: Install uv
+      uses: astral-sh/setup-uv@v5
 
     - name: Install dependencies.
-      run: poetry install -E docs
-    
+      run: uv sync --extra docs
+
     - name: Build documentation.
       run: |
         mkdir -p docs
         touch docs/.nojekyll
-        poetry run gen-doc -d docs src/linkml_tutorial/schema/linkml_tutorial.yaml
-        poetry run mkdocs gh-deploy
+        uv run gen-doc -d docs src/linkml_tutorial/schema/linkml_tutorial.yaml
+        uv run mkdocs gh-deploy
