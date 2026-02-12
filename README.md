@@ -12,11 +12,8 @@ you could refer to the `step_5_validation` branch.
 For reference, the available sections are:
 
 ### Section 1: Setting up a LinkML project from scratch 
+## NOTE: this section is currently out of date. It needs to be revised to talk about [copier](https://github.com/linkml/linkml-project-copier) rather than cookiecutter.
 
-![1-cookiecutter.jpg](tutorial_slides%2F1-cookiecutter.jpg)
-![2-cookiecutter.jpg](tutorial_slides%2F2-cookiecutter.jpg)
-![3-cookiecutter.jpg](tutorial_slides%2F3-cookiecutter.jpg)
-![4-cookiecutter.jpg](tutorial_slides%2F4-cookiecutter.jpg)
 ![5-cookiecutter.jpg](tutorial_slides%2F5-cookiecutter.jpg)
 
 - [step_0_basic_project_creation](https://github.com/linkml/linkml-tutorial/tree/step_0_basic_project_creation)
@@ -84,6 +81,7 @@ Use the `make` command to generate project artifacts:
 
 To validate, create a poetry virtual environment, install the dependencies of this tutorial, and then
 run the tests and/or linkml-validate.
+### NOTE: we have switched to using uv rather than poetry (but poetry may still work).
 
 ```bash
 poetry install
@@ -128,4 +126,5 @@ A link to a video tutorial is coming soon!
 
 ## Credits
 
-this project was made with [linkml-project-cookiecutter](https://github.com/linkml/linkml-project-cookiecutter)
+This project was made with linkml-project-cookiecutter (but we have now switched to recommending [linkml-project-copier](https://github.com/linkml/linkml-project-copier)
+for setting up a new LinkML project).
