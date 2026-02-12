@@ -1,5 +1,5 @@
-# Auto generated from linkml_tutorial.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-09-23T16:27:37
+# Auto generated from linkml_tutorial.yaml by pythongen.py version: 0.0.1
+# Generation date: 2026-02-11T18:36:26
 # Schema: linkml-tutorial
 #
 # id: https://w3id.org/linkml/linkml-tutorial
@@ -7,29 +7,60 @@
 # license: MIT
 
 import dataclasses
-import sys
 import re
-from jsonasobj2 import JsonObj, as_dict
-from typing import Optional, List, Union, Dict, ClassVar, Any
 from dataclasses import dataclass
-from linkml_runtime.linkml_model.meta import EnumDefinition, PermissibleValue, PvFormulaOptions
+from datetime import (
+    date,
+    datetime,
+    time
+)
+from typing import (
+    Any,
+    ClassVar,
+    Dict,
+    List,
+    Optional,
+    Union
+)
 
-from linkml_runtime.utils.slot import Slot
-from linkml_runtime.utils.metamodelcore import empty_list, empty_dict, bnode
-from linkml_runtime.utils.yamlutils import YAMLRoot, extended_str, extended_float, extended_int
-from linkml_runtime.utils.dataclass_extensions_376 import dataclasses_init_fn_with_kwargs
-from linkml_runtime.utils.formatutils import camelcase, underscore, sfx
-from linkml_runtime.utils.enumerations import EnumDefinitionImpl
-from rdflib import Namespace, URIRef
+from jsonasobj2 import (
+    JsonObj,
+    as_dict
+)
+from linkml_runtime.linkml_model.meta import (
+    EnumDefinition,
+    PermissibleValue,
+    PvFormulaOptions
+)
 from linkml_runtime.utils.curienamespace import CurieNamespace
+from linkml_runtime.utils.enumerations import EnumDefinitionImpl
+from linkml_runtime.utils.formatutils import (
+    camelcase,
+    sfx,
+    underscore
+)
+from linkml_runtime.utils.metamodelcore import (
+    bnode,
+    empty_dict,
+    empty_list
+)
+from linkml_runtime.utils.slot import Slot
+from linkml_runtime.utils.yamlutils import (
+    YAMLRoot,
+    extended_float,
+    extended_int,
+    extended_str
+)
+from rdflib import (
+    Namespace,
+    URIRef
+)
+
 from linkml_runtime.linkml_model.types import Date, Integer, String, Uriorcurie
 from linkml_runtime.utils.metamodelcore import URIorCURIE, XSDDate
 
 metamodel_version = "1.7.0"
 version = None
-
-# Overwrite dataclasses _init_fn to add **kwargs in __init__
-dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
 FOODON = CurieNamespace('FOODON', 'http://example.org/UNKNOWN/FOODON/')
@@ -60,14 +91,14 @@ class AnimalId(NamedThingId):
     pass
 
 
-@dataclass
+@dataclass(repr=False)
 class NamedThing(YAMLRoot):
     """
     The most generic type of entity that has a name
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = SCHEMA.Thing
+    class_class_uri: ClassVar[URIRef] = SCHEMA["Thing"]
     class_class_curie: ClassVar[str] = "schema:Thing"
     class_name: ClassVar[str] = "NamedThing"
     class_model_uri: ClassVar[URIRef] = LINKML_TUTORIAL.NamedThing
@@ -77,7 +108,7 @@ class NamedThing(YAMLRoot):
     birth_date: Optional[Union[str, XSDDate]] = None
     age_in_years: Optional[int] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, NamedThingId):
@@ -95,14 +126,14 @@ class NamedThing(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class Person(NamedThing):
     """
     An individual human being
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = SCHEMA.Person
+    class_class_uri: ClassVar[URIRef] = SCHEMA["Person"]
     class_class_curie: ClassVar[str] = "schema:Person"
     class_name: ClassVar[str] = "Person"
     class_model_uri: ClassVar[URIRef] = LINKML_TUTORIAL.Person
@@ -110,9 +141,9 @@ class Person(NamedThing):
     id: Union[str, PersonId] = None
     vital_status: Union[str, "PersonStatus"] = None
     primary_email: Optional[str] = None
-    pets: Optional[Union[Union[str, AnimalId], List[Union[str, AnimalId]]]] = empty_list()
+    pets: Optional[Union[Union[str, AnimalId], list[Union[str, AnimalId]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PersonId):
@@ -133,14 +164,14 @@ class Person(NamedThing):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class Animal(NamedThing):
     """
     An organism in the biological kingdom Animalia
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = LINKML_TUTORIAL.Animal
+    class_class_uri: ClassVar[URIRef] = LINKML_TUTORIAL["Animal"]
     class_class_curie: ClassVar[str] = "linkml_tutorial:Animal"
     class_name: ClassVar[str] = "Animal"
     class_model_uri: ClassVar[URIRef] = LINKML_TUTORIAL.Animal
@@ -151,7 +182,7 @@ class Animal(NamedThing):
     color: Optional[str] = None
     weight_in_mgs: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, AnimalId):
@@ -172,41 +203,41 @@ class Animal(NamedThing):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class PersonCollection(YAMLRoot):
     """
     A collection of things
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = LINKML_TUTORIAL.PersonCollection
+    class_class_uri: ClassVar[URIRef] = LINKML_TUTORIAL["PersonCollection"]
     class_class_curie: ClassVar[str] = "linkml_tutorial:PersonCollection"
     class_name: ClassVar[str] = "PersonCollection"
     class_model_uri: ClassVar[URIRef] = LINKML_TUTORIAL.PersonCollection
 
-    entries: Optional[Union[Dict[Union[str, PersonId], Union[dict, Person]], List[Union[dict, Person]]]] = empty_dict()
+    entries: Optional[Union[dict[Union[str, PersonId], Union[dict, Person]], list[Union[dict, Person]]]] = empty_dict()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         self._normalize_inlined_as_list(slot_name="entries", slot_type=Person, key_name="id", keyed=True)
 
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class AnimalCollection(YAMLRoot):
     """
     A collection of Animals
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = LINKML_TUTORIAL.AnimalCollection
+    class_class_uri: ClassVar[URIRef] = LINKML_TUTORIAL["AnimalCollection"]
     class_class_curie: ClassVar[str] = "linkml_tutorial:AnimalCollection"
     class_name: ClassVar[str] = "AnimalCollection"
     class_model_uri: ClassVar[URIRef] = LINKML_TUTORIAL.AnimalCollection
 
-    animals: Optional[Union[Dict[Union[str, AnimalId], Union[dict, Animal]], List[Union[dict, Animal]]]] = empty_dict()
+    animals: Optional[Union[dict[Union[str, AnimalId], Union[dict, Animal]], list[Union[dict, Animal]]]] = empty_dict()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         self._normalize_inlined_as_list(slot_name="animals", slot_type=Animal, key_name="id", keyed=True)
 
         super().__post_init__(**kwargs)
@@ -217,14 +248,17 @@ class PersonStatus(EnumDefinitionImpl):
     """
     The vital status of a person
     """
-    ALIVE = PermissibleValue(text="ALIVE",
-                                 description="the person is living",
-                                 meaning=PATO["0001421"])
-    DEAD = PermissibleValue(text="DEAD",
-                               description="the person is deceased",
-                               meaning=PATO["0001422"])
-    UNKNOWN = PermissibleValue(text="UNKNOWN",
-                                     description="the vital status is not known")
+    ALIVE = PermissibleValue(
+        text="ALIVE",
+        description="the person is living",
+        meaning=PATO["0001421"])
+    DEAD = PermissibleValue(
+        text="DEAD",
+        description="the person is deceased",
+        meaning=PATO["0001422"])
+    UNKNOWN = PermissibleValue(
+        text="UNKNOWN",
+        description="the vital status is not known")
 
     _defn = EnumDefinition(
         name="PersonStatus",
@@ -264,7 +298,7 @@ slots.vital_status = Slot(uri=LINKML_TUTORIAL.vital_status, name="vital_status",
                    model_uri=LINKML_TUTORIAL.vital_status, domain=None, range=Union[str, "PersonStatus"])
 
 slots.pets = Slot(uri=LINKML_TUTORIAL.pets, name="pets", curie=LINKML_TUTORIAL.curie('pets'),
-                   model_uri=LINKML_TUTORIAL.pets, domain=None, range=Optional[Union[Union[str, AnimalId], List[Union[str, AnimalId]]]])
+                   model_uri=LINKML_TUTORIAL.pets, domain=None, range=Optional[Union[Union[str, AnimalId], list[Union[str, AnimalId]]]])
 
 slots.species = Slot(uri=LINKML_TUTORIAL.species, name="species", curie=LINKML_TUTORIAL.curie('species'),
                    model_uri=LINKML_TUTORIAL.species, domain=None, range=Optional[Union[str, URIorCURIE]])
@@ -279,10 +313,10 @@ slots.weight_in_mgs = Slot(uri=LINKML_TUTORIAL.weight_in_mgs, name="weight_in_mg
                    model_uri=LINKML_TUTORIAL.weight_in_mgs, domain=None, range=Optional[str])
 
 slots.entries = Slot(uri=LINKML_TUTORIAL.entries, name="entries", curie=LINKML_TUTORIAL.curie('entries'),
-                   model_uri=LINKML_TUTORIAL.entries, domain=None, range=Optional[Union[Dict[Union[str, PersonId], Union[dict, Person]], List[Union[dict, Person]]]])
+                   model_uri=LINKML_TUTORIAL.entries, domain=None, range=Optional[Union[dict[Union[str, PersonId], Union[dict, Person]], list[Union[dict, Person]]]])
 
 slots.animals = Slot(uri=LINKML_TUTORIAL.animals, name="animals", curie=LINKML_TUTORIAL.curie('animals'),
-                   model_uri=LINKML_TUTORIAL.animals, domain=None, range=Optional[Union[Dict[Union[str, AnimalId], Union[dict, Animal]], List[Union[dict, Animal]]]])
+                   model_uri=LINKML_TUTORIAL.animals, domain=None, range=Optional[Union[dict[Union[str, AnimalId], Union[dict, Animal]], list[Union[dict, Animal]]]])
 
 slots.Person_id = Slot(uri=SCHEMA.identifier, name="Person_id", curie=SCHEMA.curie('identifier'),
                    model_uri=LINKML_TUTORIAL.Person_id, domain=Person, range=Union[str, PersonId])
